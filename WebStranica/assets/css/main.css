@@ -3207,7 +3207,8 @@ input, select, textarea {
 			width: 100%;
 			height: 100%;
 			background-color: #212931;
-			background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg");
+			/* background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg"); linear-gradient(c#604c1d, #99875e);   radial-gradient(circle, #000000,#000000, #fff6e5);*/
+			background-image: url("../../images/overlay.png"), linear-gradient(to right, #ffefd1, #000000,#ffefd1);
 			background-size: auto,								auto,														100% auto;
 			background-position: center,								center,														top center;
 			background-repeat: repeat,								no-repeat,													no-repeat;
@@ -3550,8 +3551,8 @@ input, select, textarea {
 		}
 
 			#header .logo:hover {
-				border-color: #18bfef !important;
-				color: #18bfef !important;
+				border-color: #ffefd1 !important;
+				color: #ffefd1 !important;
 			}
 
 		@media screen and (max-width: 980px) {
@@ -4354,7 +4355,7 @@ input, select, textarea {
 
 		}
 
-	#copyright {
+	#FooterIkone {
 		color: #ffffff;
 		position: relative;
 		color: rgba(255, 255, 255, 0.25);
@@ -4366,59 +4367,59 @@ input, select, textarea {
 		line-height: 1.5;
 		text-align: center;
 		text-transform: uppercase;
-		margin: 4rem auto 8rem auto;
+		margin: 2rem auto 8rem auto;
 		width: calc(100% - 4rem);
 		max-width: 72rem;
 		z-index: 2;
 	}
 
-		#copyright input, #copyright select, #copyright textarea {
+		#FooterIkone input, #FooterIkone select, #FooterIkone textarea {
 			color: #ffffff;
 		}
 
-		#copyright a {
+		#FooterIkone a {
 			color: #ffffff;
 			border-bottom-color: rgba(255, 255, 255, 0.5);
 		}
 
-			#copyright a:hover {
+			#FooterIkone a:hover {
 				border-bottom-color: transparent;
 				color: #18bfef !important;
 			}
 
-		#copyright strong, #copyright b {
+		#FooterIkone strong, #FooterIkone b {
 			color: #ffffff;
 		}
 
-		#copyright h1, #copyright h2, #copyright h3, #copyright h4, #copyright h5, #copyright h6 {
+		#FooterIkone h1, #FooterIkone h2, #FooterIkone h3, #FooterIkone h4, #FooterIkone h5, #FooterIkone h6 {
 			color: #ffffff;
 		}
 
-		#copyright blockquote {
+		#FooterIkone blockquote {
 			border-left-color: #ffffff;
 		}
 
-		#copyright code {
+		#FooterIkone code {
 			background: rgba(255, 255, 255, 0.075);
 			border-color: #ffffff;
 		}
 
-		#copyright hr {
+		#FooterIkone hr {
 			border-bottom-color: #ffffff;
 		}
 
-		#copyright a {
+		#FooterIkone a {
 			color: inherit;
 			border-bottom-color: inherit;
 		}
 
-		#copyright ul {
+		#FooterIkone ul {
 			list-style: none;
 			margin: 0;
 			padding-left: 0;
 		}
 
-			#copyright ul li {
+			#FooterIkone ul li {
 				border-left: solid 2px;
 				display: inline-block;
 				line-height: 1;
@@ -4426,7 +4427,7 @@ input, select, textarea {
 				padding-left: 1rem;
 			}
 
-				#copyright ul li:first-child {
+				#FooterIkone ul li:first-child {
 					border-left: 0;
 					margin-left: 0;
 					padding-left: 0;
@@ -4434,7 +4435,7 @@ input, select, textarea {
 
 		@media screen and (max-width: 1280px) {
 
-			#copyright {
+			#FooterIkone {
 				margin: 4rem auto;
 			}
 
@@ -4442,15 +4443,15 @@ input, select, textarea {
 
 		@media screen and (max-width: 480px) {
 
-			#copyright ul li {
+			#FooterIkone ul li {
 				border-left: 0;
 				margin: 1rem 0 0 0;
 				padding-left: 0;
 				display: block;
 			}
 
-				#copyright ul li:first-child {
-					margin-top: 0;
+				#FooterIkone ul li:first-child {
+					margin-top: 10px;
 				}
 
 		}
