@@ -1,7 +1,8 @@
 
 function UcitajJezik(){
   var lng = localStorage.getItem('lang');
-  console.log(lng);
+  // console log zapisuje u console koji jezik je odabran za lakšu kontrolu nad kodom
+  //console.log(lng);
 
   // provjera koji jezik je spremljen u localstorage
   if(lng == "en"){
@@ -31,6 +32,8 @@ function UcitajJezik(){
       document.getElementById("n5").innerHTML = "Contact";
       document.getElementById("n6").innerHTML = "Game";
 
+      document.getElementById("NASLOV").innerHTML = "engnaslov";
+
     break;
     case "cro":
 
@@ -41,6 +44,8 @@ function UcitajJezik(){
       document.getElementById("n4").innerHTML = "Interreg";
       document.getElementById("n5").innerHTML = "Kontakt";
       document.getElementById("n6").innerHTML = "Igra";
+
+      document.getElementById("NASLOV").innerHTML = "Cronaslov";
 
 
     break;
@@ -53,12 +58,22 @@ function UcitajJezik(){
       document.getElementById("n5").innerHTML = "Kontakt";
       document.getElementById("n6").innerHTML = "Igra";
 
+      document.getElementById("NASLOV").innerHTML = "sloNaslov";
+
 
     break;
     // tu dolazi engleski tekst po default-u ukoliko je stranica ucitana prvi put i nije se promjenio jezik
     default:
 
+      // ovo je za navigaciju
       document.getElementById("n1").innerHTML = "Home";
+      document.getElementById("n2").innerHTML = "News";
+      document.getElementById("n3").innerHTML = "Partners";
+      document.getElementById("n4").innerHTML = "Interreg";
+      document.getElementById("n5").innerHTML = "Contact";
+      document.getElementById("n6").innerHTML = "Game";
+
+      document.getElementById("NASLOV").innerHTML = "engnaslov";
 
 
     }

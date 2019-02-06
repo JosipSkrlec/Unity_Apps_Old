@@ -3,8 +3,9 @@
   margin-right: 10px;
 }
 
+/*  text-align: center;*/
 p{
-  text-align: center;
+  text-align: justify;
 }
 h1{
   text-align: center;
@@ -12,8 +13,8 @@ h1{
 
 
 .footerslikahover{
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 .footerslikahover:hover{
@@ -21,10 +22,125 @@ h1{
   margin-right: 30px;
   transform: scale(2.5);
   -webkit-transition: -webkit-transform 1s ease-in-out;
-
-
 }
 
 .FooterIkone{
   margin-top: 10px;
+}
+
+.ikoneheader{
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 5px;
+  line-height: 80%;
+}
+
+#pbccolor{
+  background-color: #a8a39a;
+  opacity: 1;
+}
+
+
+.sadrzajporavnanje{
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.centarporavnanjetext{
+  text-align: center;
+}
+
+.proba{
+  padding: 0;
+}
+
+/*ovo je za razmak izmedu linija teksta*/
+.spacer{
+  line-height: 85%;
+}
+
+/*PROBA*/
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+  z-index: 2;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+
+/*
+Dolje 3 clase se ne koriste ... temp su
+ */
+#FooterPartneri{
+  color: white;
+}
+
+#header2{
+  color: #ffffff;
+  -moz-align-items: center;
+  -webkit-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-flex-direction: column;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -moz-justify-content: -moz-flex-end;
+  -webkit-justify-content: -webkit-flex-end;
+  -ms-justify-content: -ms-flex-end;
+  justify-content: flex-end;
+  pointer-events: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 5rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  z-index: 2;
+}
+
+@media screen and (max-width: 980px) {
+  #header2 {
+    height: 10rem;
+    padding-bottom: 0rem;
+  }
 }

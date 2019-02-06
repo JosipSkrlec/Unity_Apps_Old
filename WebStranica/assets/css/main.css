@@ -2608,7 +2608,9 @@ input, select, textarea {
 			}
 
 			.image.fit img {
-				width: 100%;
+				width: 50%;
+				display: block;
+ 				margin: 0 auto;
 			}
 
 		.image.main {
@@ -3207,8 +3209,13 @@ input, select, textarea {
 			width: 100%;
 			height: 100%;
 			background-color: #212931;
-			/* background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg"); linear-gradient(c#604c1d, #99875e);   radial-gradient(circle, #000000,#000000, #fff6e5);*/
-			background-image: url("../../Slike/overlay.png"), linear-gradient(to right, #ffefd1, #000000,#ffefd1);
+			/*
+			Neke od ostalih pozadina stranice
+			background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1),
+			rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg"); linear-gradient(c#604c1d, #99875e);
+			 radial-gradient(circle, #000000,#000000, #fff6e5); */
+
+			background-image: url("../../Slike/overlay.png"), linear-gradient(to right, #ffffff, #000000, #ffffff);
 			background-size: auto,								auto,														100% auto;
 			background-position: center,								center,														top center;
 			background-repeat: repeat,								no-repeat,													no-repeat;
@@ -3284,7 +3291,7 @@ input, select, textarea {
 		cursor: default;
 		text-align: center;
 		z-index: 1;
-		min-height: 100vh;
+		min-height: 90vh;
 	}
 
 		#intro input, #intro select, #intro textarea {
@@ -3739,7 +3746,6 @@ input, select, textarea {
 	}
 
 		#main > * {
-			padding: 4rem 4rem 2rem 4rem ;
 			border-top: solid 2px #eeeeee;
 			margin: 0;
 		}
