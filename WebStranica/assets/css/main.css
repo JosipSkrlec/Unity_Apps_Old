@@ -3208,7 +3208,7 @@ input, select, textarea {
 			height: 100%;
 			background-color: #212931;
 			/* background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg"); linear-gradient(c#604c1d, #99875e);   radial-gradient(circle, #000000,#000000, #fff6e5);*/
-			background-image: url("../../images/overlay.png"), linear-gradient(to right, #ffefd1, #000000,#ffefd1);
+			background-image: url("../../Slike/overlay.png"), linear-gradient(to right, #ffefd1, #000000,#ffefd1);
 			background-size: auto,								auto,														100% auto;
 			background-position: center,								center,														top center;
 			background-repeat: repeat,								no-repeat,													no-repeat;

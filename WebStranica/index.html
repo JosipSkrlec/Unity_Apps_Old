@@ -7,13 +7,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/CSS.css" />
-		<link rel="icon" href="Slike/Ikone/Interreg_icon_tab.png">
-		<!--za emoji flags -->
-		<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
-	<body class="is-preload">
-
+	<body class="is-preload" onload="UcitajJezik();">
 
 <!-- TODO staviti za jezike skriptu i switch case blok-->
 		<!-- Wrapper -->
@@ -35,25 +31,26 @@
 				<!-- Navigacija -->
 					<nav id="nav">
 						<ul class="links">
-							<li class="active"><a href="index.html">Naslovna</a></li>
+							<li class="active"><a id="n1" href="index.html">Naslovna</a></li>
 							<li>||</li>
-							<li><a href="Novosti.html">Novosti</a></li>
-							<li><a href="Partneri.html">Partneri</a></li>
-							<li><a href="Interreg.html">Interreg</a></li>
-							<li><a href="Kontakti.html">Kontakti</a></li>
+							<li><a id="n2" href="Novosti.html">Novosti</a></li>
+							<li><a id="n3" href="Partneri.html">Partneri</a></li>
+							<li><a id="n4" href="Interreg.html">Interreg</a></li>
+							<li><a id="n5" href="Kontakti.html">Kontakti</a></li>
 							<!-- TODO promjeniti naziv tab-a i foldera jer je to temp ime! -->
-							<li><a href="IGRA.html">IGRA</a></li>
+							<li><a id="n6" href="IGRA.html">IGRA</a></li>
 						</ul>
 
 						<!-- DropDown za promjenu jezika -->
 						<div class="DropDownLanguageMeni">
-					    <select>
-					        <option value="cro"><i class="em em-flag-hr"></i> 🇭🇷 Hrvatski</option>
-					        <option class="SLOVENIA" value="slo"> 🇸🇮 Slovenski </option>
-					        <option class="UNITEDKINGDOM" value="uk"> 🇬🇧 Engleski </option>
+					    <select id="langselector" onchange="PostaviJezik(this.value)">
+					        <option href="#" value="en"> 🇬🇧 Engleski </option>
+					        <option href="#" value="cro"> 🇭🇷 Hrvatski </option>
+					        <option href="#" value="slo"> 🇸🇮 Slovenski </option>
 					    </select>
 						</div>
 
+						<!-- ovaj li je za ikone drustvenih mreza.. pitati!!!!!-->
 						<ul class="icons">
 							<!-- TODO pitati za social medie, fb twit instagram... -->
 							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
@@ -78,21 +75,26 @@
 
 					</div>
 
-					<!-- Copyright -->
+					<!-- footer ikone, poslozeno sve (Eventualne izmjene) -->
 						<div id="FooterIkone">
 							<p>
-							<img src="Slike/mev_logo_05.png" class="footerslikahover" alt="Međimursko Veleučilište u Čakovcu" height="60" width="60">
-							<img src="Slike/mev_logo_05.png" class="footerslikahover" alt="Međimursko Veleučilište u Čakovcu" height="60" width="60">
-							<img src="Slike/mev_logo_05.png" class="footerslikahover" alt="Međimursko Veleučilište u Čakovcu" height="60" width="60">
-							<img src="Slike/mev_logo_05.png" class="footerslikahover" alt="Međimursko Veleučilište u Čakovcu" height="60" width="60">
-							<img src="Slike/mev_logo_05.png" class="footerslikahover" alt="Međimursko Veleučilište u Čakovcu" height="60" width="60">
-
+							<img src="Slike/Partneri/gmv.png" class="footerslikahover" alt="Međimursko Veleučilište u Čakovcu" height="60" width="60">
+							<img src="Slike/Partneri/interreg.png" class="footerslikahover" alt="Međimursko Veleučilište u Čakovcu" height="60" width="60">
+							<img src="Slike/Partneri/mev.png" class="footerslikahover" alt="Međimursko Veleučilište u Čakovcu" height="40" width="40">
+							<img src="Slike/Partneri/mhz.png" class="footerslikahover" alt="Međimursko Veleučilište u Čakovcu" height="60" width="60">
+							<img src="Slike/Partneri/mmck.png" class="footerslikahover" alt="Međimursko Veleučilište u Čakovcu" height="40" width="40">
+							<img src="Slike/Partneri/mrr.png" class="footerslikahover" alt="Međimursko Veleučilište u Čakovcu" height="60" width="60">
+							<img src="Slike/Partneri/mzd.png" class="footerslikahover" alt="Međimursko Veleučilište u Čakovcu" height="60" width="60">
+							<img src="Slike/Partneri/rasr.png" class="footerslikahover" alt="Međimursko Veleučilište u Čakovcu" height="60" width="60">
+							<img src="Slike/Partneri/ris.png" class="footerslikahover" alt="Međimursko Veleučilište u Čakovcu" height="40" width="40">
+							<img src="Slike/Partneri/zrs.png" class="footerslikahover" alt="Međimursko Veleučilište u Čakovcu" height="60" width="60">
 						 </p>
 						</div>
 
 
 
 		<!-- JS skripte za interakciju objekata na stranici -->
+			<script src="assets/js/JS.js"></script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
