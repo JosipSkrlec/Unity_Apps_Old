@@ -10,6 +10,11 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload" onload="UcitajJezik();">
+		<style>
+		select#newlocale option[value="en"]   { background-color: powderblue;   }
+		select#newlocale option[value="cro"]   { background-color: red;   }
+		select#newlocale option[value="slo"]   { background-color: green;   }
+		</style>
 
 		<!-- Wrapper -->
 			<div id="wrapper" class="fade-in">
@@ -43,18 +48,11 @@
 						<!-- DropDown za promjenu jezika -->
 						<div class="DropDownLanguageMeni">
 					    <select id="langselector" onchange="PostaviJezik(this.value)">
-					        <option href="#" value="en"> 🇬🇧 Engleski </option>
+					        <option href="#" value="en" >  🇬🇧 Engleski </option>
 					        <option href="#" value="cro"> 🇭🇷 Hrvatski </option>
 					        <option href="#" value="slo"> 🇸🇮 Slovenski </option>
 					    </select>
 						</div>
-
-						<!-- ovaj li je za ikone drustvenih mreza.. pitati!!!!!-->
-						<ul class="icons">
-							<!-- TODO pitati za social medie, fb twit instagram... -->
-							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-
-						</ul>
 
 					</nav>
 
@@ -70,6 +68,7 @@
 
 						<div class="sadrzajporavnanje">
 							<h1 id="NASLOV">NASLOV OVDJE</h1>
+
 							<p>
 
 							U središtu projekta »Living Castles« je očuvanje i vrednovanje ljetnikovaca/dvoraca kroz razvoj zajedničke prekogranične turističke ponude te integraciju inovativnih aktivnosti očuvanja i predstavljanja baštine.
@@ -84,36 +83,50 @@
 
 							</p>
 
-						</div>
-
-						<h3>Fit</h3>
-
-						<div>
-							<div class="row gtr-50 gtr-uniform">
-								<div class="col-6"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-								<div class="col-6"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-								<!-- drugi red -->
-								<div class="col-6"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-								<div class="col-6"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-								<!-- drugi red -->
-								<div class="col-6"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-								<div class="col-6"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-							</div>
-						</div>
-
-						<div class="flip-card">
-						  <div class="flip-card-inner">
-						    <div class="flip-card-front">
-						      <img src="images/pic02.jpg" alt="Avatar" style="width:300px;height:300px;">
-						    </div>
-						    <div class="flip-card-back">
-						      <p>Veliki Tabor</p>
-						      <p class="spacer"><small>asdasd afs 1998asdas asfasf asfasfasf afasfas fasf asfasfafafagaagafa at agadgad gadg agad ga gadg adg ag adg agd g agdag </small></p>
-						    </div>
-						  </div>
-						</div>
 
 
+					<!-- Galerija Slika koje bacaju na story od svake-->
+					<!--Potrebno ukljuciti SKRIPTE sa funkcijama koje se nalaze na dnu file-a, samo element <script>-->
+					<div class="row">
+					  <div class="column">
+					    <img class="Slikaselekt" id="slika1proba" src="images/pic02.jpg" style="width:100%">
+					    <img class="Slikaselekt" src="images/pic02.jpg" style="width:100%">
+					  </div>
+					  <div class="column">
+							<img class="Slikaselekt" src="images/pic02.jpg" style="width:100%">
+					    <img class="Slikaselekt" src="images/pic02.jpg" style="width:100%">
+					  </div>
+					  <div class="column">
+							<img class="Slikaselekt" src="images/pic02.jpg" style="width:100%">
+					    <img class="Slikaselekt" src="images/pic02.jpg" style="width:100%">
+					  </div>
+					  <div class="column">
+							<img class="Slikaselekt" src="images/pic02.jpg" style="width:100%">
+					  </div>
+					</div>
+					<hr>
+
+					</div>
+
+					<!--Potrebno staviti dobre linkove u href te na svaku stranicu.-->
+					<div class="centarporavnanjetext">
+						<h5>Visit us on</h5>
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon fa-linkedin-square"><span class="label">GitHub</span></a></li>
+							<li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="#" class="icon fa-snapchat"><span class="label">GitHub</span></a></li>
+							<li><a href="#" class="icon fa-skype"><span class="label">GitHub</span></a></li>
+							<li><a href="#" class="icon fa-tumblr"><span class="label">GitHub</span></a></li>
+							<li><a href="#" class="icon fa-whatsapp"><span class="label">GitHub</span></a></li>
+							<li><a href="#" class="icon fa-youtube"><span class="label">GitHub</span></a></li>
+						</ul>
+					</div>
+
+
+					<!--ovaj div je od headera id=main-->
 					</div>
 
 					<!-- footer ikone, poslozeno sve (Eventualne izmjene) -->
@@ -129,7 +142,25 @@
 							<img src="Slike/Partneri/zrs.png" class="footerslikahover" alt="Znanstveno raziskovalno središče Bistra Ptuj" height="60" width="60">
 							<img src="Slike/Partneri/SX.png" class="footerslikahover" alt="Proteus d.o.o" height="60" width="60">
 						 </p>
-						</div>
+						 <ul><li>&copy; Living Castles</li><li>Powered By: MEV</li></ul>
+					 </div>
+
+
+
+				<!-- ovdje dolaze skripte koje na click slike bacaju na saznaj vise o tom "dvorcu"-->
+				<script>
+
+					var dropdown = document.getElementById('langselector');
+
+
+					// ucitava se id od slike te baca na classu koja je u href-u
+					var img001 = document.getElementById('slika1proba');
+					img001.onclick = function(){
+						//document.getElementById("header").location.href = "all 2s";
+						location.href='#header';
+					}
+
+				</script>
 
 
 

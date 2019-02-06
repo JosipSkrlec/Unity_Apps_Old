@@ -1,4 +1,5 @@
 
+
 function UcitajJezik(){
   var lng = localStorage.getItem('lang');
   // console log zapisuje u console koji jezik je odabran za lakšu kontrolu nad kodom
