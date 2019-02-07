@@ -3,6 +3,11 @@
   margin-right: 10px;
 }
 
+/*ovo je da se pomocu href-a na neki ID scrool-a smooth*/
+html {
+  scroll-behavior: smooth;
+}
+
 /*  text-align: center;*/
 p{
   text-align: justify;
