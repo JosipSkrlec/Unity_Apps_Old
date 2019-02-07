@@ -3266,8 +3266,17 @@ input, select, textarea {
 
 /* Intro */
 /*CHECK1 */
+
 	#intro {
 		color: #ffffff;
+		/*proba za background sliku*/
+		background-image: url("ab.png");
+		background-repeat: no-repeat;
+		background-position: bottom;
+		background-size: 90%;
+
+
+		/*do tuda*/
 		padding: 8rem 4rem 6rem 4rem ;
 		-moz-align-items: center;
 		-webkit-align-items: center;
@@ -3285,15 +3294,59 @@ input, select, textarea {
 		-webkit-justify-content: -webkit-flex-end;
 		-ms-justify-content: -ms-flex-end;
 		justify-content: flex-end;
-		-moz-transition: opacity 1s ease, -moz-transform 1s ease;
-		-webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
-		-ms-transition: opacity 1s ease, -ms-transform 1s ease;
-		transition: opacity 1s ease, transform 1s ease;
+		-moz-transition: opacity 4s ease, -moz-transform 4s ease;
+		-webkit-transition: opacity 4s ease, -webkit-transform 4s ease;
+		-ms-transition: opacity 4s ease, -ms-transform 4s ease;
+		transition: opacity 4s ease, transform 4s ease;
 		position: relative;
 		cursor: default;
 		text-align: center;
 		z-index: 1;
 		min-height: 80vh;
+	}
+	
+	/*TODO - provjeriti da li radi*/
+	/*NIJE TESTIRANO DA LI RADI ISPRAVNO*/
+	@media screen and (max-width: 600px) {
+
+		#intro {
+			color: #ffffff;
+			/*proba za background sliku*/
+			background-image: url("ab.png");
+			background-repeat: no-repeat;
+			background-position: bottom;
+			background-size: auto;
+
+
+			/*do tuda*/
+			padding: 8rem 4rem 6rem 4rem ;
+			-moz-align-items: center;
+			-webkit-align-items: center;
+			-ms-align-items: center;
+			align-items: center;
+			display: -moz-flex;
+			display: -webkit-flex;
+			display: -ms-flex;
+			display: flex;
+			-moz-flex-direction: column;
+			-webkit-flex-direction: column;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			-moz-justify-content: -moz-flex-end;
+			-webkit-justify-content: -webkit-flex-end;
+			-ms-justify-content: -ms-flex-end;
+			justify-content: flex-end;
+			-moz-transition: opacity 4s ease, -moz-transform 4s ease;
+			-webkit-transition: opacity 4s ease, -webkit-transform 4s ease;
+			-ms-transition: opacity 4s ease, -ms-transform 4s ease;
+			transition: opacity 4s ease, transform 4s ease;
+			position: relative;
+			cursor: default;
+			text-align: center;
+			z-index: 1;
+			min-height: 80vh;
+		}
+
 	}
 
 		#intro input, #intro select, #intro textarea {
@@ -3385,10 +3438,10 @@ input, select, textarea {
 		}
 
 			#intro + #header .logo {
-				-moz-transform: translateY(2rem);
-				-webkit-transform: translateY(2rem);
-				-ms-transform: translateY(2rem);
-				transform: translateY(2rem);
+				-moz-transform: translateY(3rem);
+				-webkit-transform: translateY(3rem);
+				-ms-transform: translateY(3rem);
+				transform: translateY(3rem);
 				opacity: 0;
 				visibility: hidden;
 			}
@@ -3541,6 +3594,7 @@ input, select, textarea {
 		}
 
 		#header .logo {
+						background-image: image("a.jpg");
 			-moz-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.5s ease, -moz-transform 0.5s ease, visibility 0.5s;
 			-webkit-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.5s ease, -webkit-transform 0.5s ease, visibility 0.5s;
 			-ms-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.5s ease, -ms-transform 0.5s ease, visibility 0.5s;
@@ -3594,10 +3648,10 @@ input, select, textarea {
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		-moz-transition: -moz-transform 1s ease, opacity 1s ease;
-		-webkit-transition: -webkit-transform 1s ease, opacity 1s ease;
-		-ms-transition: -ms-transform 1s ease, opacity 1s ease;
-		transition: transform 1s ease, opacity 1s ease;
+		-moz-transition: -moz-transform 2s ease, opacity 2s ease;
+		-webkit-transition: -webkit-transform 2s ease, opacity 2s ease;
+		-ms-transition: -ms-transform 2s ease, opacity 2s ease;
+		transition: transform 2s ease, opacity 2s ease;
 		background: rgba(255, 255, 255, 0.175);
 		height: 4rem;
 		line-height: 4rem;

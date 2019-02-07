@@ -1,152 +1,161 @@
 <!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
-		<title>Generic Page - Massively by HTML5 UP</title>
+		<title>Living Castles</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/CSS.css" />
+		<link rel="icon" href="Slike/Ikone/Interreg_icon_tab.png">
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
-	<body class="is-preload">
-
+	<body class="is-preload" onload="UcitajJezik();">
+		<!--Sav tekst se postavlja unutar js-a-->
 		<!-- Wrapper -->
-			<div id="wrapper">
+			<div id="wrapper" class="fade-in">
 
 				<!-- Header -->
 					<header id="header">
-						<a href="index.html" class="logo">Massively</a>
+						<a href="index.html" class="logo">LIVING CASTLES</a>
 					</header>
 
-					<!-- Navigacija  class active je za selektiranje u navigaciji koji tab je aktivan, te takoder stavljanje a kao href-->
-						<nav id="nav">
-							<ul class="links">
-								<li><a href="index.html">Naslovna</a></li>
-								<li><a href="Novosti.html">O Projektu</a></li>
-								<li class="active"><a href="Partneri.html">Partneri</a></li>
-								<li><a href="Interreg.html">Interreg</a></li>
-								<li><a href="Kontakti.html">Kontakti</a></li>
-								<!-- TODO promjeniti naziv tab-a i foldera jer je to temp ime! -->
-								<li><a href="IGRA.html">IGRA</a></li>
-							</ul>
+				<!-- Navigacija -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a id="n1" href="index.html"> </a></li>  <li>||</li>
+							<li><a id="n2" href="OProjektu.html"> </a></li>
+							<li class="active"><a id="n3" href="Partneri.html"> </a></li>
+							<li><a id="n4" href="Interreg.html"> </a></li>
+							<li><a id="n5" href="Kontakti.html"> </a></li>
+							<li><a id="n6" href="IGRA.html"> </a></li>
+						</ul>
 
-							<!-- DropDown za promjenu jezika -->
-							<div class="DropDownLanguageMeni">
-						    <select name="options">
-						        <option class="CROATIA" value="cro"> Croatian </option>
-						        <option class="SLOVENIA" value="slo"> Slovenian </option>
-						        <option class="UNITEDKINGDOM" value="uk"> English </option>
-						    </select>
-							</div>
+						<!-- DropDown za promjenu jezika -->
+						<div class="DropDownLanguageMeni">
+					    <select id="langselector" onchange="PostaviJezik(this.value)">
+					        <option href="#" value="en" id="jezikdropdown1"> </option>
+					        <option href="#" value="cro" id="jezikdropdown2"> </option>
+					        <option href="#" value="slo" id="jezikdropdown3"> </option>
+					    </select>
+						</div>
 
-							<ul class="icons">
-								<!-- TODO pitati za social medie, fb twit instagram... -->
-								<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+					</nav>
 
-							</ul>
-
-						</nav>
-
-				<!-- Main -->
+				<!-- Main sadrzaj stranice dolazi ovdje -->
 					<div id="main">
+						<div class="sadrzajporavnanje">
+							<h1 class="pocetninaslov">Partneri Projekta</h1>
+							<hr>
 
-						<!-- Post -->
-							<section class="post">
-								<header class="major">
-									<span class="date">April 25, 2017</span>
-									<h1>This is a<br />
-									Generic Page</h1>
-									<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
-									facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
-									amet nullam sed etiam veroeros.</p>
-								</header>
-								<div class="image main"><img src="images/pic01.jpg" alt="" /></div>
-								<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur sapien risus, commodo eget turpis at, elementum convallis enim turpis, lorem ipsum dolor sit amet nullam.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus. Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum.</p>
-							</section>
-								<select name="countries" id="countries" style="width:300px;">
-								<option value='ad' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ad" data-title="Andorra">Andorra</option>
-								<option value='ae' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ae" data-title="United Arab Emirates">United Arab Emirates</option>
-								<option value='af' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag af" data-title="Afghanistan">Afghanistan</option>
-								<option value='ag' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ag" data-title="Antigua and Barbuda">Antigua and Barbuda</option>
-								<option value='ai' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag ai" data-title="Anguilla">Anguilla</option>
-								<option value='al' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag al" data-title="Albania">Albania</option>
-								<option value='am' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag am" data-title="Armenia">Armenia</option>
-								<option value='an' data-image="images/msdropdown/icons/blank.gif" data-imagecss="flag an" data-title="Netherlands Antilles">Netherlands Antilles</option>
-							</select>
+							<p id="PARTNERISADRZAJ">
+								1. MEV – Međimursko veleučilište u Čakovcu <a href="#MEVid" 	class="SaznajVisePartneri">SAZNAJ VIŠE</a> <br>
+								2. RIS Dvorac Rakičan – RIS Dvorac Rakičan <a href="#RISDRid" class="SaznajVisePartneri">SAZNAJ VIŠE</a> <br>
+								3. Znanstveno-raziskovalno središče Bistra Ptuj – ZRS Bistra Ptuj <a href="#ZRSBPid" class="SaznajVisePartneri">SAZNAJ VIŠE</a> <br>
+								4. Razvojna agencija Savinjske regije <a href="#RASRid" class="SaznajVisePartneri">SAZNAJ VIŠE</a> <br>
+								5. Gradski muzej Varaždin – Gradski muzej Varaždin <a href="#GMVid" class="SaznajVisePartneri">SAZNAJ VIŠE</a> <br>
+								6. Muzej Međimurja Čakovec – Muzejski stručnjaci  <a href="#MMCid" class="SaznajVisePartneri">SAZNAJ VIŠE</a> <br>
+								7. Muzeji Hrvatskog Zagorja – Muzeji Hrvatskog zagorja  <a href="#MHZid" class="SaznajVisePartneri">SAZNAJ VIŠE</a> <br>
+								8. Proteus d.o.o. – Turistička agencija Proteus  <a href="#PROTEUSid" class="SaznajVisePartneri">SAZNAJ VIŠE</a> <br>
+							</p>
 
-							<script>
-								$(document).ready(function() {
-									$("#countries").msDropdown();
-								})
-							</script>
+							<hr>
+							<!--sljedeci odlomci su prikazani na saznaj vise o svakom partneru!-->
+							<p id="MEVid">
+								<h2>MEV</h2> <img src="Slike/pic08.jpg" alt="MEV" align="right" class="slikautekstudesno">
+								Međimursko veleučilište u Čakovcu je visoko učilište koje predstavlja regionalni centar izvrsnosti visokostručnog
+								i primijenjenog znanstvenog rada koji provodi kvalitetno i učinkovito obrazovanje temeljeno na konceptu cjeloživotnog učenja, odgovornosti za znanje kao javno dobro, mobilnosti i razvoju ljudskih potencijala kao najveće vrijednosti društva. Aktivnom suradnjom s gospodarstvom, partnerstvima za razvoj zajednice, uključenošću u Europski prostor visokog obrazovanja i Europski istraživački prostor te visokom razinom organiziranosti Veleučilište će pokazati svoju javnu odgovornost i doprinijeti razvoju društva znanja. Međimursko veleučilište u Čakovcu bit će institucija koja potiče mobilnost i razvijanje poduzetničke energije i izražavanje talenta svakog pojedinca (nastavnika, asistenta, administratora i studenta). Visoka fleksibilnost studija i uvođenje novih programa u cilju izobrazbe visokostručnih profila potrebnih gospodarstvu u okruženju ostat će jednom od temeljnih značajki Međimurskog veleučilišta u Čakovcu.
+							</p> <center> <a href="#PARTNERISADRZAJ" class="button icon solo fa-arrow-up scrolly">Nastavi</a> </center>
+							<hr>
 
+							<p id="RISDRid">
+								<h2>RIS Dvorac Rakičan</h2><img src="Slike/pic08.jpg" alt="MEV" align="left" class="slikautekstulijevo">
+							  RIS Dvorac Rakičan je regionalna javna ustanova osnovana od strane Općine Murska Sobota i Udruge za tehničku kulturu Slovenije.
+								RIS djeluje u području turizma, kulture, istraživanja, obrazovanja i međugeneracijske suradnje. Jedan od glavnih ciljeva organizacije je očuvanje, promicanje i razvoj kulturne i prirodne baštine, tako je i RIS upravitelj ljetnikovca i pripadajućeg parka, oba su pod spomeničkom zaštitom. RIS je organizator brojnih domaćih i međunarodnih skupova, konferencija o zdravlju, zdravoj prehrani, tjelovježbi, zdravom načinu života, ekologiji, ekološkoj svijesti, te onih sa psihološkim i društvenim sadržajem. Sastavni dio RIS-a je i konjički centar Dvorac Rakičan, gdje je smješteno 15 konja. RIS također upravlja i galerijom. RIS za i u interesu Gradske općine Murska Sobota priprema niz europskih projekata s time da Gradska općina Murska Sobota pruža potrebnu financijsku potporu. Njihovo osoblje je visoko kvalificirano i ima brojna iskustva u sljedećim područjima: -upravljanje projektima i financijsko upravljanje, -znanje stranih jezika, -organizacija različitih događaja (međunarodne konferencije, programi razmjene mladih) -promocija (promidžbeni materijal, suradnja s medijima) -priprema i provedba različitih istraživačkih i razvojnih programa, -priprema različitih općih i specijaliziranih stručnih mišljenja. RIS također organizira razne događaje i s više od 10.000 posjetitelja dnevno.
+							</p><center> <a href="#PARTNERISADRZAJ" class="button icon solo fa-arrow-up scrolly">Nastavi</a> </center>
+							<hr>
+
+							<p id="ZRSBPid">
+								<h2>Znanstveno-raziskovalno središče Bistra Ptuj</h2> <img src="Slike/pic08.jpg" alt="MEV" align="right" class="slikautekstudesno">
+								 ZRS Bistra Ptuj djeluje kao regionalna razvojna agencija za razvoj i kao istraživački centar te je snažno uključena u projekte EU.
+								 Glavne aktivnosti su: promicanje sveobuhvatnog i lokalno orijentiranog održivog razvoja podregije, koja se sastoji od 16 općina,
+								 uspostavljanje i održavanje veze između tvrtki, istraživačkih institucija i vlasti, prijenos, stvaranje i širenje znanja i stvaranje mogućnosti za više obrazovanih kadrova u regiji.
+								 Organizacija zapošljava 15 visokoobrazovanih ljudi, uključujući i 5 doktora i 1 magistra znanosti. Svi su obučeni i iskusni u radu na projektima.
+							</p><center> <a href="#PARTNERISADRZAJ" class="button icon solo fa-arrow-up scrolly">Nastavi</a> </center>
+							<hr>
+
+							<p id="RASRid">
+								<h2>Razvojna agencija Savinjske regije</h2> <img src="Slike/pic08.jpg" alt="MEV" align="left" class="slikautekstulijevo">
+								Osnovna uloga i zadaća RASR je poticanje razvoja Savinjske regije. Agencija je bila osnovana od strane 31 općine u lipnju 2010. U sudjelovanju sa svim regionalnim akterima razvoja, agencija se usredotočuje na prepoznavanje i iskorištavanje razvojnih potencijala u regiji. Zadaća RASR je usklađivanje i uključivanje 31 općine, u skrbi za uravnoteženi regionalni razvoj. RASR ima status regionalnog razvoja subjekta na nacionalnoj razini i ima važan utjecaj na regionalnu politiku preko svojih osnivača, 31 općine. Utječemo na područje regionalne politike s poticanjem regionalnog razvoja. RASR ima status za poticanje regionalnog razvoja, dodijeljen od strane Ministarstva za gospodarski razvoj i tehnologiju 2010. godine. Glavne djelatnosti organizacije su: planiranje rada, priprema stručnih temelja za provođenje regionalnih projekata, priprema uloga za financiranje razvojnih zadaća, priprema izvještaja, sudjelovanje s općinama u regiji u prepoznavanju i ostvarivanju zajedničkih razvojnih zadaća, sudjelovanje sa svim nacionalnim subjektima i regionalnim agencijama, provođenje regijskih shema stipendiranja, promocija regije, kao i regionalne aktivnosti, programi i projekti. RASR vodi brigu i o Regionalnoj garancijskoj shemi i Regionalnoj stipendijskoj shemi. Projekti: Poduzetno u svijet poduzetništva 2015. (sufinanciran iz EES). Projekt Jugozapadna Europa (ProgramskaPolyinvest) – PP.
+							</p><center> <a href="#PARTNERISADRZAJ" class="button icon solo fa-arrow-up scrolly">Nastavi</a> </center>
+							<hr>
+
+							<p id="GMVid">
+							<h2>Gradski muzej Varaždin</h2> <img src="Slike/pic08.jpg" alt="MEV" align="right" class="slikautekstudesno">
+							 Gradski muzej Varaždin osnovan je 1925. godine u Starom gradu, gotičko-renesansnoj utvrdi i od tada neprekinuto djeluje. Utvrda je posljednji put obnovljena 1989. godine. Stalni postav u Starom gradu sadrži brojne ambijentalno oblikovane stilske sobe od renesanse do secesije, predmete iz zbirki oružja, kamenih spomenika, ostavštine Vatroslava Jagića i Ivana Kukuljevića Sakcinskog, izlošcima što svjedoče o prošlosti grada i utvrde, obrtu i trgovini te ljekarništvu. S tim postavom Gradski muzej Varaždin bio je 1994. godine kandidat za Nagradu europskoga muzeja godine - prvi među hrvatskim muzejima. U travnju 2007. godine stalni postav Odjela dopunjen je muzeološkom cjelinom iz zbirki keramike, stakla i satova, a 2014. uređen je postav s prikazom mode i odijevanja u prošlosti. Danas GMV ima gotovo 200.000 predmeta svrstanih u 54 zbirke, a o njima brine 32 djelatnika.
+							</p><center> <a href="#PARTNERISADRZAJ" class="button icon solo fa-arrow-up scrolly">Nastavi</a> </center>
+							<hr>
+
+							<p id="MMCid">
+								<h2>Muzej Međimurja Čakovec</h2><img src="Slike/pic08.jpg" alt="MEV" align="left" class="slikautekstulijevo">
+								Muzejski stručnjaci (arheolog, povjesničar, povjesničar umjetnosti, etnolog) imaju veliko iskustvo u istraživanju povijesti putem stručne literature, istraživanjem u povijesnim arhivima, terenskim obilascima lokaliteta, intervjuiranjem pojedinaca te za razliku od običnih istraživača, kolekcionara i povjesničara vični su i sposobni svoje znanje i spoznaje na kreativan način pretočiti u zanimljivu izložbu ili stalan postav muzeja i na taj način znanje prenijeti na posjetitelje. Pisanje stručnih i znanstvenih radova kao i kataloga muzejskih izložbi, vodiča stalnim postavom ili knjiga također je uredovnom poslu muzejskih stručnjaka. Imaju i veliko iskustvo u komuniciranju s posjetiteljima, predavanjima, vodstvima i općenito usmenom prijenosu znanja, kao i u osmišljavanju i provedbi edukativnih i kreativnih radionica za sve dobne skupine posjetitelja. U sklopu redovnog muzejskog rada stručni tim kustosa napisao je scenarije za dva muzejska kratkometražna filma - reportažni i dokumentarni. Sudjelovali su 2012. u povijesno-kulturno-turističkoj manifestaciji „Ana Katarina Zrinski“ Međimurskog veleučilišta kojoj je glavni cilj bio uprizorenje povijesne osobe Ane Katarine Zrinski uautentičnom okruženju Starog grada Zrinskih u Čakovcu. U sklopu projekta „pHisCulture“ koji se provodio unutar OP SI-HR 2007-2013muzejski kustosi rekonstruirali su period tzv. Fin de siècla, tj. kraja 19. i početka 20. stoljeća te uz otvorenje izložbe pod nazivom„Večernji soirée“.
+							</p><center> <a href="#PARTNERISADRZAJ" class="button icon solo fa-arrow-up scrolly">Nastavi</a> </center>
+							<hr>
+
+							<p id="MHZid">
+							<h2>Muzeji Hrvatskog Zagorja</h2><img src="Slike/pic08.jpg" alt="MEV" align="right" class="slikautekstudesno">
+							Muzeji Hrvatskog zagorja objedinjuju pet muzejsko-galerijskih ustanova na području Hrvatskog zagorja. Područje njihovog djelovanja je zaštita prezentacija i interpretacija kulturne i prirodne baštine. U tu svrhu muzeji osim što rade na zaštiti nepokretne kulturne baštine, ulažu veliki trud i u njezinu prezentacijukroz stalne postave, izložbe, kataloge i druge tiskovine, ali i putem multimedije. U projektu sudjeluju dvije ustrojbene jedinice iz sastava Muzeja: Dvor Veliki Tabor i Muzej seljačkih buna. Oba se nalaze u zgradama koje su spomenici kulture. Dvor Veliki Tabor nedavno je izradio scenarij postava uključuući dobre muzeološke prakse kao i smjernice Strategije očuvanja i gospodarskog korištenja kulturne baštine Republike Hrvatske za razdoblje 2010.-2013 i Strategije Ministarstva kulture RH 2012-2014. Muzejima iskustva u različitim projektima digitalizacije građe te izrade mulitmedijalnih aplikacija koje se koriste u stalnom postavu. Muzej je za svoj 3D mapping Gubec teatar dobio i nagradu Heritage in Motion u kategoriji film i video. Djelatnici obje muzejske jedinice imaju bogato iskustvo u kulturnom turizmu i realizaciji različitih događanja oživljene povijesti, organizaciji stručnih skupova i kulturnih događanja.
+							</p><center> <a href="#PARTNERISADRZAJ" class="button icon solo fa-arrow-up scrolly">Nastavi</a> </center>
+							<hr>
+
+							<p id="PROTEUSid">
+							<h2>Proteus d.o.o.</h2><img src="Slike/pic08.jpg" alt="MEV" align="left" class="slikautekstulijevo">
+							 Turistička agencija Proteus je sa zaštitnim znakom Slovenia Explorer vodeći ponuđač dnevnih izleta po Sloveniji za strane turiste. Pored obaveze izvrsnosti provedbe i odnosa sa strankama i partnerima, za uspjeh agencije ključan je inovativni pristup organizaciji i promociji, što agenciju uvijek nanovo čini konkurentnom. Važnost agencije je da pored glavnih slovenskih turističkih mjesta u svoju ponudu uključuje sve slovenske regije, jer  u svojoj  ponudi imaju čak 14 različitih rasprodanih izleta koji se ostvaruju svaki tjedan. U ponudi imaju i inovativni proizvod zvan Slovenia Incognita. Radi se o izletu u nepoznato, gdje se strankama ne govori kamo ih se vodi. Za promociju svojih izleta i Slovenije nacrtan je ilustrirani zemljovid sa slovenskim znamenitostima, što se je kod stranih gostiju pokazalo kao izniman uspjeh. TA Proteus uspješno prodaje svoje izlete preko vlastite mrežne stranice, a s tiskanim promotivnim materijalom prisutna je u svim ljubljanskim hotelima i ostalim smještajnim kapacitetima. Pri organizaciji i prodaji izleta odlično surađuje s Turizmom Ljubljana te s brojnim stranim agencijama po Europi i drugdje u svijetu. Svoje izlete uspješno prodaje i na globalnim mrežnim portalima kao što su Viator i Tripadvisor. Pored dobre organizacijske ekipe TA Proteus ima ekipu odličnih turističkih vodiča, koje redovito dodatno osposobljava. Vodiči vode u većini glavnih svjetskih jezika, a pored toga ima i dobru skupinu povremenih suradnika za ostale strane jezike.
+							</p><center> <a href="#PARTNERISADRZAJ" class="button icon solo fa-arrow-up scrolly">Nastavi</a> </center>
+							<hr>
 
 					</div>
 
+					<!--Potrebno staviti dobre linkove u href te na svaku stranicu.-->
+					<div class="centarporavnanjetext">
+						<h5 id="PosjetiteNas">Visit us on</h5>
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon fa-linkedin-square"><span class="label">GitHub</span></a></li>
+							<li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="#" class="icon fa-snapchat"><span class="label">GitHub</span></a></li>
+							<li><a href="#" class="icon fa-skype"><span class="label">GitHub</span></a></li>
+							<li><a href="#" class="icon fa-tumblr"><span class="label">GitHub</span></a></li>
+							<li><a href="#" class="icon fa-whatsapp"><span class="label">GitHub</span></a></li>
+							<li><a href="#" class="icon fa-youtube"><span class="label">GitHub</span></a></li>
+						</ul>
+					</div>
+					<hr>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="3"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-						</section>
-						<section class="split contact">
-							<section class="alt">
-								<h3>Address</h3>
-								<p>1234 Somewhere Road #87257<br />
-								Nashville, TN 00000-0000</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">(000) 000-0000</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="#">info@untitled.tld</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
-
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					<!--ovaj div je od headera id=main Main sadrzaj stranice-->
 					</div>
 
-			</div>
 
-		<!-- Scripts -->
+				<!-- footer ikone, poslozeno sve (Eventualne izmjene) -->
+					<div id="FooterIkone">
+						<p class="centarporavnanjetext" id="FooterPartneri">PARTNERI PROJEKTA</p>
+						<p class="centarporavnanjetext">
+						<img src="Slike/Partneri/mev.png" class="footerslikahover" alt="Međimursko Veleučilište u Čakovcu" height="40" width="40">
+						<img src="Slike/Partneri/mhz.png" class="footerslikahover" alt="Muzeji Hrvatskig Zagorja" height="60" width="60">
+						<img src="Slike/Partneri/ris.png" class="footerslikahover" alt="RIS Dvorac Rakičan" height="40" width="40">
+						<img src="Slike/Partneri/rasr.png" class="footerslikahover" alt="Razvojna agencija Savinske regije d.o.o" height="60" width="60">
+						<img src="Slike/Partneri/mmck.png" class="footerslikahover" alt="Međimurski muzej Čakovec" height="40" width="40">
+						<img src="Slike/Partneri/gmv.png" class="footerslikahover" alt="Gradski muzej Varaždin" height="60" width="60">
+						<img src="Slike/Partneri/zrs.png" class="footerslikahover" alt="Znanstveno raziskovalno središče Bistra Ptuj" height="60" width="60">
+						<img src="Slike/Partneri/SX.png" class="footerslikahover" alt="Proteus d.o.o" height="60" width="60">
+					 </p>
+					 <!--OVO JE OPTIONAL :D-->
+					 <ul><li>&copy; Living Castles</li><li>Powered By: MEV</li></ul>
+				 </div>
+
+		<!-- JS skripte za interakciju objekata na stranici -->
+			<script src="assets/js/JSPartneri.js"></script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
@@ -154,7 +163,6 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
 
 	</body>
 </html>
