@@ -12,6 +12,7 @@ html {
 p{
   text-align: justify;
 }
+
 h1{
   text-align: center;
 }
@@ -21,7 +22,6 @@ h1{
   padding-left: 30px;
   width: 30%;
   height: 30%;
-
 }
 .slikautekstulijevo{
   padding-right: 30px;
@@ -84,6 +84,12 @@ h1{
 #pbccolor{
   background-color: #a8a39a;
   opacity: 1;
+}
+
+#zastava{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
 }
 
 

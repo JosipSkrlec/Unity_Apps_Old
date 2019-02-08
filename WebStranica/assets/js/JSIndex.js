@@ -21,8 +21,9 @@ function UcitajJezik(){
   switch (lng)
     {
       // tu dolazi engleski tekst
-    case "en":
+      case "en":
 
+      document.getElementById("zastava").src = "Slike/Zastave/UKflag.png";
       // ovo je za tekst dobrodoslice
       document.getElementById("DobrodosliTekst").innerHTML = "Welcome to our page";
       // ovo je za navigaciju
@@ -45,6 +46,7 @@ function UcitajJezik(){
     break;
     case "cro":
 
+    document.getElementById("zastava").src = "Slike/Zastave/CROflag.png";
     // ovo je za tekst dobrodoslice
     document.getElementById("DobrodosliTekst").innerHTML = "Dobrodošli na našu stranicu";
     // ovo je za navigaciju
@@ -66,6 +68,7 @@ function UcitajJezik(){
     break;
     case "slo":
 
+    document.getElementById("zastava").src = "Slike/Zastave/SLOflag.png";
     // ovo je za tekst dobrodoslice
     document.getElementById("DobrodosliTekst").innerHTML = "Dobrodošli na naši spletni strani";
     // ovo je za navigaciju
@@ -88,6 +91,7 @@ function UcitajJezik(){
     // tu dolazi engleski tekst po default-u ukoliko je stranica ucitana prvi put i nije se promjenio jezik
     default:
 
+    document.getElementById("zastava").src = "Slike/Zastave/UKflag.png";
     // ovo je za tekst dobrodoslice
     document.getElementById("DobrodosliTekst").innerHTML = "Welcome to our page";
     // ovo je za navigaciju
