@@ -13,14 +13,6 @@
 		<!--Sav tekst se postavlja unutar js-a-->
 		<!-- Wrapper -->
 			<div id="wrapper" class="fade-in">
-				<!-- Intro, animacija -->
-					<div id="intro">
-						<h1>Living Castles</h1>
-						<p id="DobrodosliTekst"></p>
-						<ul class="actions">
-							<li><a href="#header" class="button icon solo fa-arrow-down scrolly">Nastavi</a></li>
-						</ul>
-					</div>
 
 				<!-- Header -->
 					<header id="header">
@@ -30,10 +22,10 @@
 				<!-- Navigacija -->
 					<nav id="nav">
 						<ul class="links">
-							<li class="active"><a id="n1" href="index.html"> </a></li>  <li>||</li>
+							<li><a id="n1" href="index.html"> </a></li>  <li>||</li>
 							<li><a id="n2" href="OProjektu.html"> </a></li>
 							<li><a id="n3" href="Partneri.html"> </a></li>
-							<li><a id="n4" href="Interreg.html"> </a></li>
+							<li class="active"><a id="n4" href="Interreg.html"> </a></li>
 							<li><a id="n5" href="Kontakti.html"> </a></li>
 							<li><a id="n6" href="IGRA.html"> </a></li>
 						</ul>
@@ -51,22 +43,24 @@
 
 				<!-- Main sadrzaj stranice dolazi ovdje -->
 					<div id="main">
-						<div class="box alt">
-							<div class="row gtr-50 gtr-uniform">
-								<div class="col-4"><span class="image fit"><img src="Slike/Partneri/mrr.png" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="Slike/Partneri/interreg.png" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="Slike/Partneri/mzd.png" /></span></div>
-							</div>
-						</div>
-
 						<div class="sadrzajporavnanje">
-							<h1>interreg</h1>
-
+							<h1 class="pocetninaslov">Interreg</h1>
+							<hr>
+							<h2>O Interreg-u</h2>
 							<p>
-								
+								Program je pokrenut s ciljem jačanja učinaka Kohezijske politike Europske unije u razdoblju od 2014. do 2020. godine i nasljednik je programa INTERREG
+							 	IVC koji je bio aktivan u prošlom programskom razudoblju. Ima za cilj smanjiti postojeće nejednakosti između regija Europske unije u pogledu njihovog
+							  ekonomskog i društvenog razvoja i održivosti okoliša, pritom uzimajući u obzir njihove specifične prostorne značajke i mogućnosti. Raspoloživa sredstva
+							 	programa ovisna su o alokaciji sredstava na razini Europske unije namijenjenih Europskoj teritorijalnoj suradnji. Za sedmogodišnje razdoblje od 2014. do 2020. godine
+							  za Europsku teritorijalnu suradnju namijenjeno je 10,2 milijardi eura, a jedan dio pripada programu INTERREG EUROPE, odnosno 359 milijuna eura.
+							 	Sredstva programa raspoloživa su sljedećim skupinama: nacionalna, regionalna i lokalna tijela javne vlasti, regionalne razvojne agencije,
+							  regionalne energetske agencije, agencije u području transporta i mobilnosti, akteri uključeni u upravljanje i provedbu programa namijenjenih rastu i stvaranju radnih mjesta,
+							 	subjekti poslovne podrške i organizacije koje predstavljaju mala i srednja poduzeća te ostali dionici zaduženi za razvoj regionalne inovacijske infrastrukture i kapaciteta.
+							  Aktivnosti programa su: izrada akcijskih planova, izrada studija i analiza regionalnih inovacijskih infrastrukturnih politika, organizacija međuregionalnih seminara i događaja
+							 	namijenjenih razmjeni sadržaja i izgradnji kapaciteta inovacijske infrastrukture, komunikacija i širenje rezultata projekta, izrada tematskih sadržaja kao što su novine,
+							  studije i slični dokumenti.
 							</p>
-
-
+							<hr>
 
 					</div>
 
@@ -109,8 +103,10 @@
 					 <ul><li>&copy; Living Castles</li><li>Powered By: MEV</li></ul>
 				 </div>
 
-		<!-- JS skripte za interakciju objekata na stranici -->
-			<script src="assets/js/JSIndex.js"></script>
+			<!-- JS skripte za interakciju objekata na stranici -->
+			<!-- sljedecu skriptu Mjenjati u skladu sa stranicom-->
+			<script src="assets/js/JSInterreg.js"></script>
+
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
@@ -118,18 +114,6 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<!-- ovdje dolaze skripte koje na click slike bacaju na saznaj vise o tom "dvorcu"-->
-			<script>
-
-				var dropdown = document.getElementById('langselector');
-				// ucitava se id od slike te baca na classu koja je u href-u
-				var img001 = document.getElementById('slika1proba');
-				img001.onclick = function(){
-					//document.getElementById("header").location.href = "all 2s";
-					location.href='#header';
-				}
-
-			</script>
 
 	</body>
 </html>

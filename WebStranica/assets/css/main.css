@@ -3273,7 +3273,8 @@ input, select, textarea {
 		background-image: url("ab.png");
 		background-repeat: no-repeat;
 		background-position: bottom;
-		background-size: 90%;
+		background-size: 70%;
+		background-color:rgba(0, 0, 0, 0.5)
 
 
 		/*do tuda*/
@@ -3304,7 +3305,7 @@ input, select, textarea {
 		z-index: 1;
 		min-height: 80vh;
 	}
-	
+
 	/*TODO - provjeriti da li radi*/
 	/*NIJE TESTIRANO DA LI RADI ISPRAVNO*/
 	@media screen and (max-width: 600px) {
@@ -3434,7 +3435,7 @@ input, select, textarea {
 		}
 
 		#intro + #header {
-			margin-top: -20rem;
+			margin-top: -16rem;
 		}
 
 			#intro + #header .logo {
@@ -3552,7 +3553,7 @@ input, select, textarea {
 		-ms-user-select: none;
 		user-select: none;
 		height: 20rem;
-		padding-bottom: 8rem;
+		padding-bottom: 10rem;
 		position: relative;
 		text-align: center;
 		z-index: 2;
@@ -3594,7 +3595,7 @@ input, select, textarea {
 		}
 
 		#header .logo {
-						background-image: image("a.jpg");
+
 			-moz-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.5s ease, -moz-transform 0.5s ease, visibility 0.5s;
 			-webkit-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.5s ease, -webkit-transform 0.5s ease, visibility 0.5s;
 			-ms-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.5s ease, -ms-transform 0.5s ease, visibility 0.5s;
@@ -3757,9 +3758,10 @@ input, select, textarea {
 						color: inherit !important;
 						background-color: rgba(255, 255, 255, 0.1);
 					}
-
+				/*ovdje promjeniti boju za selektirani tab u navigaciji*/
+				/*CHECK*/
 				#nav ul.links li.active {
-					background-color: #ffffff;
+					background-color: #efece8;
 				}
 
 					#nav ul.links li.active a {
@@ -3791,9 +3793,9 @@ input, select, textarea {
 		}
 
 /* Main */
-
+/*tu je stavljeno po default-u #ffffff kao bijela pozadina u main*/
 	#main {
-		background-color: #ffffff;
+		background-color: #efece8;
 		position: relative;
 		margin: 0 auto;
 		width: calc(100% - 4rem);
