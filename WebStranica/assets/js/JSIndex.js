@@ -38,8 +38,6 @@ function UcitajJezik(){
       document.getElementById("jezikdropdown1").innerHTML = "🇬🇧 English";
       document.getElementById("jezikdropdown2").innerHTML = "🇭🇷 Croatian";
       document.getElementById("jezikdropdown3").innerHTML = "🇸🇮 Slovenian";
-      // ovo je za visit us on (social media)
-      document.getElementById("PosjetiteNas").innerHTML = "Visit us";
       // ovo je za footer
       document.getElementById("FooterPartneri").innerHTML = "Project partners";
 
@@ -61,8 +59,6 @@ function UcitajJezik(){
     document.getElementById("jezikdropdown1").innerHTML = "🇬🇧 Engleski";
     document.getElementById("jezikdropdown2").innerHTML = "🇭🇷 Hrvatski";
     document.getElementById("jezikdropdown3").innerHTML = "🇸🇮 Slovenski";
-    // ovo je za visit us on (social media)
-    document.getElementById("PosjetiteNas").innerHTML = "Posjetite nas na";
     // ovo je za footer
     document.getElementById("FooterPartneri").innerHTML = "Partneri Projekta";
 
@@ -83,8 +79,6 @@ function UcitajJezik(){
     document.getElementById("jezikdropdown1").innerHTML = "🇬🇧 Angleščina";
     document.getElementById("jezikdropdown2").innerHTML = "🇭🇷 Hrvaški";
     document.getElementById("jezikdropdown3").innerHTML = "🇸🇮 Slovenščina";
-    // ovo je za visit us on (social media)
-    document.getElementById("PosjetiteNas").innerHTML = "Obiščite nas";
     // ovo je za footer
     document.getElementById("FooterPartneri").innerHTML = "Projektni partnerji";
 
@@ -106,8 +100,6 @@ function UcitajJezik(){
     document.getElementById("jezikdropdown1").innerHTML = "🇬🇧 English";
     document.getElementById("jezikdropdown2").innerHTML = "🇭🇷 Croatian";
     document.getElementById("jezikdropdown3").innerHTML = "🇸🇮 Slovenian";
-    // ovo je za visit us on (social media)
-    document.getElementById("PosjetiteNas").innerHTML = "Visit us";
     // ovo je za footer
     document.getElementById("FooterPartneri").innerHTML = "Project partners";
 

@@ -9,9 +9,11 @@ html {
 }
 
 /*  text-align: center;*/
-p{
-  text-align: justify;
+
+basictekst{
+  text-align: center;
 }
+
 
 h1{
   text-align: center;
@@ -58,12 +60,13 @@ h1{
 .footerslikahover{
   margin-left: 30px;
   margin-right: 30px;
+
 }
 
 .footerslikahover:hover{
   margin-left: 30px;
   margin-right: 30px;
-  transform: scale(2.5);
+  transform: scale(2);
   -webkit-transition: -webkit-transform 1s ease-in-out;
 }
 
@@ -83,8 +86,8 @@ h1{
   opacity: 1;
 }
 
-#zastava{
-
+#facebookid{
+  padding-left: 20px;
 }
 
 
@@ -136,6 +139,7 @@ h1{
 .column img {
   margin-top: 8px;
   vertical-align: middle;
+  text-align: justify;
 }
 
 @media screen and (max-width: 800px) {
@@ -143,6 +147,9 @@ h1{
     -ms-flex: 50%;
     flex: 50%;
     max-width: 50%;
+  }
+  #facebookid{
+    padding-left: 0px;
   }
 }
 
