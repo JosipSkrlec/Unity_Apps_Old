@@ -1,7 +1,7 @@
 function UcitajJezik(){
   var lng = localStorage.getItem('lang');
   // console log zapisuje u console koji jezik je odabran za lakšu kontrolu nad kodom
-  console.log(lng);
+  //console.log(lng);
 
   // provjera koji jezik je spremljen u localstorage
   if(lng == "en"){
@@ -21,12 +21,8 @@ function UcitajJezik(){
   switch (lng)
     {
       // tu dolazi engleski tekst
-      case "en":
+    case "en":
 
-      // ovo je za promjenu zastave pokraj dropdown-a
-      document.getElementById("zastava").src = "Slike/Zastave/UKflag.png";
-      // ovo je za tekst dobrodoslice
-      document.getElementById("DobrodosliTekst").innerHTML = "Welcome to our page";
       // ovo je za navigaciju
       document.getElementById("n1").innerHTML = "Home";
       document.getElementById("n2").innerHTML = "About Project";
@@ -47,9 +43,6 @@ function UcitajJezik(){
     break;
     case "cro":
 
-    document.getElementById("zastava").src = "Slike/Zastave/CROflag.png";
-    // ovo je za tekst dobrodoslice
-    document.getElementById("DobrodosliTekst").innerHTML = "Dobrodošli na našu stranicu";
     // ovo je za navigaciju
     document.getElementById("n1").innerHTML = "Naslovna";
     document.getElementById("n2").innerHTML = "O projektu";
@@ -69,9 +62,6 @@ function UcitajJezik(){
     break;
     case "slo":
 
-    document.getElementById("zastava").src = "Slike/Zastave/SLOflag.png";
-    // ovo je za tekst dobrodoslice
-    document.getElementById("DobrodosliTekst").innerHTML = "Dobrodošli na naši spletni strani";
     // ovo je za navigaciju
     document.getElementById("n1").innerHTML = "Domov";
     document.getElementById("n2").innerHTML = "O projektu";
@@ -92,9 +82,6 @@ function UcitajJezik(){
     // tu dolazi engleski tekst po default-u ukoliko je stranica ucitana prvi put i nije se promjenio jezik
     default:
 
-    document.getElementById("zastava").src = "Slike/Zastave/UKflag.png";
-    // ovo je za tekst dobrodoslice
-    document.getElementById("DobrodosliTekst").innerHTML = "Welcome to our page";
     // ovo je za navigaciju
     document.getElementById("n1").innerHTML = "Home";
     document.getElementById("n2").innerHTML = "About Project";
