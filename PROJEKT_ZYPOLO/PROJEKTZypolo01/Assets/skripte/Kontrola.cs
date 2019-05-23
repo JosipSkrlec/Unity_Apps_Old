@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class Kontrola : MonoBehaviour
 {
+    public GameObject PRVICanvas;
+    public GameObject DRUGICanvas;
+
     private bool PRVI = true;
     private bool DRUGI = true;
 
@@ -31,10 +34,7 @@ public class Kontrola : MonoBehaviour
 
     void Start()
     {
-        
-
-
-
+        PRVICanvas.SetActive(true);
     }
 
     // Update is called once per frame
@@ -46,7 +46,13 @@ public class Kontrola : MonoBehaviour
         }
         else if (PRVI == false && DRUGI == true)
         {
+            vrijemeprvi += Time.deltaTime;
 
+            if (vrijemeprvi >= 2.0f)
+            {
+                PRVICanvas.SetActive(false);
+                DRUGICanvas.SetActive(true);
+            }
         }
         {
 
