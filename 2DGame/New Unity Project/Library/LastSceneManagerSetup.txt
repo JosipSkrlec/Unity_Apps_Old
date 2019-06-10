@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/gamescena.unity
+- path: Assets/DAJANA/gamescena.unity
   isLoaded: 1
   isActive: 1

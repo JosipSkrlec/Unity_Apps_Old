@@ -29,11 +29,15 @@ public class PlayerControl : MonoBehaviour {
             rezz += 1;
             Rezultat.text = rezz.ToString();
 
+            Destroy(collision.gameObject);
+
         }
         else if (collision.transform.name.Contains("2EUR"))
         {
             rezz += 2;
             Rezultat.text = rezz.ToString();
+
+            Destroy(collision.gameObject);
 
         }
         else if (collision.transform.name.Contains("5EUR"))
@@ -41,11 +45,15 @@ public class PlayerControl : MonoBehaviour {
             rezz += 5;
             Rezultat.text = rezz.ToString();
 
+            Destroy(collision.gameObject);
+
         }
         else if (collision.transform.name.Contains("10EUR"))
         {
             rezz += 10;
             Rezultat.text = rezz.ToString();
+
+            Destroy(collision.gameObject);
 
         }
         else if (collision.transform.name.Contains("20EUR"))
@@ -53,11 +61,15 @@ public class PlayerControl : MonoBehaviour {
             rezz += 20;
             Rezultat.text = rezz.ToString();
 
+            Destroy(collision.gameObject);
+
         }
         else if (collision.transform.name.Contains("50EUR"))
         {
             rezz += 50;
             Rezultat.text = rezz.ToString();
+
+            Destroy(collision.gameObject);
 
         }
         else if (collision.transform.name.Contains("100EUR"))
@@ -65,11 +77,15 @@ public class PlayerControl : MonoBehaviour {
             rezz += 100;
             Rezultat.text = rezz.ToString();
 
+            Destroy(collision.gameObject);
+
         }
         else if (collision.transform.name.Contains("200EUR"))
         {
             rezz += 200;
             Rezultat.text = rezz.ToString();
+
+            Destroy(collision.gameObject);
 
         }
         else if (collision.transform.name.Contains("500EUR"))
@@ -77,6 +93,19 @@ public class PlayerControl : MonoBehaviour {
             rezz += 500;
             Rezultat.text = rezz.ToString();
 
+            Destroy(collision.gameObject);
+
+
+        }
+
+        else if (collision.transform.name.Contains("500EUR"))
+        {
+            rezz += 500;
+            Rezultat.text = rezz.ToString();
+
+            Destroy(collision.gameObject);
+
+            Instantiate(LosaEksplozija, this.gameObject.transform.position, Quaternion.identity);
         }
 
 

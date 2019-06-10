@@ -373,8 +373,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9fc8d721c38ec443974da652be768ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rezultat: {fileID: 0}
-  LosaEksplozija: {fileID: 0}
+  Rezultat: {fileID: 248334330}
+  LosaEksplozija: {fileID: 139366, guid: b185c1a9cf067374586d095111b15bd1, type: 2}
 --- !u!1 &585456461
 GameObject:
   m_ObjectHideFlags: 0
@@ -1123,10 +1123,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Objekt1: {fileID: 1441767086289320, guid: 778e6e8447238654cab87ae67ef9d2c2, type: 2}
   Objekt2: {fileID: 1556510928391686, guid: 98fc76d39c6ce01489f9edecee8549c2, type: 2}
-  Objekt3: {fileID: 0}
-  Objekt4: {fileID: 0}
-  Objekt5: {fileID: 0}
-  Objekt6: {fileID: 0}
-  Objekt7: {fileID: 0}
-  Objekt8: {fileID: 0}
-  Objekt9: {fileID: 0}
+  Objekt3: {fileID: 1410706011364018, guid: 3599a0c41e1cf424a8c73ccfff4cb912, type: 2}
+  Objekt4: {fileID: 1571318336108682, guid: bc2e260649e3277478024114b66d5793, type: 2}
+  Objekt5: {fileID: 1606672258317846, guid: 2da24d2c9f931af42b63e8f68c5d6af3, type: 2}
+  Objekt6: {fileID: 1002942606778714, guid: d9284169131ed084a989b304b3dfa239, type: 2}
+  Objekt7: {fileID: 1929622193467694, guid: b3880e146f71ca14a87eef334a953658, type: 2}
+  Objekt8: {fileID: 1197999998078234, guid: 3e79081ba68b7b646b405eea74ad3bb0, type: 2}
+  Objekt9: {fileID: 1937527468712204, guid: d558545278d82ee499d3d5957025bd5c, type: 2}
+  LOPOV: {fileID: 1229922434710986, guid: 4360a9c56aa40e74082be8e2e61df059, type: 2}

@@ -15,6 +15,9 @@ public class SpawnControl : MonoBehaviour {
     public GameObject Objekt8;
     public GameObject Objekt9;
 
+    // "lopov"
+    public GameObject LOPOV;
+
     float vrijeme;
 
     float xmin;
@@ -40,7 +43,7 @@ public class SpawnControl : MonoBehaviour {
 
         if (vrijeme >= 1.0f)
         {
-            int temp = Random.Range(1,5);
+            int temp = Random.Range(1,12);
 
             if (temp == 1)
             {
@@ -50,7 +53,7 @@ public class SpawnControl : MonoBehaviour {
 
                 Instantiate(Objekt1, vec, Quaternion.identity);
             }
-            if (temp == 2)
+            else if (temp == 2)
             {
                 float RandomPozicijax = Random.Range(xmin, xmax);
 
@@ -58,7 +61,7 @@ public class SpawnControl : MonoBehaviour {
 
                 Instantiate(Objekt2, vec, Quaternion.identity);
             }
-            if (temp == 3)
+            else if(temp == 3)
             {
                 float RandomPozicijax = Random.Range(xmin, xmax);
 
@@ -66,13 +69,78 @@ public class SpawnControl : MonoBehaviour {
 
                 Instantiate(Objekt3, vec, Quaternion.identity);
             }
-            if (temp == 4)
+            else if(temp == 4)
             {
                 float RandomPozicijax = Random.Range(xmin, xmax);
 
                 Vector3 vec = new Vector3(RandomPozicijax, 6.0f, 0.0f);
 
                 Instantiate(Objekt4, vec, Quaternion.identity);
+            }
+            else if(temp == 5)
+            {
+                float RandomPozicijax = Random.Range(xmin, xmax);
+
+                Vector3 vec = new Vector3(RandomPozicijax, 6.0f, 0.0f);
+
+                Instantiate(Objekt5, vec, Quaternion.identity);
+            }
+            else if(temp == 6)
+            {
+                float RandomPozicijax = Random.Range(xmin, xmax);
+
+                Vector3 vec = new Vector3(RandomPozicijax, 6.0f, 0.0f);
+
+                Instantiate(Objekt6, vec, Quaternion.identity);
+            }
+            else if(temp == 7)
+            {
+                float RandomPozicijax = Random.Range(xmin, xmax);
+
+                Vector3 vec = new Vector3(RandomPozicijax, 6.0f, 0.0f);
+
+                Instantiate(Objekt7, vec, Quaternion.identity);
+            }
+            else if(temp == 8)
+            {
+                float RandomPozicijax = Random.Range(xmin, xmax);
+
+                Vector3 vec = new Vector3(RandomPozicijax, 6.0f, 0.0f);
+
+                Instantiate(Objekt8, vec, Quaternion.identity);
+            }
+            else if(temp == 9)
+            {
+                float RandomPozicijax = Random.Range(xmin, xmax);
+
+                Vector3 vec = new Vector3(RandomPozicijax, 6.0f, 0.0f);
+
+                Instantiate(Objekt9, vec, Quaternion.identity);
+            }
+
+            else if (temp == 10)
+            {
+                float RandomPozicijax = Random.Range(xmin, xmax);
+
+                Vector3 vec = new Vector3(RandomPozicijax, 6.0f, 0.0f);
+
+                Instantiate(LOPOV, vec, Quaternion.identity);
+            }
+            else if (temp == 11)
+            {
+                float RandomPozicijax = Random.Range(xmin, xmax);
+
+                Vector3 vec = new Vector3(RandomPozicijax, 6.0f, 0.0f);
+
+                Instantiate(LOPOV, vec, Quaternion.identity);
+            }
+            else if (temp == 12)
+            {
+                float RandomPozicijax = Random.Range(xmin, xmax);
+
+                Vector3 vec = new Vector3(RandomPozicijax, 6.0f, 0.0f);
+
+                Instantiate(LOPOV, vec, Quaternion.identity);
             }
 
             vrijeme = 0.0f;
