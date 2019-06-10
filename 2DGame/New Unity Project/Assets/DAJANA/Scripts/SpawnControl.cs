@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class SpawnControl : MonoBehaviour {
 
+    // "dobri objekti"
     public GameObject Objekt1;
     public GameObject Objekt2;
+    public GameObject Objekt3;
+    public GameObject Objekt4;
+    public GameObject Objekt5;
+    public GameObject Objekt6;
+    public GameObject Objekt7;
+    public GameObject Objekt8;
+    public GameObject Objekt9;
 
     float vrijeme;
 
@@ -32,7 +40,7 @@ public class SpawnControl : MonoBehaviour {
 
         if (vrijeme >= 1.0f)
         {
-            int temp = Random.Range(1,3);
+            int temp = Random.Range(1,5);
 
             if (temp == 1)
             {
@@ -49,6 +57,22 @@ public class SpawnControl : MonoBehaviour {
                 Vector3 vec = new Vector3(RandomPozicijax, 6.0f, 0.0f);
 
                 Instantiate(Objekt2, vec, Quaternion.identity);
+            }
+            if (temp == 3)
+            {
+                float RandomPozicijax = Random.Range(xmin, xmax);
+
+                Vector3 vec = new Vector3(RandomPozicijax, 6.0f, 0.0f);
+
+                Instantiate(Objekt3, vec, Quaternion.identity);
+            }
+            if (temp == 4)
+            {
+                float RandomPozicijax = Random.Range(xmin, xmax);
+
+                Vector3 vec = new Vector3(RandomPozicijax, 6.0f, 0.0f);
+
+                Instantiate(Objekt4, vec, Quaternion.identity);
             }
 
             vrijeme = 0.0f;
