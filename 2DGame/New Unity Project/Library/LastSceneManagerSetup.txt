@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/DAJANA/gamescena.unity
+- path: Assets/DAJANA/GameOver.unity
   isLoaded: 1
   isActive: 1

@@ -18,6 +18,7 @@ public class restart : MonoBehaviour {
     public void BaciNaScenu()
     {
         SceneManager.LoadScene("gamescena");
+        PlayerControl.rezz = 0;
     }
 
 }
