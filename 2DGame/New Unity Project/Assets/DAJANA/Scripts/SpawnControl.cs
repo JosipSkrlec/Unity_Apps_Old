@@ -15,8 +15,6 @@ public class SpawnControl : MonoBehaviour {
     public GameObject Objekt8;
     public GameObject Objekt9;
 
-    // "lopov"
-    public GameObject LOPOV;
 
     float vrijeme;
 
@@ -118,30 +116,6 @@ public class SpawnControl : MonoBehaviour {
                 Instantiate(Objekt9, vec, Quaternion.identity);
             }
 
-            else if (temp == 10)
-            {
-                float RandomPozicijax = Random.Range(xmin, xmax);
-
-                Vector3 vec = new Vector3(RandomPozicijax, 6.0f, 0.0f);
-
-                Instantiate(LOPOV, vec, Quaternion.identity);
-            }
-            else if (temp == 11)
-            {
-                float RandomPozicijax = Random.Range(xmin, xmax);
-
-                Vector3 vec = new Vector3(RandomPozicijax, 6.0f, 0.0f);
-
-                Instantiate(LOPOV, vec, Quaternion.identity);
-            }
-            else if (temp == 12)
-            {
-                float RandomPozicijax = Random.Range(xmin, xmax);
-
-                Vector3 vec = new Vector3(RandomPozicijax, 6.0f, 0.0f);
-
-                Instantiate(LOPOV, vec, Quaternion.identity);
-            }
 
             vrijeme = 0.0f;
 
