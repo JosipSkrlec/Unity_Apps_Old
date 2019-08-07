@@ -2,6 +2,27 @@
 	text-align: center;
 }
 
+.tekstprostor{ /*ovo je za popravnanje da se ne pomice div kada animacija pise u novi red*/
+	height: 10%;
+}
+
+.zastava{
+	margin-top: 20px;
+	width: 40px;
+	height: 25px;
+}
+
+.SocialMediaIkone{
+	list-style: none;
+	font-size: 1.5em;
+	text-align: center;
+}
+
+#razmak{
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
 
 	/*--------------------*/
 	/*Animacija fade in / fade out*/

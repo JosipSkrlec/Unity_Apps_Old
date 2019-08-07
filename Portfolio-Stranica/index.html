@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="assets/css/CSS2.css" />
 	</head>
 
-	<body class="is-preload" onload="startTime()">
+	<body class="is-preload" onload="startTime(); UcitajJezik();">
 			<div id="header">
 				<div class="top">
 						<div id="logo">
@@ -23,10 +23,15 @@
 							<ul>
 								<li class="sredina">SADRŽAJ</li>
 								<li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
-								<li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
 								<li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">Portfolio</span></a></li>
 								<li><a href="#about" id="about-link"><span class="icon solid fa-user">About Me</span></a></li>
 								<li><a href="#contact" id="contact-link"><span class="icon solid fa-envelope">Contact</span></a></li>
+							</ul>
+							<ul>
+								<li class="sredina">
+									<img class="zastava" src="Zastave/CROflag.png" onclick="PostaviJezik('CRO')">
+									<img class="zastava" src="Zastave/ENGflag.png" onclick="PostaviJezik('ENG')">
+								</li>
 							</ul>
 						</nav>
 
@@ -35,9 +40,12 @@
 				<div class="bottom">
 
 					<!-- Ikone na ostale stranice -->
-						<ul class="icons">
-							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="fab fa-github"><span class="label"></span></a></li>
+						<ul>
+							<li class="SocialMediaIkone">
+								<a href="https://www.facebook.com/josip.skrlec.1" target="_blank" class="icon brands fa-facebook-f"></a>
+								<a id="razmak" href="https://github.com/JosipSkrlec" target="_blank" class="fab fa-github"></a>
+							</li>
+
 						</ul>
 
 				</div>
@@ -51,7 +59,8 @@
 						<div class="container">
 
 							<header>
-    					<h4>Console.WriteLine("Dobrodošli na Stranicu!"); * asdasfasf</h4>
+								<!--tekstprostor sluzi da bi se poravnao div kako se ne bi rastezao prilikom novog reda-->
+    					<h4 class="tekstprostor">Console.WriteLine("Dobrodošli na Stranicu!"); * asdasfasf</h4>
 
 							</header>
 
@@ -203,6 +212,7 @@
 			<script src="assets/js/main.js"></script>
 
 			<script src="assets/js/JSAnimation.js"></script>
+						<script src="assets/js/JSJezici.js"></script>
 
 	</body>
 </html>
