@@ -1,11 +1,21 @@
-// animated skill bars
-jQuery(document).ready(function(){
-	jQuery('.skillbar').each(function(){
-		jQuery(this).find('.skillbar-bar').animate({
-			width:jQuery(this).attr('data-percent')
-		},6000);
-	});
-});
+// provjera da li je element u viewportu
+// ako je tada se aktivira funkcija isinview koja vraca true i pokazu se skillovi
+function isInView(elem){
+   return $(elem).offset().top - $(window).scrollTop() < $(elem).height() ;
+}
+
+$(window).scroll(function(){
+   if (isInView($('#skills')))
+   jQuery(document).ready(function(){
+     jQuery('.skillbar').each(function(){
+       jQuery(this).find('.skillbar-bar').animate({
+         width:jQuery(this).attr('data-percent')
+       },6000);
+     });
+   });
+
+})
+
 
 // goto top button
 var btn = $('#button');
