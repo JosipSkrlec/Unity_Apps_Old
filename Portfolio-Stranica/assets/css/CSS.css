@@ -178,7 +178,7 @@ input, select, textarea {
 	}
 
 		a:hover {
-			color: #E27689;
+			color: #14cedb;
 			border-bottom-color: rgba(255, 255, 255, 0);
 		}
 
@@ -2173,7 +2173,7 @@ input, select, textarea {
 				}
 
 					#nav ul li a.active span:before {
-						color: #e27689;
+						color: #14cedb;
 					}
 
 /* Footer */
@@ -2245,7 +2245,7 @@ input, select, textarea {
 					}
 
 			#main > section.cover {
-				padding: 10em 0;
+				padding: 5em 0;
 				background-size: cover;
 				background-position: center center;
 			}
@@ -2561,10 +2561,10 @@ input, select, textarea {
 				-webkit-backface-visibility: hidden;
 				-ms-backface-visibility: hidden;
 				backface-visibility: hidden;
-				-moz-transition: -moz-transform 0.5s ease;
-				-webkit-transition: -webkit-transform 0.5s ease;
-				-ms-transition: -ms-transform 0.5s ease;
-				transition: transform 0.5s ease;
+				-moz-transition: -moz-transform 0.9s ease;
+				-webkit-transition: -webkit-transform 0.9s ease;
+				-ms-transition: -ms-transform 0.9s ease;
+				transition: transform 0.9s ease;
 				padding-bottom: 1px;
 				margin-left: 0;
 			}
