@@ -1,3 +1,12 @@
+// animated skill bars
+jQuery(document).ready(function(){
+	jQuery('.skillbar').each(function(){
+		jQuery(this).find('.skillbar-bar').animate({
+			width:jQuery(this).attr('data-percent')
+		},6000);
+	});
+});
+
 // goto top button
 var btn = $('#button');
 
@@ -14,12 +23,7 @@ btn.on('click', function(e) {
   $('html, body').animate({scrollTop:0}, '300');
 });
 
-
-
-
-
-
-//
+// vrijeme servera
 function startTime() {
   var today = new Date();
   var h = today.getHours();
