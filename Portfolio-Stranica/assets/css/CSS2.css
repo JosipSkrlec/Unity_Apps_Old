@@ -1,0 +1,313 @@
+.sredina{
+	text-align: center;
+}
+
+
+	/*--------------------*/
+	/*Animacija fade in / fade out*/
+	.Animacija001 {
+	  position: relative;
+	  font-family: sans-serif;
+	  text-transform: lowercase;
+	  font-size: 2em;
+	  letter-spacing: 2px;
+	  overflow: hidden;
+	  background: linear-gradient(90deg, #000, #fff, #000);
+	  background-repeat: no-repeat;
+	  background-size: 80%;
+	  animation: animate 5s linear infinite;
+	  -webkit-background-clip: text;
+	  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+	}
+
+	@keyframes animate {
+	  0% {
+	    background-position: -500%;
+	  }
+	  100% {
+	    background-position: 500%;
+	  }
+	}
+
+  /*--------------------*/
+  /*Animacija slova */
+
+  .Animacija002{
+    text-transform: uppercase;
+    letter-spacing: 1pt;
+    font-size: 30pt;
+    margin-bottom: 15px;
+  }
+
+
+  #table {
+  	display: table;
+  	width: 100%;
+  	height: 100%;
+    background-color: #e5e5e5;
+  }
+
+  #centeralign {
+  	display: table-cell;
+  	vertical-align: middle;
+  }
+  /*--------------------*/
+
+  /*Odlicna animacija */
+  /*ovo je html code za tu animaciju
+  <div class="arrow bounce">
+    <a class="fa fa-arrow-down fa-2x" href="#"></a>
+  </div>
+  */
+  .arrow {
+    text-align: center;
+    margin: 8% 0;
+  }
+  .bounce {
+    -moz-animation: bounce 2s infinite;
+    -webkit-animation: bounce 2s infinite;
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-30px);
+    }
+    60% {
+      transform: translateY(-15px);
+    }
+  }
+
+  /*
+  Animacija mis
+
+  */
+  body {
+  	background: #333;
+  }
+
+
+  *, *:before, *:after {
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+   }
+
+
+  .mouse_scroll {
+  	display: block;
+  	margin: 0 auto;
+  	width: 24px;
+  	height: 100px;
+  	margin-top: 125px;
+  }
+
+
+  .m_scroll_arrows
+  {
+    display: block;
+    width: 5px;
+    height: 5px;
+    -ms-transform: rotate(45deg); /* IE 9 */
+    -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+    transform: rotate(45deg);
+
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    margin: 0 0 3px 4px;
+
+    width: 16px;
+    height: 16px;
+  }
+
+
+  .unu
+  {
+    margin-top: 1px;
+  }
+
+  .unu, .doi, .trei
+  {
+      -webkit-animation: mouse-scroll 1s infinite;
+      -moz-animation: mouse-scroll 1s infinite;
+      animation: mouse-scroll 1s infinite;
+
+  }
+
+  .unu
+  {
+    -webkit-animation-delay: .1s;
+    -moz-animation-delay: .1s;
+    -webkit-animation-direction: alternate;
+
+    animation-direction: alternate;
+    animation-delay: alternate;
+  }
+
+  .doi
+  {
+    -webkit-animation-delay: .2s;
+    -moz-animation-delay: .2s;
+    -webkit-animation-direction: alternate;
+
+    animation-delay: .2s;
+    animation-direction: alternate;
+
+    margin-top: -6px;
+  }
+
+  .trei
+  {
+    -webkit-animation-delay: .3s;
+    -moz-animation-delay: .3s;
+    -webkit-animation-direction: alternate;
+
+    animation-delay: .3s;
+    animation-direction: alternate;
+
+
+    margin-top: -6px;
+  }
+
+  .mouse {
+    height: 42px;
+    width: 24px;
+    border-radius: 14px;
+    transform: none;
+    border: 2px solid white;
+    top: 170px;
+  }
+
+  .wheel {
+    height: 5px;
+    width: 2px;
+    display: block;
+    margin: 5px auto;
+    background: white;
+    position: relative;
+
+    height: 4px;
+    width: 4px;
+    border: 2px solid #fff;
+    -webkit-border-radius: 8px;
+            border-radius: 8px;
+  }
+
+  .wheel {
+    -webkit-animation: mouse-wheel 0.6s linear infinite;
+    -moz-animation: mouse-wheel 0.6s linear infinite;
+    animation: mouse-wheel 0.6s linear infinite;
+  }
+
+  @-webkit-keyframes mouse-wheel{
+     0% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+      transform: translateY(0);
+    }
+
+    100% {
+      opacity: 0;
+      -webkit-transform: translateY(6px);
+      -ms-transform: translateY(6px);
+      transform: translateY(6px);
+    }
+  }
+  @-moz-keyframes mouse-wheel {
+    0% { top: 1px; }
+    25% { top: 2px; }
+    50% { top: 3px;}
+    75% { top: 2px;}
+    100% { top: 1px;}
+  }
+  @-o-keyframes mouse-wheel {
+
+     0% { top: 1px; }
+    25% { top: 2px; }
+    50% { top: 3px;}
+    75% { top: 2px;}
+    100% { top: 1px;}
+  }
+  @keyframes mouse-wheel {
+
+     0% { top: 1px; }
+    25% { top: 2px; }
+    50% { top: 3px;}
+    75% { top: 2px;}
+    100% { top: 1px;}
+  }
+
+  @-webkit-keyframes mouse-scroll {
+
+    0%   { opacity: 0;}
+    50%  { opacity: .5;}
+    100% { opacity: 1;}
+  }
+  @-moz-keyframes mouse-scroll {
+
+    0%   { opacity: 0; }
+    50%  { opacity: .5; }
+    100% { opacity: 1; }
+  }
+  @-o-keyframes mouse-scroll {
+
+    0%   { opacity: 0; }
+    50%  { opacity: .5; }
+    100% { opacity: 1; }
+  }
+  @keyframes mouse-scroll {
+
+    0%   { opacity: 0; }
+    50%  { opacity: .5; }
+    100% { opacity: 1; }
+  }
+
+
+
+
+  /*tripple Arrow animacija , nije iskoristiva ovdje*/
+  /* ovo he html code za animaciju ispod.
+  <div class="arrow">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  */
+  /*
+  .arrow{
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+  }
+  .arrow span{
+      display: block;
+      width: 30px;
+      height: 30px;
+      border-bottom: 5px solid #06A8FF;
+      border-right: 5px solid #06A8FF;
+      transform: rotate(45deg);
+      margin: -10px;
+      animation: animate 2s infinite;
+  }
+  .arrow span:nth-child(2){
+      animation-delay: -0.2s;
+  }
+  .arrow span:nth-child(3){
+      animation-delay: -0.4s;
+  }
+  @keyframes animate {
+      0%{
+          opacity: 0;
+          transform: rotate(45deg) translate(-20px,-20px);
+      }
+      50%{
+          opacity: 1;
+      }
+      100%{
+          opacity: 0;
+          transform: rotate(45deg) translate(20px,20px);
+      }
+  }
+*/
