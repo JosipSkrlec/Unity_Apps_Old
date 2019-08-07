@@ -1,3 +1,6 @@
+/*----------------------------*/
+/*----------------------------*/
+/*----------------------------*/
 .sredina{
 	text-align: center;
 }
@@ -28,8 +31,13 @@
 	margin-top: 13px;
 }
 
-/*PROBA*/
-
+/*----------------------------*/
+/*----------------------------*/
+/*----------------------------*/
+/*SKILL BARS*/
+/*Prvi dio je za normalne duzine slova, drugi dio je za duze*/
+/*PRVI DIO*/
+/*PRVI DIO*/
 .skillbar {
 	position:relative;
 	display:block;
@@ -56,7 +64,7 @@
 	position:absolute;
 	top:0;
 	left:0;
-width:110px;
+width:150px;
 	font-weight:bold;
 	font-size:13px;
 	color:#ffffff;
@@ -68,6 +76,7 @@ width:110px;
 	border-top-left-radius:3px;
 	border-bottom-left-radius:3px;
 }
+
 
 .skillbar-title span {
 	display:block;
@@ -102,8 +111,88 @@ width:110px;
 	color:#ffffff;
 	color:rgba(0, 0, 0, 0.4);
 }
-/*button to top*/
 
+/*DRUGI DIO*/
+/*DRUGI DIO*/
+/*DRUGI DIO*/
+.skillbar2 {
+	position:relative;
+	display:block;
+	margin-bottom:15px;
+	width:100%;
+	background:#eee;
+	height:35px;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	-webkit-transition:0.4s linear;
+	-moz-transition:0.4s linear;
+	-ms-transition:0.4s linear;
+	-o-transition:0.4s linear;
+	transition:0.4s linear;
+	-webkit-transition-property:width, background-color;
+	-moz-transition-property:width, background-color;
+	-ms-transition-property:width, background-color;
+	-o-transition-property:width, background-color;
+	transition-property:width, background-color;
+}
+
+.skillbar-title2 {
+	position:absolute;
+	top:0;
+	left:0;
+	width:220px;
+	font-weight:bold;
+	font-size:13px;
+	color:#ffffff;
+	background:#6adcfa;
+	-webkit-border-top-left-radius:3px;
+	-webkit-border-bottom-left-radius:4px;
+	-moz-border-radius-topleft:3px;
+	-moz-border-radius-bottomleft:3px;
+	border-top-left-radius:3px;
+	border-bottom-left-radius:3px;
+}
+
+
+.skillbar-title2 span {
+	display:block;
+	background:rgba(0, 0, 0, 0.1);
+	padding:0 20px;
+	height:35px;
+	line-height:35px;
+	-webkit-border-top-left-radius:3px;
+	-webkit-border-bottom-left-radius:3px;
+	-moz-border-radius-topleft:3px;
+	-moz-border-radius-bottomleft:3px;
+	border-top-left-radius:3px;
+	border-bottom-left-radius:3px;
+}
+
+.skillbar-bar2 {
+	height:35px;
+	width:0px;
+	background:#6adcfa;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+}
+
+.skill-bar-percent2 {
+	position:absolute;
+	right:10px;
+	top:0;
+	font-size:11px;
+	height:35px;
+	line-height:35px;
+	color:#ffffff;
+	color:rgba(0, 0, 0, 0.4);
+}
+
+/*----------------------------*/
+/*----------------------------*/
+/*----------------------------*/
+/*button to top*/
 #button {
   display: inline-block;
   background-color: #14cedb;
@@ -139,9 +228,6 @@ width:110px;
   opacity: 1;
   visibility: visible;
 }
-
-/* Styles for the content section */
-
 .content {
   width: 77%;
   margin: 50px auto;
@@ -167,11 +253,10 @@ width:110px;
   font-style: italic;
   color: #14cedb;
 }
-/*do tud je za button to top*/
-
-
-	/*--------------------*/
-	/*Animacija fade in / fade out*/
+/*----------------------------*/
+/*----------------------------*/
+/*----------------------------*/
+	/*Animacija fade in / fade out slova*/
 	.Animacija001 {
 	  position: relative;
 	  font-family: sans-serif;
@@ -186,7 +271,6 @@ width:110px;
 	  -webkit-background-clip: text;
 	  -webkit-text-fill-color: rgba(255, 255, 255, 0);
 	}
-
 	@keyframes animate {
 	  0% {
 	    background-position: -500%;
@@ -196,30 +280,29 @@ width:110px;
 	  }
 	}
 
-  /*--------------------*/
-  /*Animacija slova */
-
+	/*----------------------------*/
+	/*----------------------------*/
+	/*----------------------------*/
+  /*Animacija slova 02 */
   .Animacija002{
     text-transform: uppercase;
     letter-spacing: 1pt;
     font-size: 30pt;
     margin-bottom: 15px;
   }
-
-
   #table {
   	display: table;
   	width: 100%;
   	height: 100%;
     background-color: #e5e5e5;
   }
-
   #centeralign {
   	display: table-cell;
   	vertical-align: middle;
   }
-  /*--------------------*/
-
+  /*----------------------------*/
+	/*----------------------------*/
+	/*----------------------------*/
   /*Odlicna animacija */
   /*ovo je html code za tu animaciju
   <div class="arrow bounce">
@@ -247,21 +330,18 @@ width:110px;
       transform: translateY(-15px);
     }
   }
-
+	/*----------------------------*/
+	/*----------------------------*/
+	/*----------------------------*/
   /*
-  Animacija mis
-
+  Animacija mis koji pokazuje da se treba scroolat
   */
   body {
   	background: #333;
   }
-
-
   *, *:before, *:after {
     -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
    }
-
-
   .mouse_scroll {
   	display: block;
   	margin: 0 auto;
@@ -269,8 +349,6 @@ width:110px;
   	height: 100px;
   	margin-top: 125px;
   }
-
-
   .m_scroll_arrows
   {
     display: block;
@@ -287,21 +365,16 @@ width:110px;
     width: 16px;
     height: 16px;
   }
-
-
   .unu
   {
     margin-top: 1px;
   }
-
   .unu, .doi, .trei
   {
       -webkit-animation: mouse-scroll 1s infinite;
       -moz-animation: mouse-scroll 1s infinite;
       animation: mouse-scroll 1s infinite;
-
   }
-
   .unu
   {
     -webkit-animation-delay: .1s;
@@ -311,7 +384,6 @@ width:110px;
     animation-direction: alternate;
     animation-delay: alternate;
   }
-
   .doi
   {
     -webkit-animation-delay: .2s;
@@ -323,7 +395,6 @@ width:110px;
 
     margin-top: -6px;
   }
-
   .trei
   {
     -webkit-animation-delay: .3s;
@@ -336,7 +407,6 @@ width:110px;
 
     margin-top: -6px;
   }
-
   .mouse {
     height: 42px;
     width: 24px;
@@ -345,7 +415,6 @@ width:110px;
     border: 2px solid white;
     top: 170px;
   }
-
   .wheel {
     height: 5px;
     width: 2px;
@@ -360,13 +429,11 @@ width:110px;
     -webkit-border-radius: 8px;
             border-radius: 8px;
   }
-
   .wheel {
     -webkit-animation: mouse-wheel 0.6s linear infinite;
     -moz-animation: mouse-wheel 0.6s linear infinite;
     animation: mouse-wheel 0.6s linear infinite;
   }
-
   @-webkit-keyframes mouse-wheel{
      0% {
       opacity: 1;
@@ -374,7 +441,6 @@ width:110px;
       -ms-transform: translateY(0);
       transform: translateY(0);
     }
-
     100% {
       opacity: 0;
       -webkit-transform: translateY(6px);
@@ -430,10 +496,9 @@ width:110px;
     50%  { opacity: .5; }
     100% { opacity: 1; }
   }
-
-
-
-
+	/*----------------------------*/
+	/*----------------------------*/
+	/*----------------------------*/
   /*tripple Arrow animacija , nije iskoristiva ovdje*/
   /* ovo he html code za animaciju ispod.
   <div class="arrow">
@@ -478,3 +543,9 @@ width:110px;
       }
   }
 */
+/*----------------------------*/
+/*----------------------------*/
+/*----------------------------*/
+/*----------------------------*/
+/*----------------------------*/
+/*----------------------------*/
