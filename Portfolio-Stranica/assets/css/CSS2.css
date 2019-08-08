@@ -5,6 +5,15 @@
 	text-align: center;
 }
 
+.visitme{
+	text-align: center;
+	font-weight: bold;
+	list-style: none;
+	font-size: 15px;
+	color: #ffffff;
+
+}
+
 .tekstprostor{ /*ovo je za popravnanje da se ne pomice div kada animacija pise u novi red*/
 	height: 10%;
 	text-align: left;
