@@ -22,6 +22,12 @@
 	text-align: center;
 }
 
+.zivotopis{
+	color: #14cedb;
+	font-weight: bold;
+	font-size: 35px;
+}
+
 #razmak{
 	margin-left: 30px;
 	margin-right: 30px;
@@ -30,6 +36,7 @@
 #sredinaArrowTop{
 	margin-top: 13px;
 }
+
 
 /*----------------------------*/
 /*----------------------------*/

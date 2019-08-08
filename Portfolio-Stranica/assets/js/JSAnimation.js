@@ -4,16 +4,21 @@ function isInView(elem){
    return $(elem).offset().top - $(window).scrollTop() < $(elem).height() ;
 }
 
+// ne ulazi unutar ifa ako su skillovi vec postavljeni
+var tempbroj = 0;
 $(window).scroll(function(){
    if (isInView($('#skills')))
+   if(tempbroj == 0){
+     tempbroj = 1;
    jQuery(document).ready(function(){
      jQuery('.skillbar').each(function(){
        jQuery(this).find('.skillbar-bar').animate({
          width:jQuery(this).attr('data-percent')
        },6000);
+        console.log("Animiran skill barove!");
      });
    });
-
+   }
 })
 
 
