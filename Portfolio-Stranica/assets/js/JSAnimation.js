@@ -1,3 +1,38 @@
+// animacija brojaca  --TODO potrebam fix
+$('.count').each(function () {
+    $(this).prop('Counter',0).animate({
+        Counter: $(this).text()
+    }, {
+        duration: 5000,
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(Math.ceil(now));
+        }
+    });
+});
+
+// TODO - trenutno se samo jednom refresha kada se vrati na sekciju shiva
+var tempbroj1 = 0;
+// proba za brojacavar tempbroj = 0;
+$(window).scroll(function(){
+   if (isInView($('#shiva')))
+   if(tempbroj1 == 0){
+     tempbroj1 = 1;
+     $('.count').each(function () {
+         $(this).prop('Counter',0).animate({
+             Counter: $(this).text()
+         }, {
+             duration: 5000,
+             easing: 'swing',
+             step: function (now) {
+                 $(this).text(Math.ceil(now));
+             }
+         });
+     });
+   }
+})
+
+
 // provjera da li je element u viewportu
 // ako je tada se aktivira funkcija isinview koja vraca true i pokazu se skillovi
 function isInView(elem){
@@ -14,7 +49,7 @@ $(window).scroll(function(){
      jQuery('.skillbar').each(function(){
        jQuery(this).find('.skillbar-bar').animate({
          width:jQuery(this).attr('data-percent')
-       },6000);
+       },6000); // , "linear");
         console.log("Animiran skill barove!");
      });
    });
@@ -81,7 +116,7 @@ function typeEffect(element, speed) {
 
 
 // application
-var speed = 100;
+var speed = 50;
 var h1 = document.querySelector('h4');
 // var p = document.querySelector('p');
 var delay = h1.innerHTML.length * speed + speed;

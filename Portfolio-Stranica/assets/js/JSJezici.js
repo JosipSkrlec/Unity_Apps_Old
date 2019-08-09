@@ -15,12 +15,12 @@ function UcitajJezik(){ // TODO - postaviti da se load-a nova stranica CRO/ENG a
 function PostaviJezik(Value){
   if(Value == "CRO"){
     localStorage.setItem('lang','CRO');
-    location.reload();
+    //location.reload();
     console.log("Postavljam Hrvatski jezik");
   }
   else if(Value == "ENG"){
     localStorage.setItem('lang','ENG');
-    location.reload();
+    //location.reload();
     console.log("Postavljam Engleski jezik");
   }
 }

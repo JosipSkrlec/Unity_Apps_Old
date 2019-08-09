@@ -5,6 +5,11 @@
 	text-align: center;
 }
 
+.count{
+	color: #ffffff;
+	font-weight: bold;
+}
+
 .visitme{
 	text-align: center;
 	font-weight: bold;
@@ -119,12 +124,13 @@ width:150px;
 
 .skill-bar-percent {
 	position:absolute;
+	font-weight: bold;
 	right:10px;
 	top:0;
-	font-size:11px;
+	font-size:15px;
 	height:35px;
 	line-height:35px;
-	color:#ffffff;
+	color:#000000;
 	color:rgba(0, 0, 0, 0.4);
 }
 
@@ -196,12 +202,13 @@ width:150px;
 
 .skill-bar-percent2 {
 	position:absolute;
+	font-weight: bold;
 	right:10px;
 	top:0;
-	font-size:11px;
+	font-size:15px;
 	height:35px;
 	line-height:35px;
-	color:#ffffff;
+	color:#000000;
 	color:rgba(0, 0, 0, 0.4);
 }
 
