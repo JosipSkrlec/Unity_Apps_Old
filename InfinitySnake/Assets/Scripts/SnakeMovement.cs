@@ -54,6 +54,23 @@ public class SnakeMovement : MonoBehaviour
 
             Destroy(collision.gameObject);
         }
+
+        if (collision.transform.name.Contains("LOS"))
+        {
+            GameObject g = GameObject.Find(bodyParts[bodyParts.Count -1].transform.gameObject.name);
+
+            g.GetComponent<SnakeBodyPart>().enabled = false;
+
+            bodyParts.Remove(g.transform);
+
+            g.GetComponent<Rigidbody2D>().gravityScale = 1;
+
+            Debug.Log(bodyParts.Count);
+
+
+
+            Destroy(collision.gameObject);
+        }
     }
 
 
