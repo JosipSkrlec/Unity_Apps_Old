@@ -6,6 +6,8 @@ public class test : MonoBehaviour
 {
     public GameObject jab;
 
+    public GameObject test01;
+
     // Use this for initialization
     void Start()
     {
@@ -27,6 +29,15 @@ public class test : MonoBehaviour
 
             Instantiate(jab, pos, Quaternion.identity);
         }
+
+        Vector3 pos1 = new Vector3(0f, 0.5f, 10.0f);
+        pos1 = Camera.main.ViewportToWorldPoint(pos1);
+        Instantiate(test01, pos1, Quaternion.identity);
+
+        Vector3 pos2 = new Vector3(1f, 0.5f, 10.0f);
+        pos2 = Camera.main.ViewportToWorldPoint(pos2);
+        Instantiate(test01, pos2, Quaternion.identity);
+
     }
 
 

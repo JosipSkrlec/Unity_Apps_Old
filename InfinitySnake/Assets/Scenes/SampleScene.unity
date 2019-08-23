@@ -166,6 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jab: {fileID: 2550831395653876616, guid: 6fe211f65553ec24498c84015bd86413, type: 3}
+  test01: {fileID: 8960803106139724328, guid: d3b9233c45fcc6f458a231baf3f79c3c, type: 3}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
