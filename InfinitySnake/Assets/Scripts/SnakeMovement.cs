@@ -9,6 +9,8 @@ public class SnakeMovement : MonoBehaviour
 
     public List<Transform> bodyParts = new List<Transform>();
 
+    public GameObject tijelo01;
+
     // Use this for initialization
     void Start()
     {
@@ -37,7 +39,20 @@ public class SnakeMovement : MonoBehaviour
     {
         if (collision.transform.name.Contains("jabuka"))
         {
-            Debug.Log("jabuka");
+            GameObject g =  Instantiate(tijelo01);
+
+            g.GetComponent<SnakeBodyPart>().head = bodyParts[bodyParts.Count -1];
+
+
+            bodyParts.Add(g.transform);
+
+
+
+            Debug.Log(bodyParts.Count);
+
+
+
+            Destroy(collision.gameObject);
         }
     }
 
