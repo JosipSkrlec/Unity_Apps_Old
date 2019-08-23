@@ -33,6 +33,15 @@ public class SnakeMovement : MonoBehaviour
     }
 
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.name.Contains("jabuka"))
+        {
+            Debug.Log("jabuka");
+        }
+    }
+
+
 
 
 }
