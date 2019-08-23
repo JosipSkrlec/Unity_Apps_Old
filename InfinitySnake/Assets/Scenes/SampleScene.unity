@@ -253,6 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cfe7539fe49a294482d5142f3618351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jab: {fileID: 2550831395653876616, guid: 6fe211f65553ec24498c84015bd86413, type: 3}
   sceneWidth: 10
 --- !u!20 &519420031
 Camera:
@@ -281,7 +282,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.53
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

@@ -12,17 +12,17 @@ public class test : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        float unitsPerPixel = sceneWidth / Screen.width;
+        //float unitsPerPixel = sceneWidth / Screen.width;
 
-        float unitsPerPixell = Screen.width / Screen.height;
+        //float unitsPerPixell = Screen.width / Screen.height;
 
-        Debug.Log("units per pixell " + unitsPerPixell);
+        //Debug.Log("units per pixell " + unitsPerPixell);
 
-        float desiredHalfHeight = 0.5f * unitsPerPixel * Screen.height;
+        //float desiredHalfHeight = 0.5f * unitsPerPixel * Screen.height;
 
-        GetComponent<Camera>().orthographicSize = desiredHalfHeight;
+        //GetComponent<Camera>().orthographicSize = desiredHalfHeight;
 
-        Debug.Log(desiredHalfHeight);
+        //Debug.Log(desiredHalfHeight);
 
     }
 
@@ -36,6 +36,21 @@ public class test : MonoBehaviour
         float rez = width / height;
 
         Debug.Log("w = " + width + " h = " + height + " r = " + rez);
+
+        float height1 = Camera.main.orthographicSize * 2;
+        float width1 = height * Screen.width / Screen.height;
+
+
+        //
+        //Vector3 vec = new Vector3(width1, width1, 1.0f);
+        //vec = Camera.main.ViewportToWorldPoint(vec);
+
+        float x = Random.Range(0.05f, 0.95f);
+        float y = Random.Range(0.05f, 0.95f);
+        Vector3 pos = new Vector3(x, y, 10.0f);
+        pos = Camera.main.ViewportToWorldPoint(pos);
+
+        Instantiate(jab, pos, Quaternion.identity);
 
 
         //Vector3 pos = new Vector3(Random.value, Random.value, distFromCamera);
