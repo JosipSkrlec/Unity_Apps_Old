@@ -6,7 +6,7 @@
 }
 
 .count{
-	color: #ffffff;
+	color: #ff000d;
 	font-weight: bold;
 }
 
@@ -448,7 +448,7 @@ width:150px;
 
     height: 4px;
     width: 4px;
-    border: 2px solid #fff;
+    border: 2px solid #000000;
     -webkit-border-radius: 8px;
             border-radius: 8px;
   }

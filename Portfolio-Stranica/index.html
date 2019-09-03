@@ -7,14 +7,14 @@
 		<meta charset="utf-8" /> <!-- encoding -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!-- glavni css u kojem je cijeli izgled stranice -->
-		<link rel="stylesheet" href="assets/css/CSS.css" />
+		<link rel="stylesheet" href="assets/css/MainCss.css" />
 		<!-- pomocni css u kojima se override-a neki dio od glavnog css-a -->
 		<link rel="stylesheet" href="assets/css/CSS2.css" />
 		<link rel="stylesheet" href="assets/css/CSS3.css" />
 	</head>
 
 	<body class="is-preload" onload="startTime(); UcitajJezik();">
-			<!-- Back to top button -->
+			<!-- Button koji vraca na top ako se skrola dolje ispod prve sekcije -->
 			<a id="button"><span id="sredinaArrowTop" class="fas fa-arrow-up"></span></a>
 
 			<div id="header">
@@ -29,7 +29,6 @@
 					<!-- Navigacija -->
 						<nav id="nav">
 							<ul>
-								<li class="sredina">SADRŽAJ</li>
 								<li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
 								<li><a href="#about" id="about-link"><span class="icon solid fa-user">About Me</span></a></li>
 								<li><a href="#skills" id="skill-link"><span class="fas fa-trophy">Skills</span></a></li>
@@ -60,7 +59,8 @@
 
 				</div>
 
-			</div>
+			</div><!-- kraj header-a -->
+
 		<!-- Main -->
 			<div id="main">
 				<!-- Intro -->
@@ -74,8 +74,8 @@
 							<br><br><br><br>
 							<footer>
 								<div id="shiva">
-									<p>I programming over <span class="count">5</span> years and i have worked on over <span class="count">20</span> projects. <br>
-									 and i wrote over <span class="count">30000</span> lines of code
+									<p> <span class="count">5</span> years <span class="count">20</span> projects. <br>
+									 and <span class="count">30000</span> .
 									</p>
 								</div>
 								<div class="mouse_scroll">
@@ -347,7 +347,9 @@
 					</ul>
 
 			</div>
-		<!-- Scripts -->
+
+
+			<!-- pozivanje Scripti -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
