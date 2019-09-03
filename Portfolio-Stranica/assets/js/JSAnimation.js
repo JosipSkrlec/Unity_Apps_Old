@@ -130,3 +130,34 @@ typeEffect(h1, speed);
 //   p.style.display = "inline-block";
 //   typeEffect(p, speed);
 // }, delay);
+
+// proba za promjenu teksta (fun)
+// RADI
+  setTimeout(doSomething, 3000);
+  setTimeout(doSomething1, 6000);
+
+
+function doSomething() {
+  var element = document.getElementById("messages");
+  element.innerHTML = "Mogu napraviti " + "<strike>SVE</strike> NEKE" + " vaše projekte.";
+}
+
+
+function doSomething1() {
+  var element1 = document.getElementById("messages");
+  element1.innerHTML = "Mogu napraviti " + "<strike>SVE </strike>" + " <strike>NEKE</strike> " + " vaše projekte.";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+//
