@@ -381,8 +381,8 @@ width:150px;
     -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
     transform: rotate(45deg);
 
-    border-right: 2px solid white;
-    border-bottom: 2px solid white;
+    border-right: 2px solid #000000;
+    border-bottom: 2px solid #000000;
     margin: 0 0 3px 4px;
 
     width: 16px;
@@ -435,7 +435,7 @@ width:150px;
     width: 24px;
     border-radius: 14px;
     transform: none;
-    border: 2px solid white;
+    border: 2px solid #000000;
     top: 170px;
   }
   .wheel {

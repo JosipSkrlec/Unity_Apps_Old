@@ -2050,9 +2050,8 @@ input, select, textarea {
 		-webkit-justify-content: space-between;
 		-ms-justify-content: space-between;
 		justify-content: space-between;
-		background: #6dd5fa url("images/overlay.png");
 		box-shadow: inset -0.25em 0 0.25em 0 rgba(0, 0, 0, 0.1);
-		color: #fff;
+		background-color:  #93a5cf;
 		height: 100%;
 		left: 0;
 		overflow-y: auto;
@@ -2170,7 +2169,7 @@ input, select, textarea {
 				#nav ul li a.active {
 					background: rgba(0, 0, 0, 0.15);
 					box-shadow: inset 0 0 0.25em 0 rgba(0, 0, 0, 0.125);
-          font-weight: bold;
+
 					color: #000000;
 				}
 
@@ -2259,19 +2258,21 @@ input, select, textarea {
 				/*background-color: #222629;*/ /* samo black pozadina*/
 
         /*ovdje je sekcija za gradient boje*/
-        background-image: linear-gradient(#2980b9, #6dd5fa, #b0eaff);
-
+        /*background-image: linear-gradient(#2980b9, #6dd5fa, #b0eaff);*/
+				background-image: linear-gradient(#93a5cf, #ffffff); /*(#e0c3fc, #8ec5fc)  --  (#f5f7fa, #c3cfe2)  --  (#d299c2, #fef9d7)  --  (#fddb92, #d1fdff)  --  (#a3bded, #6991c7)  --  (#9795f0, #fbc8d4)*/
 
 			}
 
 			#main > section.two {
 				/*background-color: #f5fafa;*/
-        background-image: linear-gradient(#b0eaff, #6dd5fa, #2980b9);
+        /*background-image: linear-gradient(#b0eaff, #6dd5fa, #2980b9);*/
+				background-color: #ffffff;
 
 			}
 
+
 			#main > section.three {
-				background-color: #d3dbdb;
+				background-color: #93a5cf;
 			}
 
 			#main > section.four {
