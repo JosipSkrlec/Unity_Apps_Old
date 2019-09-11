@@ -83,7 +83,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #fff;
+		background: #ffffff;
 				font-family: 'Oxygen Mono', monospace;
 		font-size: 19pt;
 		font-weight: 300;
@@ -115,7 +115,7 @@ input, select, textarea {
 
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: 300;
-		color: #666;
+		color: #000000;
 		line-height: 1.5em;
 	}
 
@@ -168,7 +168,7 @@ input, select, textarea {
 
 	a {
 		text-decoration: none;
-		color: inherit;
+		color: #000000;
 		border-bottom: dotted 1px rgba(128, 128, 128, 0.5);
 		-moz-transition: color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
 		-webkit-transition: color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
@@ -1916,7 +1916,7 @@ input, select, textarea {
 	}
 
 		table tbody tr:nth-child(2n+2) {
-			background: #f4f4f4;
+			background: #bbc7e1;
 		}
 
 		table td {
@@ -1926,12 +1926,10 @@ input, select, textarea {
 		table th {
 			text-align: left;
 			padding: 0.5em 1em 0.5em 1em;
-			color: #fff;
-			background: #222729 url("images/overlay.png");
 		}
 
 		table thead {
-			background: #444;
+			background: #;
 			color: #fff;
 		}
 

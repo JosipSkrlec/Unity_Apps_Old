@@ -334,6 +334,7 @@ width:150px;
 }
 #button.show {
   opacity: 1;
+
   visibility: visible;
 }
 .content {
@@ -361,6 +362,7 @@ width:150px;
   font-style: italic;
   color: #14cedb;
 }
+
 /*----------------------------*/
 /*----------------------------*/
 /*----------------------------*/
