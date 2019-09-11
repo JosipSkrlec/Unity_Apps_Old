@@ -8,7 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!-- glavni css u kojem je cijeli izgled stranice -->
 		<link rel="stylesheet" href="assets/css/MainCss.css" />
-		<!-- pomocni css u kojima se override-a neki dio od glavnog css-a -->
+		<!-- pomocni css u kojima se override-a neki dio od glavnog MainCss-a -->
 		<link rel="stylesheet" href="assets/css/CSS2.css" />
 		<link rel="stylesheet" href="assets/css/CSS3.css" />
 	</head>
@@ -21,9 +21,9 @@
 				<div class="top">
 						<div id="logo">
 							<span class="image avatar48"><img src="slike/IKONA.png" alt="" /></span>
-							<p id="vrijeme">???</p>
+							<p id="vrijeme" class="boldclass">???</p>
 							<h1 id="title">Josip Škrlec</h1>
-							<p>Programmer & 3D artist</p>
+							<p class="boldclass">Programmer & 3D artist</p>
 						</div>
 
 					<!-- Navigacija -->
@@ -31,14 +31,16 @@
 							<ul>
 								<li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
 								<li><a href="#about" id="about-link"><span class="icon solid fa-user">About Me</span></a></li>
-								<li><a href="#skills" id="skill-link"><span class="fas fa-award">Skills</span></a></li>
+								<li><a href="#skills" id="skill-link"><span class="icon solid fa-trophy">Skills</span></a></li>
 								<li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">Portfolio</span></a></li>
 								<li><a href="#contact" id="contact-link"><span class="icon solid fa-envelope">Contact</span></a></li>
 							</ul>
 							<ul>
-								<li class="sredina">
+								<li class="pointer">
 									<a href="index.html"><img class="zastava" src="Zastave/CROflag.png" onclick="PostaviJezik('CRO')"></a>
-									<a href="index_end.html"><img href="index.html" class="zastava" src="Zastave/ENGflag.png" onclick="PostaviJezik('ENG')"></a>
+							  </li>
+								<li class="pointer">
+									<a href="index_end.html"><img class="zastava" src="Zastave/ENGflag.png" onclick="PostaviJezik('ENG')"></a>
 								</li>
 							</ul>
 						</nav>
@@ -69,7 +71,7 @@
 
 							<header>
 								<!--tekstprostor sluzi da bi se poravnao div kako se ne bi rastezao prilikom novog reda-->
-    					<h4 class="tekstprostor">Console.WriteLine("Weljkome to maj pejđ!");*Person p = new Person(); * p.Name = Josip; * p.Surname = Škrlec; * p.Age = 22; * p.Education = Bacc.ing.comp.*}</h4>
+    					<h4 class="tekstprostor">Console.WriteLine("Weljkome to maj pejđ!");*___Person p = new Person(); * ___p.Name = Josip; * p.Surname = Škrlec; * p.Age = 22; * p.Education = Bacc.ing.comp.*}</h4>
 							</header>
 							<br><br><br><br>
 							<footer>
@@ -144,7 +146,8 @@
 							<header>
 								<h2>MY Skills</h2>
 							</header>
-
+							<button type="button" class="button">SHOW (SELF GRADES)</button>
+							<div class=""> <!-- ovo je div koji ce se prikazat na pritisak gumba-->
 							<h3>Programming Languages</h3>
 
 							<div class="skillbar clearfix " data-percent="90%"> <!-- postotak je koji se napuni -->
@@ -232,7 +235,7 @@
 								<div class="skill-bar-percent2">40%</div><!-- postotak mora biti isti kao i kod div-a koji se puni-->
 							</div>
 
-
+						</div>
 						</div>
 
 						<br />
