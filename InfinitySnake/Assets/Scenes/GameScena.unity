@@ -246,7 +246,7 @@ PrefabInstance:
     - target: {fileID: 2550831395653876618, guid: 6fe211f65553ec24498c84015bd86413,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2550831395653876618, guid: 6fe211f65553ec24498c84015bd86413,
         type: 3}
@@ -271,7 +271,7 @@ PrefabInstance:
     - target: {fileID: 2550831395653876618, guid: 6fe211f65553ec24498c84015bd86413,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2550831395653876618, guid: 6fe211f65553ec24498c84015bd86413,
         type: 3}
@@ -328,12 +328,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 974028743}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.04, y: -4.66, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.04, y: -2.24, z: 1}
   m_LocalScale: {x: 3.5, y: 3.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &974028745
 Rigidbody2D:
@@ -582,7 +582,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1789055044
 GameObject:
@@ -597,6 +597,7 @@ GameObject:
   - component: {fileID: 1789055047}
   - component: {fileID: 1789055046}
   - component: {fileID: 1789055045}
+  - component: {fileID: 1789055050}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -630,7 +631,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jab: {fileID: 2550831395653876616, guid: 6fe211f65553ec24498c84015bd86413, type: 3}
-  test01: {fileID: 8960803106139724328, guid: d3b9233c45fcc6f458a231baf3f79c3c, type: 3}
   CrvenaVrata: {fileID: 2410209094495404147, guid: c1b5b3ae0f3092e4fa0ec092f42bbba2,
     type: 3}
   LjubicastaVrata: {fileID: 679884827245275063, guid: b97be6b596da31e41a7fe7e971d8a552,
@@ -695,10 +695,23 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1789055044}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1789055050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789055044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b4c06554af9d604bbe21c4903e0f7a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BrzinaKretanja: 2

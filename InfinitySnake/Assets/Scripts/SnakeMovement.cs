@@ -10,6 +10,7 @@ public class SnakeMovement : MonoBehaviour
     public List<Transform> bodyParts = new List<Transform>();
 
     public GameObject tijelo01;
+    
 
     // Use this for initialization
     void Start()
@@ -20,17 +21,19 @@ public class SnakeMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         this.transform.position += transform.up * BrzinaKretanja * Time.deltaTime;
-
 
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Rotate(Vector3.forward * BrzinaRotiranja * Time.deltaTime);
+            //transform.Rotate(Vector3.forward * BrzinaRotiranja * Time.deltaTime);
+            this.transform.position -= transform.right * BrzinaKretanja * 3.0f * Time.deltaTime;
+
         }
         if (Input.GetKey(KeyCode.D))
         {
-            transform.Rotate(-Vector3.forward * BrzinaRotiranja * Time.deltaTime);
+            //transform.Rotate(-Vector3.forward * BrzinaRotiranja * Time.deltaTime);
+            this.transform.position += transform.right * BrzinaKretanja * 3.0f * Time.deltaTime;
+
         }
     }
 
