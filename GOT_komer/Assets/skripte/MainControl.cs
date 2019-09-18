@@ -43,12 +43,22 @@ public class MainControl : MonoBehaviour {
         PrviPanel.SetActive(false);
         DrugiPanel.SetActive(true);
 
+        foreach (string a in SeatsSelector.ListaSOP)
+        {
+            Debug.Log(a);
+        }
+
     }
 
     public void ZatvoriScreenAddLord()
     {
 
         AddNewLordPanel.SetActive(false);
+
+        // TODO - dodati ispis tabele
+
+
+
 
     }
 
@@ -62,7 +72,8 @@ public class MainControl : MonoBehaviour {
     public void AddLordSAVE()
     {
         string destination = Application.persistentDataPath + "/LORDS.dat";
-        FileStream file;
+        //FileStream file;/* = new FileStream("/LORDS.dat", FileMode.Append); */ // FILEMODE za append, da ne brise prijasnje , NE RADI
+        Stream stream;
 
         // temp varijable za provjeru validacije 
         string LordNametemp = LordNameTemp.GetComponent<InputField>().text;
@@ -71,36 +82,67 @@ public class MainControl : MonoBehaviour {
         string MarchSizetemp = MarchSizeTemp.GetComponent<InputField>().text;
 
         // PROVJERA VALIDACIJE
-        if (LordNametemp == "" || TotalTroopstemp == "" || TotalTroopstemp == "" || MarchSizetemp == "")
+        if (LordNametemp == "" || TroopTiertemp == "" || TotalTroopstemp == "" || MarchSizetemp == "")
         {
-            // TODO - ispisati validaciju kj nije popunjeno
+            string porukaolosojvalidaciji = " ";
+
+            if (LordNametemp == "")
+            {
+                porukaolosojvalidaciji += "Name ";
+            }
+            if (TroopTiertemp == "")
+            {
+                porukaolosojvalidaciji += "TroopTier  ";
+            }
+            if (TotalTroopstemp == "")
+            {
+                porukaolosojvalidaciji += "TotalTroops ";
+            }
+            if (MarchSizetemp == "")
+            {
+                porukaolosojvalidaciji += "MarchSize ";
+            }
+            porukaolosojvalidaciji += "nisu dodani!, Molimo upisite potrebno";
+
+            Debug.Log(porukaolosojvalidaciji);
         }
         else // ako su sva polja popunjena ulazi unutra i zapisuje u file
         {
             if (File.Exists(destination))
             {
-                file = File.OpenWrite(destination);
+                //file = File.OpenWrite(destination); // ne appenda se u file
+
+                stream = new FileStream(destination, FileMode.Append, FileAccess.Write, FileShare.None);
 
                 string VarijablaZaSave = " ";
 
-                VarijablaZaSave = LordNametemp + ":" + TroopTiertemp + ":" + TotalTroopstemp + ":" + MarchSizetemp;
+                VarijablaZaSave = LordNametemp + ":" + TroopTiertemp + ":" + TotalTroopstemp + ":" + MarchSizetemp + "/" + System.Environment.NewLine;
 
                 BinaryFormatter bf = new BinaryFormatter();
-                bf.Serialize(file, VarijablaZaSave);
+                bf.Serialize(stream, VarijablaZaSave);
+
+
+                Debug.Log("UPISANO U FILE LORDS - append");
+
             }
             else
             {
-                file = File.Create(destination);
+                //file = File.Create(destination);  // ne appenda se u file
+
+                stream = new FileStream(destination, FileMode.Append, FileAccess.Write, FileShare.None);
 
                 string VarijablaZaSave = " ";
 
-                VarijablaZaSave = LordNametemp + ":" + TroopTiertemp + ":" + TotalTroopstemp + ":" + MarchSizetemp;
+                VarijablaZaSave = LordNametemp + ":" + TroopTiertemp + ":" + TotalTroopstemp + ":" + MarchSizetemp + "/" + System.Environment.NewLine;
 
                 BinaryFormatter bf = new BinaryFormatter();
-                bf.Serialize(file, VarijablaZaSave);
+                bf.Serialize(stream, VarijablaZaSave);
+
+                Debug.Log("UPISANO U FILE LORDS - create");
             }
 
-            file.Close();
+            //file.Close();
+            stream.Close();
         }
 
 
@@ -116,16 +158,20 @@ public class MainControl : MonoBehaviour {
 
             if (File.Exists(destination))
             {
-                file = File.OpenRead(destination);
+                file = File.OpenRead(destination);                
 
                 BinaryFormatter bf = new BinaryFormatter();
 
+                //var a = bf.Deserialize(file);
+                //string b = a.ToString();
+                //string[] c = b.Split(':');
+
                 Debug.Log(bf.Deserialize(file));
+
 
             }
             else
             {
-
                 return;
             }
 

@@ -32,12 +32,6 @@ public class SeatsSelector : MonoBehaviour {
 
             ListaSOP.Remove(temp);
 
-            foreach (string a in ListaSOP)
-            {
-                Debug.Log(a);
-            }
-
-
             this.gameObject.GetComponent<Image>().color = Color.white;
 
 
