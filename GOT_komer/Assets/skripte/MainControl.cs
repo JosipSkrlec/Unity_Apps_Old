@@ -73,7 +73,8 @@ public class MainControl : MonoBehaviour {
     {
         string destination = Application.persistentDataPath + "/LORDS.dat";
         //FileStream file;/* = new FileStream("/LORDS.dat", FileMode.Append); */ // FILEMODE za append, da ne brise prijasnje , NE RADI
-        Stream stream;
+        //Stream stream;
+        StreamWriter sw;
 
         // temp varijable za provjeru validacije 
         string LordNametemp = LordNameTemp.GetComponent<InputField>().text;
@@ -112,14 +113,27 @@ public class MainControl : MonoBehaviour {
             {
                 //file = File.OpenWrite(destination); // ne appenda se u file
 
-                stream = new FileStream(destination, FileMode.Append, FileAccess.Write, FileShare.None);
+                //Pass the filepath and filename to the StreamWriter Constructor
+                sw = new StreamWriter(destination, append: true);
 
                 string VarijablaZaSave = " ";
 
-                VarijablaZaSave = LordNametemp + ":" + TroopTiertemp + ":" + TotalTroopstemp + ":" + MarchSizetemp + "/" + System.Environment.NewLine;
+                VarijablaZaSave = LordNametemp + ":" + TroopTiertemp + ":" + TotalTroopstemp + ":" + MarchSizetemp; //LordNametemp + ":" + TroopTiertemp + ":" + TotalTroopstemp + ":" + MarchSizetemp + "/" + System.Environment.NewLine;
 
-                BinaryFormatter bf = new BinaryFormatter();
-                bf.Serialize(stream, VarijablaZaSave);
+                //Write a line of text
+                sw.Write(VarijablaZaSave);
+
+                #region Kriptirani podaci
+                //stream = new FileStream(destination, FileMode.Append, FileAccess.Write, FileShare.None);
+
+                //string VarijablaZaSave = " ";
+
+                //VarijablaZaSave = LordNametemp + ":" + TroopTiertemp + ":" + TotalTroopstemp + ":" + MarchSizetemp + "/" + System.Environment.NewLine;
+
+                //BinaryFormatter bf = new BinaryFormatter();
+                //bf.Serialize(stream, VarijablaZaSave);
+
+                #endregion
 
 
                 Debug.Log("UPISANO U FILE LORDS - append");
@@ -129,20 +143,39 @@ public class MainControl : MonoBehaviour {
             {
                 //file = File.Create(destination);  // ne appenda se u file
 
-                stream = new FileStream(destination, FileMode.Append, FileAccess.Write, FileShare.None);
+                //Pass the filepath and filename to the StreamWriter Constructor
+                sw = new StreamWriter(destination, append: true);
 
                 string VarijablaZaSave = " ";
 
                 VarijablaZaSave = LordNametemp + ":" + TroopTiertemp + ":" + TotalTroopstemp + ":" + MarchSizetemp + "/" + System.Environment.NewLine;
 
-                BinaryFormatter bf = new BinaryFormatter();
-                bf.Serialize(stream, VarijablaZaSave);
+                //Write a line of text
+                sw.Write(VarijablaZaSave);
+
+
+                #region Kriptirani podaci
+
+                //stream = new FileStream(destination, FileMode.Append, FileAccess.Write, FileShare.None);
+
+                //string VarijablaZaSave = " ";
+
+                //VarijablaZaSave = LordNametemp + ":" + TroopTiertemp + ":" + TotalTroopstemp + ":" + MarchSizetemp + "/" + System.Environment.NewLine;
+
+                //BinaryFormatter bf = new BinaryFormatter();
+                //bf.Serialize(stream, VarijablaZaSave);
+
+                #endregion
 
                 Debug.Log("UPISANO U FILE LORDS - create");
+
+
             }
 
+            sw.Close();
+
             //file.Close();
-            stream.Close();
+            //stream.Close(); // Kriptirani podaci
         }
 
 
@@ -154,33 +187,56 @@ public class MainControl : MonoBehaviour {
         try
         {
             string destination = Application.persistentDataPath + "/LORDS.dat";
-            FileStream file;
+            //FileStream file;
+            StreamReader sr;
 
             if (File.Exists(destination))
             {
-                file = File.OpenRead(destination);                
+                //file = File.OpenRead(destination);
 
-                BinaryFormatter bf = new BinaryFormatter();
+                string line;
 
-                //var a = bf.Deserialize(file);
-                //string b = a.ToString();
-                //string[] c = b.Split(':');
+                //Pass the file path and file name to the StreamReader constructor
+                sr = new StreamReader(destination);
 
-                Debug.Log(bf.Deserialize(file));
+                //Read the first line of text
+                line = sr.ReadLine();
 
+                Debug.Log(line);
 
+                //Continue to read until you reach end of file
+                while (line != null)
+                {
+                    //Read the next line
+                    line = sr.ReadLine();
+                    Debug.Log(line);
+                }
+
+                #region kriptirani podaci
+                //BinaryFormatter bf = new BinaryFormatter();
+
+                ////var a = bf.Deserialize(file);
+                ////string b = a.ToString();
+                ////string[] c = b.Split(':');
+
+                //Debug.Log(bf.Deserialize(file));
+                #endregion
             }
             else
             {
                 return;
-            }
 
-            file.Close();
+                //file.Close();
+                sr.Close();
+            }
         }
+
         catch(Exception e)
         {
             Debug.Log(e.Message);
         }
+
+
     }
 
 
