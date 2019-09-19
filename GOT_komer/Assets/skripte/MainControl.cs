@@ -14,6 +14,14 @@ public class MainControl : MonoBehaviour {
 
     public GameObject AddNewLordPanel;
 
+
+    public GameObject paneljedancontent;
+
+    public GameObject ime;
+    public GameObject troops;
+    public GameObject totaltroops;
+    public GameObject marchsize;
+
     [SerializeField]
     private GameObject LordNameTemp;
     [SerializeField]
@@ -56,7 +64,6 @@ public class MainControl : MonoBehaviour {
         AddNewLordPanel.SetActive(false);
 
         // TODO - dodati ispis tabele
-
 
 
 
@@ -118,7 +125,7 @@ public class MainControl : MonoBehaviour {
 
                 string VarijablaZaSave = " ";
 
-                VarijablaZaSave = LordNametemp + ":" + TroopTiertemp + ":" + TotalTroopstemp + ":" + MarchSizetemp; //LordNametemp + ":" + TroopTiertemp + ":" + TotalTroopstemp + ":" + MarchSizetemp + "/" + System.Environment.NewLine;
+                VarijablaZaSave = LordNametemp + ":" + TroopTiertemp + ":" + TotalTroopstemp + ":" + MarchSizetemp + System.Environment.NewLine; //LordNametemp + ":" + TroopTiertemp + ":" + TotalTroopstemp + ":" + MarchSizetemp + "/" + System.Environment.NewLine;
 
                 //Write a line of text
                 sw.Write(VarijablaZaSave);
@@ -143,14 +150,16 @@ public class MainControl : MonoBehaviour {
             {
                 //file = File.Create(destination);  // ne appenda se u file
 
-                //Pass the filepath and filename to the StreamWriter Constructor
                 sw = new StreamWriter(destination, append: true);
 
                 string VarijablaZaSave = " ";
 
-                VarijablaZaSave = LordNametemp + ":" + TroopTiertemp + ":" + TotalTroopstemp + ":" + MarchSizetemp + "/" + System.Environment.NewLine;
+                VarijablaZaSave = LordNametemp + ":" + TroopTiertemp + ":" + TotalTroopstemp + ":" + MarchSizetemp + System.Environment.NewLine; //LordNametemp + ":" + TroopTiertemp + ":" + TotalTroopstemp + ":" + MarchSizetemp + "/" + System.Environment.NewLine;
+
+                string prvalinija = "U ovom file-u se nalazi popis svih LORDOVA" + System.Environment.NewLine;
 
                 //Write a line of text
+                sw.Write(prvalinija);
                 sw.Write(VarijablaZaSave);
 
 
@@ -196,23 +205,37 @@ public class MainControl : MonoBehaviour {
 
                 string line;
 
-                //Pass the file path and file name to the StreamReader constructor
                 sr = new StreamReader(destination);
 
                 //Read the first line of text
                 line = sr.ReadLine();
 
-                Debug.Log(line);
-
                 //Continue to read until you reach end of file
                 while (line != null)
                 {
-                    //Read the next line
+
                     line = sr.ReadLine();
-                    Debug.Log(line);
+
+
+                    string[] temp = line.Split(':');
+
+                    string temp1 = temp[0];
+                    string temp2 = temp[1];
+                    string temp3 = temp[2];
+                    string temp4 = temp[3];
+
+
+                    Debug.Log(line + " " + temp1 + " " + temp2 + " " + temp3 + " " + temp4);
+
+
+
+
+
+
+
                 }
 
-                #region kriptirani podaci
+               #region kriptirani podaci
                 //BinaryFormatter bf = new BinaryFormatter();
 
                 ////var a = bf.Deserialize(file);
@@ -224,11 +247,12 @@ public class MainControl : MonoBehaviour {
             }
             else
             {
-                return;
-
-                //file.Close();
-                sr.Close();
+                return;                
             }
+
+            //file.Close();
+            sr.Close();
+
         }
 
         catch(Exception e)
