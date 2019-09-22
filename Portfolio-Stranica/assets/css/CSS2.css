@@ -3,6 +3,21 @@
 /*----------------------------*/
 .sredina{
 	text-align: center;
+	color: black;
+	font-weight: bold;
+}
+
+.crvenoslova{
+	color: red;
+}
+
+.slikaZaIgru{
+	opacity: 0.5;
+	text-align: center;
+}
+
+.slikaZaIgru:hover{
+	opacity: 1;
 }
 
 .sredina1{
