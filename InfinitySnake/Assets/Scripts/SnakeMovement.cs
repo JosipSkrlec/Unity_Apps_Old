@@ -25,14 +25,14 @@ public class SnakeMovement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A))
         {
-            //transform.Rotate(Vector3.forward * BrzinaRotiranja * Time.deltaTime);
-            this.transform.position -= transform.right * BrzinaKretanja * 3.0f * Time.deltaTime;
+            transform.Rotate(Vector3.forward * BrzinaRotiranja * Time.deltaTime);
+            //this.transform.position -= transform.right * BrzinaKretanja * 3.0f * Time.deltaTime;
 
         }
         if (Input.GetKey(KeyCode.D))
         {
-            //transform.Rotate(-Vector3.forward * BrzinaRotiranja * Time.deltaTime);
-            this.transform.position += transform.right * BrzinaKretanja * 3.0f * Time.deltaTime;
+            transform.Rotate(-Vector3.forward * BrzinaRotiranja * Time.deltaTime);
+            //this.transform.position += transform.right * BrzinaKretanja * 3.0f * Time.deltaTime;
 
         }
     }

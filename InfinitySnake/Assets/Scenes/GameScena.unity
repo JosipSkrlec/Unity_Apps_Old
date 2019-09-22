@@ -329,8 +329,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 974028743}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.04, y: -2.24, z: 1}
-  m_LocalScale: {x: 3.5, y: 3.5, z: 1}
+  m_LocalPosition: {x: -0.04000002, y: -2.24, z: 1}
+  m_LocalScale: {x: 3, y: 3.4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -385,7 +385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BrzinaKretanja: 2
-  BrzinaRotiranja: 200
+  BrzinaRotiranja: 300
   bodyParts:
   - {fileID: 1092715801}
   tijelo01: {fileID: 6114755822343512045, guid: 613b2bfd2ec83af4ab9bacd9c303fff5,
@@ -510,6 +510,16 @@ PrefabInstance:
       propertyPath: head
       value: 
       objectReference: {fileID: 974028744}
+    - target: {fileID: 6114755822343512044, guid: 613b2bfd2ec83af4ab9bacd9c303fff5,
+        type: 3}
+      propertyPath: overTime
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6114755822343512035, guid: 613b2bfd2ec83af4ab9bacd9c303fff5,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 613b2bfd2ec83af4ab9bacd9c303fff5, type: 3}
 --- !u!4 &1092715801 stripped
@@ -696,7 +706,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1789055044}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -714,4 +724,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b4c06554af9d604bbe21c4903e0f7a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BrzinaKretanja: 2
+  BrzinaKretanja: 1

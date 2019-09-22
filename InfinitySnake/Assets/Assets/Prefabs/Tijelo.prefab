@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   head: {fileID: 0}
-  overTime: 0.18
+  overTime: 0.08
 --- !u!50 &-8660779681493808818
 Rigidbody2D:
   serializedVersion: 4
