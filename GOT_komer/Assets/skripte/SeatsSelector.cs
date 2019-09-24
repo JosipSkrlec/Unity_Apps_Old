@@ -11,18 +11,6 @@ public class SeatsSelector : MonoBehaviour {
 
     public static List<string> ListaSOP = new List<string>(); 
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
-
-
-	}
-
     public void SelectSeat()
     {
         string temp = this.gameObject.transform.name;
@@ -41,17 +29,6 @@ public class SeatsSelector : MonoBehaviour {
             ListaSOP.Add(temp);
             this.gameObject.GetComponent<Image>().color = Color.red;
         }
-
-
-
-
-
-
     }
-
-
-
-
-
 
 }
