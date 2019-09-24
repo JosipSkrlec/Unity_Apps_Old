@@ -11,17 +11,17 @@ public class MainControl : MonoBehaviour {
     #region public Varijable
     public GameObject PrviPanel;
     public GameObject DrugiPanel;
-
     public GameObject AddNewLordPanel;
+    public GameObject ShowLordPanel;
 
-
-    public GameObject paneljedancontent;
+    public Text Tekst;
 
     public GameObject ime;
     public GameObject troops;
     public GameObject totaltroops;
     public GameObject marchsize;
 
+    // za punjenje prilikom upisa novog lorda
     [SerializeField]
     private GameObject LordNameTemp;
     [SerializeField]
@@ -35,7 +35,6 @@ public class MainControl : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-
     }
 
     // Update is called once per frame
@@ -65,7 +64,10 @@ public class MainControl : MonoBehaviour {
 
         // TODO - dodati ispis tabele
 
+        ShowLordPanel.SetActive(true);
 
+
+        LOADLordsFromFile();
 
     }
 
@@ -73,6 +75,16 @@ public class MainControl : MonoBehaviour {
     {
 
         AddNewLordPanel.SetActive(true);
+
+    }
+
+    public void ZatvoriScreenAddLordIPrikaziLordoveuTabeli()
+    {
+        AddNewLordPanel.SetActive(false);
+
+        ShowLordPanel.SetActive(true);
+
+        LOADLordsFromFile();
 
     }
 
@@ -193,6 +205,7 @@ public class MainControl : MonoBehaviour {
 
     public void LOADLordsFromFile()
     {
+        Tekst.text = "IME LORDA " + " TROOP TIER " + " TOTAL TROOPS " + " MARCH SIZE " + System.Environment.NewLine;
         try
         {
             string destination = Application.persistentDataPath + "/LORDS.dat";
@@ -225,12 +238,9 @@ public class MainControl : MonoBehaviour {
                     string temp4 = temp[3];
 
 
-                    Debug.Log(line + " " + temp1 + " " + temp2 + " " + temp3 + " " + temp4);
+                    Tekst.text += temp1 + " " + temp2 + " " + temp3 + " " + temp4 + System.Environment.NewLine; 
 
-
-
-
-
+                    //Debug.Log(line + " " + temp1 + " " + temp2 + " " + temp3 + " " + temp4);
 
 
                 }
