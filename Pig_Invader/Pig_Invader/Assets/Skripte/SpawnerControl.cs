@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnerControl : MonoBehaviour
 {
     public GameObject Enemy;
+    public GameObject BOSS;
 
     private int BrojUbijenih = 0;
 
@@ -21,6 +22,7 @@ public class SpawnerControl : MonoBehaviour
     bool jednomprvi = false;
     bool jednomdrugi = false;
     bool jednomtreci = false;
+    bool jednomcetvrti = false;
 
     // Start is called before the first frame update
     void Start()
@@ -97,6 +99,21 @@ public class SpawnerControl : MonoBehaviour
             g7.transform.localPosition = new Vector3(0.7f, 0.0f, 0.0f);
 
 
+        }
+        if (BrojUbijenih == 15 && jednomcetvrti == false)
+        {
+            jednomcetvrti = true;
+
+            GameObject g = Instantiate(BOSS, this.gameObject.transform);
+            g.transform.localPosition = new Vector3(0.0f, -1.3f, 0.0f);
+            //g.transform.parent = null; // ukoliko neces da se boss miče
+        
+
+
+        }
+        if (BrojUbijenih == 16)
+        {
+            Application.LoadLevel("WINScena");
         }
 
     }
