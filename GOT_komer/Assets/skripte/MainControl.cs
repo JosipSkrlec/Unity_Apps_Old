@@ -13,13 +13,9 @@ public class MainControl : MonoBehaviour {
     public GameObject AddLordsWhoReinforce;
     public GameObject AddNewLord;
     public GameObject PanelZaPrikaz;
+    public GameObject SelectedSeats;
 
     public Text TekstZaPrikazUTabelu;
-
-    public GameObject ime;
-    public GameObject troops;
-    public GameObject totaltroops;
-    public GameObject marchsize;
 
     // za punjenje prilikom upisa novog lorda
     [SerializeField]
@@ -50,10 +46,10 @@ public class MainControl : MonoBehaviour {
         SelectControlledSeatsScreen.SetActive(false);
         AddLordsWhoReinforce.SetActive(true);
 
-        foreach (string a in SeatsSelector.ListaSOP)
-        {
-            Debug.Log(a);
-        }
+        //foreach (string a in SeatsSelector.ListaSOP)
+        //{
+        //    Debug.Log(a);
+        //}
 
     }
 
@@ -86,6 +82,21 @@ public class MainControl : MonoBehaviour {
 
         LOADLordsFromFile();
 
+    }
+
+    public void OtvoriScreenPrikazOdabranihSeatova()
+    {
+        SelectedSeats.SetActive(true);
+
+        AddLordsWhoReinforce.SetActive(false);
+        PanelZaPrikaz.SetActive(false);
+        AddNewLord.SetActive(false);
+
+
+        foreach (string a in SeatsSelector.ListaSOP)
+        {
+            Debug.Log(a);
+        }
     }
 
     public void AddLordSAVE()
