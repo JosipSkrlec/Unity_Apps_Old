@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.skripte;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -27,7 +28,23 @@ public class MainControl : MonoBehaviour {
     [SerializeField]
     private GameObject MarchSizeTemp;
 
+    private static List<LORD> listaLordova = new List<LORD>();
+
+    internal static List<LORD> ListaLordova
+    {
+        get
+        {
+            return listaLordova;
+        }
+
+        set
+        {
+            listaLordova = value;
+        }
+    }
+
     #endregion
+
 
     // Use this for initialization
     void Start() {
@@ -247,6 +264,12 @@ public class MainControl : MonoBehaviour {
                     string temp2 = temp[1];
                     string temp3 = temp[2];
                     string temp4 = temp[3];
+
+                    // ZAPIS U LISTU tipa LORD koji je klasa
+                    LORD lord = new LORD(temp1, temp2, temp3, temp4);
+
+                    ListaLordova.Add(lord);
+
 
 
                     TekstZaPrikazUTabelu.text += temp1 + " " + temp2 + " " + temp3 + " " + temp4 + System.Environment.NewLine; 
