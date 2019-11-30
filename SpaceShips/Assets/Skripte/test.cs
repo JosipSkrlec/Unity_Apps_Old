@@ -8,14 +8,17 @@ public class test : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Save_Load SL = new Save_Load(Save_Load.Method_Type.Save,"TEST", "test123");
 
-        Save_Load SL3 = new Save_Load(Save_Load.Method_Type.Save, "TEST", "test12564873");
+        //Save_Load SL = new Save_Load(Save_Load.Method_Type.Save,"TEST", "test123");
+
+        //Save_Load SL3 = new Save_Load(Save_Load.Method_Type.Save, "TEST", "test12564873");
+
+        //Save_Load fl6 = new Save_Load();
 
 
-        Save_Load SL1 = new Save_Load(Save_Load.Method_Type.Load, "TEST", "aa");
+        //Save_Load SL1 = new Save_Load(Save_Load.Method_Type.Load, "TEST", null);
     
-        Debug.Log(SL1.getOutput());
+        //Debug.Log(SL1.getOutput());
 
     }
 
