@@ -184,7 +184,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &43039449
 PrefabInstance:
@@ -236,7 +236,7 @@ PrefabInstance:
     - target: {fileID: 2722985562706389027, guid: f6f82a0d084d2a24f98fe50ccae5819e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2722985562706389027, guid: f6f82a0d084d2a24f98fe50ccae5819e,
         type: 3}
@@ -309,8 +309,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 68300db4a9f846a4292ac4a5ca747251, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 212977d07596f264c9f4f2f0678dbe6f, type: 3}
+  m_Color: {r: 0.8207547, g: 0.7549395, b: 0.7549395, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -332,7 +332,7 @@ Transform:
   m_LocalScale: {x: 0.1479036, y: 0.25444397, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &390812318
 PrefabInstance:
@@ -384,7 +384,7 @@ PrefabInstance:
     - target: {fileID: 6819602725781172278, guid: ad1559c1e3cb85943aff83289ad43450,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6819602725781172278, guid: ad1559c1e3cb85943aff83289ad43450,
         type: 3}
@@ -557,7 +557,7 @@ PrefabInstance:
     - target: {fileID: 2722985562706389027, guid: f6f82a0d084d2a24f98fe50ccae5819e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2722985562706389027, guid: f6f82a0d084d2a24f98fe50ccae5819e,
         type: 3}
@@ -743,7 +743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72662e0e4ea6d0a4f95c7f67ec59f450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Cooldown: 1
+  Cooldown: 0.5
   AllianceEnemyShip01: {fileID: 2387804790307509295, guid: 0e5cae20ce896e9469feeb9d643b3284,
     type: 3}
   AllianceEnemyShip02: {fileID: 5175565025195253020, guid: 60c3c65d3273cd74fa618e7d90c710a4,
@@ -810,7 +810,7 @@ PrefabInstance:
     - target: {fileID: 7950285737543479814, guid: 8b4d12c502a02bb4c99d66bee14c7e10,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7950285737543479814, guid: 8b4d12c502a02bb4c99d66bee14c7e10,
         type: 3}
