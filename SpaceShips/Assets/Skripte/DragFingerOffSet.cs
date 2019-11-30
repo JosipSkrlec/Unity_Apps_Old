@@ -34,7 +34,7 @@ public class DragFingerOffSet : MonoBehaviour
         {
 
             mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Debug.Log(mousePosition);
+            //Debug.Log(mousePosition);
             rb.MovePosition(new Vector2(mousePosition.x - deltaX, mousePosition.y - deltaY));
 
 
