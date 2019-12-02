@@ -28,9 +28,6 @@ public class ChooseSide : MonoBehaviour
     public Text ResistanceText;
     public Text ChoosenSideText;
 
-
-
-    private bool ChoosenSideSelected = false;
     private static string ChoosenSide; // STATIC VARIABLE
 
     #endregion

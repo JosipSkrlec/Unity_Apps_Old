@@ -8,8 +8,6 @@ public class DragFingerOffSet : MonoBehaviour
     private float deltaX, deltaY;
     private Rigidbody2D rb;
 
-    bool jedanput = true;
-
     // Start is called before the first frame update
     void Start()
     {

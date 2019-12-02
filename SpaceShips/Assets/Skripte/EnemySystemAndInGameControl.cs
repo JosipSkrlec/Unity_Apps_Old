@@ -19,6 +19,11 @@ public class EnemySystemAndInGameControl : MonoBehaviour
     public GameObject ResistanceEnemyShip03;
     #endregion
 
+    private Vector3 LeftUpperFormationSpawner = new Vector3(60.0f, -30.0f, 0.0f);
+    private Vector3 LeftBottomFormationSpawner = new Vector3(40.0f, 0.0f, 0.0f);
+    private Vector3 RightUpperFormationSpawner = new Vector3(-60.0f, -30.0f, 0.0f);
+    private Vector3 RightBottomrFormationSpawner = new Vector3(-40.0f, 0.0f, 0.0f);
+
     public float cooldown = 5.0f;
 
     float time;
@@ -43,7 +48,7 @@ public class EnemySystemAndInGameControl : MonoBehaviour
                     GO_Spawn.transform.parent = this.transform;
                     GO_Spawn.transform.localPosition = new Vector3(-40.0f, -30.0f, 0.0f); // set position and animate
 
-                    GO_Spawn.GetComponent<EnemyControl>().setstartPosition(new Vector3(-40.0f, -30.0f, 0.0f));
+                    GO_Spawn.GetComponent<EnemyControl>().setstartPosition(LeftUpperFormationSpawner);
                     GO_Spawn.GetComponent<EnemyControl>().settargetPosition(new Vector3(Formation_ArrayX[x], Formation_ArrayY[y], 0.0f));
                 }
                 else if (TypeOfEnemyShip == 2)
@@ -51,6 +56,7 @@ public class EnemySystemAndInGameControl : MonoBehaviour
                     GameObject GO_Spawn = Instantiate(ResistanceEnemyShip02);
                     GO_Spawn.transform.parent = this.transform;
 
+                    GO_Spawn.GetComponent<EnemyControl>().setstartPosition(LeftBottomFormationSpawner);
                     GO_Spawn.GetComponent<EnemyControl>().settargetPosition(new Vector3(Formation_ArrayX[x], Formation_ArrayY[y], 0.0f));
 
                 }
@@ -59,6 +65,7 @@ public class EnemySystemAndInGameControl : MonoBehaviour
                     GameObject GO_Spawn = Instantiate(ResistanceEnemyShip03);
                     GO_Spawn.transform.parent = this.transform;
 
+                    GO_Spawn.GetComponent<EnemyControl>().setstartPosition(RightUpperFormationSpawner);
                     GO_Spawn.GetComponent<EnemyControl>().settargetPosition(new Vector3(Formation_ArrayX[x], Formation_ArrayY[y], 0.0f));
                 }
                 else

@@ -311,7 +311,7 @@ MonoBehaviour:
   DrawText: 1
   DrawLine: 0
   DrawSphere: 1
-  TextForGizmo: -40 0 0 - position of spawn
+  TextForGizmo: 40 0 0 - position of spawn
   PositionOfGizmoText: {x: -9.55, y: 1, z: 0}
   PositionOfGizmoLineStartPosition: {x: 0, y: 0, z: 0}
   PositionOfGizmoLineEndPosition: {x: 0, y: 0, z: 0}
@@ -758,7 +758,7 @@ MonoBehaviour:
   DrawLine: 0
   DrawSphere: 1
   TextForGizmo: -40 0 0 - position of spawn
-  PositionOfGizmoText: {x: 4, y: 1, z: 0}
+  PositionOfGizmoText: {x: 4.46, y: 1, z: 0}
   PositionOfGizmoLineStartPosition: {x: 0, y: 0, z: 0}
   PositionOfGizmoLineEndPosition: {x: 0, y: 0, z: 0}
   PositionOfGizmoSphere: {x: 6, y: 0, z: 0}
@@ -1166,6 +1166,7 @@ MonoBehaviour:
     type: 3}
   ResistanceEnemyShip03: {fileID: 7950285737543479808, guid: 8b4d12c502a02bb4c99d66bee14c7e10,
     type: 3}
+  cooldown: 5
 --- !u!1 &1692760599
 GameObject:
   m_ObjectHideFlags: 0

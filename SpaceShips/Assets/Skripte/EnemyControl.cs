@@ -18,6 +18,10 @@ public class EnemyControl : MonoBehaviour
     public bool getShootEnabled() { return this.ShootEnabled; }
     public void setShootEnabled(bool value) { this.ShootEnabled = value; }
 
+    private bool MoveEnemyFormationOnce = true;
+    public bool getMoveEnemyFormationOnce() { return this.MoveEnemyFormationOnce; }
+    public void setMoveEnemyFormationOnce(bool value) { this.MoveEnemyFormationOnce = value; }
+
     private Vector3 startPosition;
     public Vector3 getstartPosition() { return this.startPosition; }
     public void setstartPosition(Vector3 value) { this.startPosition = value; }
@@ -27,9 +31,7 @@ public class EnemyControl : MonoBehaviour
     public void settargetPosition(Vector3 value){this.targetPosition = value;}
     #endregion
 
-    bool MoveEnemyFormationOnce = false;
-    float timeForMovement;
-    float time;
+    float timeForMovementFormation;
 
     private void Start()
     {
@@ -38,13 +40,17 @@ public class EnemyControl : MonoBehaviour
 
     void Update()
     {
-        if (MoveEnemyFormationOnce == false)
+        //timeForMovement += Time.deltaTime / timeToReachTarget;
+        //transform.localPosition = Vector3.Lerp(startPosition, targetPosition, timeForMovement);
+
+        
+        if (MoveEnemyFormationOnce == true)
         {
-            timeForMovement += Time.deltaTime / timeToReachTarget;
-            if (timeForMovement >= timeToReachTarget)
+            timeForMovementFormation += Time.deltaTime / timeToReachTarget;
+            transform.localPosition = Vector3.Lerp(startPosition, targetPosition, timeForMovementFormation);
+            if (timeForMovementFormation >= timeToReachTarget)
             {
-                MoveEnemyFormationOnce = true;
-                transform.localPosition = Vector3.Lerp(startPosition, targetPosition, time);
+                MoveEnemyFormationOnce = false;
             }
         }
 
@@ -59,7 +65,6 @@ public class EnemyControl : MonoBehaviour
             GO_ForSpawn.transform.position = new Vector3(PositionOfPlayer.x, PositionOfPlayer.y + 0.5f, PositionOfPlayer.z);
             GO_ForSpawn.transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
 
-            time = 0.0f;
         }
 
     }
