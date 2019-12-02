@@ -93,7 +93,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d59df6d317aed5439c4d85e1e446185, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToReachTarget: 1.5
+  Projectile01: {fileID: 2217701231956940846, guid: 77c135be221a21648be4d5c51447c864,
+    type: 3}
+  Projectile02: {fileID: 0}
 --- !u!1001 &5971936629346428119
 PrefabInstance:
   m_ObjectHideFlags: 0

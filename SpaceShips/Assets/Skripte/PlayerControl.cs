@@ -2,11 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerControl : MonoBehaviour
 {
     #region Game Cotrol Variables
     // PLAYER VARIABLES
-    public float PlayerShootingCooldown;
+    [SerializeField]
+    private float PlayerShootingCooldown;
+    public float getPlayerShootingCooldown(){return this.PlayerShootingCooldown; }
+    public void setPlayerShootingCooldown(float value){this.PlayerShootingCooldown = value;}
+
+
 
     private protected int NumberOfWaves;
 
@@ -44,6 +50,7 @@ public class PlayerControl : MonoBehaviour
             // TODO - napraviti system upgrade-a i razlicitog pucanja
 
             GameObject GO_ForSpawn = (GameObject)Instantiate(Projectile01);
+            GO_ForSpawn.name = "Projectile";
             GO_ForSpawn.transform.position = new Vector3(PositionOfPlayer.x, PositionOfPlayer.y + 0.5f, PositionOfPlayer.z);
             GO_ForSpawn.transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
 
