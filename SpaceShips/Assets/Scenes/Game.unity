@@ -642,7 +642,7 @@ PrefabInstance:
     - target: {fileID: 4085051835790848217, guid: 2b001a454810fb14bb3a8ff1c8d465b3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4085051835790848217, guid: 2b001a454810fb14bb3a8ff1c8d465b3,
         type: 3}
@@ -1235,7 +1235,8 @@ MonoBehaviour:
     type: 3}
   ResistanceEnemyShip03: {fileID: 7950285737543479808, guid: 8b4d12c502a02bb4c99d66bee14c7e10,
     type: 3}
-  cooldown: 3
+  NumberOfWaves: 0
+  cooldownforShooting: 5
 --- !u!1 &1692760599
 GameObject:
   m_ObjectHideFlags: 0
@@ -1324,7 +1325,7 @@ PrefabInstance:
     - target: {fileID: 4085051835790848217, guid: 2b001a454810fb14bb3a8ff1c8d465b3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4085051835790848217, guid: 2b001a454810fb14bb3a8ff1c8d465b3,
         type: 3}
@@ -1927,7 +1928,7 @@ PrefabInstance:
     - target: {fileID: 4085051835790848217, guid: 2b001a454810fb14bb3a8ff1c8d465b3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4085051835790848217, guid: 2b001a454810fb14bb3a8ff1c8d465b3,
         type: 3}

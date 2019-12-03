@@ -8,9 +8,6 @@ public class EnemySystemAndInGameControl : MonoBehaviour
     private protected  float[] Formation_ArrayX = new float[] { 14.0f, 9.2f, 4.6f, 0.0f, -4.6f, -9.2f, -14.0f }; // 7 numbers
     private protected float[] Formation_ArrayY = new float[] { -28.0f, -24.0f, -20.0f, -16.0f, -12.0f, -8.0f, -4.0f}; // 8 numbers
 
-    // all spawned enemy will store inside that list
-    private protected List<GameObject> ListOfEnemyShips = new List<GameObject>();
-
     #region Main Objects
     [Header("Enemy Ships / Alliance")]
     public GameObject AllianceEnemyShip01;
@@ -28,8 +25,17 @@ public class EnemySystemAndInGameControl : MonoBehaviour
     private Vector3 RightUpperFormationSpawner = new Vector3(-60.0f, -30.0f, 0.0f);
     private Vector3 RightBottomrFormationSpawner = new Vector3(-40.0f, 0.0f, 0.0f);
 
-    public float cooldown = 5.0f;
+    [Header("")]
+    public int NumberOfWaves = 3;
 
+    public float cooldownforShooting = 5.0f;
+    public float getcooldownforShooting() { return this.cooldownforShooting; }
+    public void setcooldownforShooting(float value) { this.cooldownforShooting = value; }
+
+    bool spawnOnce = true;
+
+
+    // HELPERS
     float time;
 
     // spawn first wave
@@ -39,12 +45,49 @@ public class EnemySystemAndInGameControl : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
+    {       
+
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        time += Time.deltaTime;
+
+        if (time >= cooldownforShooting)
+        {
+            time = 0.0f;
+
+            int NumberOfChields = this.gameObject.transform.childCount;
+
+            int RandomChoosenEnemyForShoot = Random.Range(0,NumberOfChields);
+
+            this.gameObject.transform.GetChild(RandomChoosenEnemyForShoot).GetComponent<EnemyControl>().setShootEnabled(true);
+
+        }
+
+        if (this.transform.childCount <= 0)
+        {
+            spawnOnce = true;
+        }
+
+        if (spawnOnce == true)
+        {
+            spawnOnce = false;
+            Spawn();
+        }
+
+        
+    }
+
+    void Spawn()
     {
         int TypeOfEnemyShip = 0;
-        for (int x = 0; x <= Formation_ArrayX.Length-1; x++)
+        for (int x = 0; x <= Formation_ArrayX.Length - 1; x++)
         {
             TypeOfEnemyShip = Random.Range(1, 4);
-            for (int y = 0; y <= Formation_ArrayY.Length-1; y++)
+            for (int y = 0; y <= Formation_ArrayY.Length - 1; y++)
             {
                 if (TypeOfEnemyShip == 1)
                 {
@@ -79,30 +122,7 @@ public class EnemySystemAndInGameControl : MonoBehaviour
 
             }
         }
-
-
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        time += Time.deltaTime;
-
-        if (time >= cooldown)
-        {
-            time = 0.0f;
-
-            int NumberOfChields = this.gameObject.transform.childCount;
-
-            int RandomChoosenEnemyForShoot = Random.Range(0,NumberOfChields);
-
-            this.gameObject.transform.GetChild(RandomChoosenEnemyForShoot).GetComponent<EnemyControl>().setShootEnabled(true);
-
-        }
-
-        
-    }
-
 
 
 

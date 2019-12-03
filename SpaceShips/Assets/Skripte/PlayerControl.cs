@@ -11,11 +11,7 @@ public class PlayerControl : MonoBehaviour
     private float PlayerShootingCooldown;
     public float getPlayerShootingCooldown(){return this.PlayerShootingCooldown; }
     public void setPlayerShootingCooldown(float value){this.PlayerShootingCooldown = value;}
-
-
-
-    private protected int NumberOfWaves;
-
+       
     #endregion
 
     #region Main Objects
@@ -77,7 +73,7 @@ public class PlayerControl : MonoBehaviour
 
 
         }
-        else if (collision.transform.name.Contains("Projectile"))
+        else if (collision.transform.name.Contains("ProjectileFrom"))
         {
             if (collision.GetComponent<ProjectileMovement>().getFriendlyToPlayer() == false)
             {

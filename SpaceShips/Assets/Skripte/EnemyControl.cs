@@ -71,7 +71,7 @@ public class EnemyControl : MonoBehaviour
             GameObject GO_ForSpawn = (GameObject)Instantiate(Projectile01);
             GO_ForSpawn.GetComponent<ProjectileMovement>().setFriendlyToPlayer(false); 
 
-            GO_ForSpawn.name = "Projectile";
+            GO_ForSpawn.name = "ProjectileFromEnemy";
             GO_ForSpawn.transform.position = new Vector3(PositionOfPlayer.x, PositionOfPlayer.y, PositionOfPlayer.z);
 
         }
@@ -80,7 +80,7 @@ public class EnemyControl : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.name.Contains("ProjectileFromPlayer"))
+        if (collision.transform.name.Contains("ProjectileFrom"))
         {
             // GetFriendly is inside of ProjectileMovement and this variable says if projectile is friendly to player or no
             if (collision.GetComponent<ProjectileMovement>().getFriendlyToPlayer() == true)

@@ -4,6 +4,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class DrawGizmos : MonoBehaviour
 {
+#if UNITY_EDITOR
     [Header("Gizmo Usage")]
     public bool DrawText = false;
     public bool DrawLine = false;
@@ -20,7 +21,6 @@ public class DrawGizmos : MonoBehaviour
     [Header("Sphere")]
     public Vector3 PositionOfGizmoSphere;
     public float SphereGizmoSize = 1;
-
 
 
     void OnDrawGizmos()
@@ -47,6 +47,7 @@ public class DrawGizmos : MonoBehaviour
     }
 
 
+
     private void OnDrawGizmosSelected()
     {
         Handles.color = Color.blue;
@@ -59,5 +60,5 @@ public class DrawGizmos : MonoBehaviour
         OnDrawGizmos();
     }
 
-
+#endif
 }
