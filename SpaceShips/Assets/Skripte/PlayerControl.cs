@@ -50,7 +50,7 @@ public class PlayerControl : MonoBehaviour
             // TODO - napraviti system upgrade-a i razlicitog pucanja
 
             GameObject GO_ForSpawn = (GameObject)Instantiate(Projectile01);
-            GO_ForSpawn.name = "Projectile";
+            GO_ForSpawn.name = "ProjectilePlayer";
             GO_ForSpawn.transform.position = new Vector3(PositionOfPlayer.x, PositionOfPlayer.y + 0.5f, PositionOfPlayer.z);
             GO_ForSpawn.transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
 

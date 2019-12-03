@@ -6,9 +6,18 @@ using UnityEngine;
 public class EnemyControl : MonoBehaviour
 {
     #region Public Variables with Getters & Setters
-    [Header("Projectiles")]
+    [Header("Enemy Info")]
+    public float Health;
+    public float getHealth() { return this.Health; }
+    public void setHealth(float value) { this.Health = value; }
+
+
+    [Header("Projectiles and Game Pref")]
+    // projectiles which enemy can spawn
     public GameObject Projectile01;
     public GameObject Projectile02;
+    // game object for explosion
+    public GameObject Explosion;
 
     private float timeToReachTarget = 3.0f;
     public float gettimeToReachTarget() { return this.timeToReachTarget; }
@@ -42,7 +51,6 @@ public class EnemyControl : MonoBehaviour
     {
         //timeForMovement += Time.deltaTime / timeToReachTarget;
         //transform.localPosition = Vector3.Lerp(startPosition, targetPosition, timeForMovement);
-
         
         if (MoveEnemyFormationOnce == true)
         {
@@ -62,8 +70,31 @@ public class EnemyControl : MonoBehaviour
 
             GameObject GO_ForSpawn = (GameObject)Instantiate(Projectile01);
             GO_ForSpawn.name = "Projectile";
-            GO_ForSpawn.transform.position = new Vector3(PositionOfPlayer.x, PositionOfPlayer.y + 0.5f, PositionOfPlayer.z);
-            GO_ForSpawn.transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
+            GO_ForSpawn.transform.position = new Vector3(PositionOfPlayer.x, PositionOfPlayer.y, PositionOfPlayer.z);
+
+        }
+
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.gameObject.name.Contains("ProjectilePlayer"))
+        {
+            // TODO on projectile make setters and getters for projectile damage
+            Health -= 30;
+
+            if (Health <= 0.0f)
+            {
+                GameObject ExplosionSpawnedPref = Instantiate(Explosion, this.gameObject.transform.localPosition, Quaternion.identity);
+                ExplosionSpawnedPref.transform.parent = this.transform.parent;
+                ExplosionSpawnedPref.transform.localPosition = this.gameObject.transform.localPosition;
+
+                Destroy(this.gameObject); // TODO - set destroy in EnemySystemAndInGameCOntoler script
+
+            }
+
+
+            Destroy(collision.transform.gameObject);
 
         }
 

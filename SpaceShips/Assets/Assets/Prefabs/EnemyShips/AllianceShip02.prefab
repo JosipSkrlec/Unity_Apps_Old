@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5175565025195253022}
   - component: {fileID: 5175565025195253021}
+  - component: {fileID: -1816926058149709525}
   m_Layer: 0
   m_Name: AllianceShip02
   m_TagString: Untagged
@@ -80,6 +81,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-1816926058149709525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5175565025195253020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d59df6d317aed5439c4d85e1e446185, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 100
+  Projectile01: {fileID: 5426081720486797169, guid: 83f2bdedf23af704fba99e1d6a533ac2,
+    type: 3}
+  Projectile02: {fileID: 0}
+  Explosion: {fileID: 3149982673036943676, guid: bda18fa9387a6fd4da51f515b1153ed3,
+    type: 3}
 --- !u!1001 &7930196425142802332
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -157,6 +176,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 776990779225279447, guid: 07b6834fed1753249bf67ae94c80dc94,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 03db9bc81c50a674a9b679dea95247d8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07b6834fed1753249bf67ae94c80dc94, type: 3}
 --- !u!4 &7261451174380805197 stripped

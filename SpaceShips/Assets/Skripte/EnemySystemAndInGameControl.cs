@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class EnemySystemAndInGameControl : MonoBehaviour
 {
+    // TODO - napraviti punjenje u startu tj. awake-u i broj koji ce biti 0 ne spawna se stupac
     private protected  float[] Formation_ArrayX = new float[] { 14.0f, 9.2f, 4.6f, 0.0f, -4.6f, -9.2f, -14.0f }; // 7 numbers
-    private protected float[] Formation_ArrayY = new float[] { -28.0f, -24.0f, -20.0f, -16.0f, -12.0f, -8.0f, -4.0f, 0.0f }; // 8 numbers
+    private protected float[] Formation_ArrayY = new float[] { -28.0f, -24.0f, -20.0f, -16.0f, -12.0f, -8.0f, -4.0f}; // 8 numbers
+
+    // all spawned enemy will store inside that list
+    private protected List<GameObject> ListOfEnemyShips = new List<GameObject>();
 
     #region Main Objects
     [Header("Enemy Ships / Alliance")]
@@ -37,10 +41,10 @@ public class EnemySystemAndInGameControl : MonoBehaviour
     void Start()
     {
         int TypeOfEnemyShip = 0;
-        for (int x = 0; x <= 6; x++)
+        for (int x = 0; x <= Formation_ArrayX.Length-1; x++)
         {
             TypeOfEnemyShip = Random.Range(1, 4);
-            for (int y = 0; y <= 7; y++)
+            for (int y = 0; y <= Formation_ArrayY.Length-1; y++)
             {
                 if (TypeOfEnemyShip == 1)
                 {

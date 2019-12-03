@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6819602725781172278}
   - component: {fileID: 6819602725781172279}
+  - component: {fileID: -359269719769810639}
+  - component: {fileID: 3544115630070132406}
   - component: {fileID: 7960247935010224626}
   m_Layer: 0
   m_Name: ResistanceShip01
@@ -81,6 +83,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &-359269719769810639
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6819602725781172276}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &3544115630070132406
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6819602725781172276}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0030226111, y: -0.10857159}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5, y: 5}
+    newSize: {x: 5, y: 5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.940941, y: 2.4914694}
+  m_EdgeRadius: 0
 --- !u!114 &7960247935010224626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,9 +142,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d59df6d317aed5439c4d85e1e446185, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Projectile01: {fileID: 2217701231956940846, guid: 77c135be221a21648be4d5c51447c864,
+  Health: 100
+  Projectile01: {fileID: 5426081720486797169, guid: 83f2bdedf23af704fba99e1d6a533ac2,
     type: 3}
   Projectile02: {fileID: 0}
+  Explosion: {fileID: 3149982673036943676, guid: bda18fa9387a6fd4da51f515b1153ed3,
+    type: 3}
 --- !u!1001 &2531209581029473044
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -173,6 +225,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 776990779225279447, guid: 07b6834fed1753249bf67ae94c80dc94,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 03db9bc81c50a674a9b679dea95247d8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07b6834fed1753249bf67ae94c80dc94, type: 3}
 --- !u!4 &3019880483651170501 stripped
