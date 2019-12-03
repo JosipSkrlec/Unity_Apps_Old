@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DestroyGameObjectAfterSeconds : MonoBehaviour
 {
-    public float DestroyAfter = 1.0f;
+    public float DestroyAfter = 0.3f;
 
     private void Start()
     {

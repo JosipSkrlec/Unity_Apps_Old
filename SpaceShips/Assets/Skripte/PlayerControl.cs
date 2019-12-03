@@ -23,6 +23,9 @@ public class PlayerControl : MonoBehaviour
     public GameObject Projectile01;
     public GameObject Projectile02;
 
+    [Header("Bonuses")]
+    public GameObject Shield;
+
     #endregion
 
     #region Help Variables
@@ -50,7 +53,10 @@ public class PlayerControl : MonoBehaviour
             // TODO - napraviti system upgrade-a i razlicitog pucanja
 
             GameObject GO_ForSpawn = (GameObject)Instantiate(Projectile01);
-            GO_ForSpawn.name = "ProjectilePlayer";
+            GO_ForSpawn.name = "ProjectileFromPlayer";
+            GO_ForSpawn.GetComponent<ProjectileMovement>().setFriendlyToPlayer(true);
+            GO_ForSpawn.GetComponent<ProjectileMovement>().setUpDirection(true);
+
             GO_ForSpawn.transform.position = new Vector3(PositionOfPlayer.x, PositionOfPlayer.y + 0.5f, PositionOfPlayer.z);
             GO_ForSpawn.transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
 
@@ -58,6 +64,41 @@ public class PlayerControl : MonoBehaviour
         }
 
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.name.Contains("ShieldBonus"))
+        {
+            Shield.SetActive(true);
+            Shield.GetComponent<ActiveObjectToUnactiveAfterSeconds>().setCooldown(5.0f);
+
+            collision.GetComponent<DestroyGameObjectAfterSeconds>().enabled = true;
+
+
+        }
+        else if (collision.transform.name.Contains("Projectile"))
+        {
+            if (collision.GetComponent<ProjectileMovement>().getFriendlyToPlayer() == false)
+            {
+                if (Shield.activeSelf == true)
+                {
+                    Debug.Log("PROJECTILE CHANGE"+ collision.transform.name + " ");
+                    collision.gameObject.transform.GetComponent<ProjectileMovement>().setMovementSpeed(10);
+                    collision.gameObject.transform.GetComponent<ProjectileMovement>().setFriendlyToPlayer(true);
+                    collision.gameObject.transform.GetComponent<ProjectileMovement>().setUpDirection(true);
+
+                }
+                else if (Shield.activeSelf == false)
+                {
+                    Destroy(collision.gameObject);
+                    Debug.Log("Take damage");
+                }
+
+            }            
+
+        }
+
     }
 
 

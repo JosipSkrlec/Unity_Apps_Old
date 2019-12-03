@@ -69,6 +69,8 @@ public class EnemyControl : MonoBehaviour
             Vector3 PositionOfPlayer = this.gameObject.transform.position;
 
             GameObject GO_ForSpawn = (GameObject)Instantiate(Projectile01);
+            GO_ForSpawn.GetComponent<ProjectileMovement>().setFriendlyToPlayer(false); 
+
             GO_ForSpawn.name = "Projectile";
             GO_ForSpawn.transform.position = new Vector3(PositionOfPlayer.x, PositionOfPlayer.y, PositionOfPlayer.z);
 
@@ -78,25 +80,29 @@ public class EnemyControl : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.gameObject.name.Contains("ProjectilePlayer"))
+        if (collision.transform.name.Contains("ProjectileFromPlayer"))
         {
-            // TODO on projectile make setters and getters for projectile damage
-            Health -= 30;
-
-            if (Health <= 0.0f)
+            // GetFriendly is inside of ProjectileMovement and this variable says if projectile is friendly to player or no
+            if (collision.GetComponent<ProjectileMovement>().getFriendlyToPlayer() == true)
             {
-                GameObject ExplosionSpawnedPref = Instantiate(Explosion, this.gameObject.transform.localPosition, Quaternion.identity);
-                ExplosionSpawnedPref.transform.parent = this.transform.parent;
-                ExplosionSpawnedPref.transform.localPosition = this.gameObject.transform.localPosition;
+                // TODO on projectile make setters and getters for projectile damage
+                Health -= 30;
 
-                Destroy(this.gameObject); // TODO - set destroy in EnemySystemAndInGameCOntoler script
+                if (Health <= 0.0f)
+                {
+                    GameObject ExplosionSpawnedPref = Instantiate(Explosion, this.gameObject.transform.localPosition, Quaternion.identity);
+                    ExplosionSpawnedPref.transform.parent = this.transform.parent;
+                    ExplosionSpawnedPref.transform.localPosition = this.gameObject.transform.localPosition;
+
+                    Destroy(this.gameObject); // TODO - set destroy in EnemySystemAndInGameCOntoler script
+
+                }
+
+
+                Destroy(collision.transform.gameObject);
 
             }
-
-
-            Destroy(collision.transform.gameObject);
-
-        }
+        }      
 
     }
 

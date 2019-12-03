@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 100
-  Projectile01: {fileID: 5426081720486797169, guid: 83f2bdedf23af704fba99e1d6a533ac2,
+  Projectile01: {fileID: 2217701231956940846, guid: 77c135be221a21648be4d5c51447c864,
     type: 3}
   Projectile02: {fileID: 0}
   Explosion: {fileID: 3149982673036943676, guid: bda18fa9387a6fd4da51f515b1153ed3,
