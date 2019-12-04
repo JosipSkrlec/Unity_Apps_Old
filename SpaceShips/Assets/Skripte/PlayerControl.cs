@@ -79,7 +79,7 @@ public class PlayerControl : MonoBehaviour
             {
                 if (Shield.activeSelf == true)
                 {
-                    Debug.Log("PROJECTILE CHANGE"+ collision.transform.name + " ");
+                    //Debug.Log("PROJECTILE CHANGE"+ collision.transform.name + " ");
                     collision.gameObject.transform.GetComponent<ProjectileMovement>().setMovementSpeed(10);
                     collision.gameObject.transform.GetComponent<ProjectileMovement>().setFriendlyToPlayer(true);
                     collision.gameObject.transform.GetComponent<ProjectileMovement>().setUpDirection(true);
