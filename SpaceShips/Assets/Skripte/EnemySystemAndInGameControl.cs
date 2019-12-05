@@ -71,11 +71,11 @@ public class EnemySystemAndInGameControl : MonoBehaviour
         // first parameter is number of waves
         // second is enemy shooting cooldown
         //third is 0 or 1, for spawn randomm or no        
-        PlayerPrefs.SetString("LEVELCONTROL", "3-1-0");
+        //PlayerPrefs.SetString("LEVELCONTROL", "3-1-0");
         // first is number in first wave
         // ...
         // in third wave
-        PlayerPrefs.SetString("LEVELCONTROLFORMATION", "4-3-5");
+        //PlayerPrefs.SetString("LEVELCONTROLFORMATION", "4-3-5");
 
     }
 
@@ -97,6 +97,8 @@ public class EnemySystemAndInGameControl : MonoBehaviour
         string WaveLoad = LoadedParameters[0];
         string CooldownLoad = LoadedParameters[1];
         string randomLoad = LoadedParameters[2];
+
+        Debug.Log(WaveLoad);
 
         NumberOfWaves = int.Parse(WaveLoad, CultureInfo.InvariantCulture.NumberFormat);
         cooldownforShooting = float.Parse(CooldownLoad, CultureInfo.InvariantCulture.NumberFormat);
@@ -135,13 +137,16 @@ public class EnemySystemAndInGameControl : MonoBehaviour
         {
             if (NumberOfWaves <= 0)
             {
-                Debug.Log("Call done level");
+
+                Application.LoadLevel("test");
             }
             else
-            {
+            {                
                 PositionOfSpawnFromListHelper += 1;
+                NumberOfWaves -= 1;
                 SpawnFormationBool = true;
             }
+
         }
 
         if (SpawnFormationBool == true)
@@ -151,7 +156,6 @@ public class EnemySystemAndInGameControl : MonoBehaviour
             string[] LoadedParameters = PlayerPrefs.GetString("LEVELCONTROLFORMATION").Split('-');
 
             int temp = int.Parse(LoadedParameters[PositionOfSpawnFromListHelper], CultureInfo.InvariantCulture.NumberFormat);
-            Debug.Log(PositionOfSpawnFromListHelper);
 
             SpawnEnemyShipInControlledFormation(temp, 1);
 
