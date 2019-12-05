@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// this script communicate with EnemyControl, all the variable value is set in EnemyControl
+/// <summary>
+/// This class is used to control enemy invidualy
+/// <para>enemy health, explosion after death,projectil which will use</para> 
+/// <para>move from starting position to target position</para> 
+/// </summary>
 public class EnemyControl : MonoBehaviour
 {
     #region Public Variables with Getters & Setters
@@ -10,7 +14,6 @@ public class EnemyControl : MonoBehaviour
     public float Health;
     public float getHealth() { return this.Health; }
     public void setHealth(float value) { this.Health = value; }
-
 
     [Header("Projectiles and Game Pref")]
     // projectiles which enemy can spawn

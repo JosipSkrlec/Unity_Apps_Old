@@ -19,9 +19,6 @@ public class Save_Load
     /// <summary>
     /// You can use that Constructor for Save And Load, if you use Load Method then Content can be null
     /// </summary>
-    /// <param name="Methodtype"></param>
-    /// <param name="FileName_dat"></param>
-    /// <param name="Content"></param>
     public Save_Load(Method_Type Methodtype, string FileName_dat, string Content)
     {
         if (Methodtype == Method_Type.Save)
@@ -87,8 +84,5 @@ public class Save_Load
         }
 
     }// Second Constructor
-
-
-
 
 } // Main Class
