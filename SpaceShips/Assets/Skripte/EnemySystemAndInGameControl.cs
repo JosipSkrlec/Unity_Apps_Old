@@ -40,8 +40,11 @@ public class EnemySystemAndInGameControl : MonoBehaviour
     public float getcooldownforShooting() { return this.cooldownforShooting; }
     public void setcooldownforShooting(float value) { this.cooldownforShooting = value; }
 
-    private protected List<string> ListToStoreGameLevelControl = new List<string>();
-    private protected string SaveHelper;
+    //private protected List<string> ListToStoreGameLevelControl = new List<string>();
+    //private protected string SaveHelper;
+
+    private protected List<int> NumberInFormation = new List<int>();
+    private int PositionOfSpawnFromListHelper = 0;
 
     private int NumberOfColumnInFormation = 0;
 
@@ -54,30 +57,58 @@ public class EnemySystemAndInGameControl : MonoBehaviour
     // spawn first wave
     private void Awake()
     {
+        #region LOAD SAVE EXAMPLE
         // EXAMPLE
         // this is example of calling level control,
         // making object with parameters, first.save,second.nameoffile in persistance path see more https://docs.unity3d.com/ScriptReference/Application-persistentDataPath.html
         // third is example of level, so first number is number of waves which will be stored in start() method in parameter waves
         // then separator - then number for shooting cooldown
-        Save_Load SV = new Save_Load(Save_Load.Method_Type.Save, "Save", "0-0");
-        
+
+
+        //Save_Load SV = new Save_Load(Save_Load.Method_Type.Save, "Save", "0-0");
+        #endregion
+
+        // first parameter is number of waves
+        // second is enemy shooting cooldown
+        //third is 0 or 1, for spawn randomm or no        
+        PlayerPrefs.SetString("LEVELCONTROL", "3-1-0");
+        // first is number in first wave
+        // ...
+        // in third wave
+        PlayerPrefs.SetString("LEVELCONTROLFORMATION", "4-3-5");
 
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        Save_Load SV = new Save_Load(Save_Load.Method_Type.Load, "Save", "a");
+        #region LOAD SAVE EXAMPLE
+        //Save_Load SV = new Save_Load(Save_Load.Method_Type.Load, "Save", "a");
 
-        string SaveHelper = SV.getOutput();
+        //string SaveHelper = SV.getOutput();
 
-        // 0 is number of waves, 1 is shooting sooldown
-        string[] SaveParameters = SaveHelper.Split('-');
+        //string[] SaveParameters = SaveHelper.Split('-');
 
-        //Debug.Log(t[0]);
-        //Debug.Log(t[1]);
+        //cooldownforShooting = float.Parse(SaveParameters[0], CultureInfo.InvariantCulture.NumberFormat);
+        #endregion
 
-        cooldownforShooting = float.Parse(SaveParameters[0], CultureInfo.InvariantCulture.NumberFormat);
+        string[] LoadedParameters = PlayerPrefs.GetString("LEVELCONTROL").Split('-');
+
+        string WaveLoad = LoadedParameters[0];
+        string CooldownLoad = LoadedParameters[1];
+        string randomLoad = LoadedParameters[2];
+
+        NumberOfWaves = int.Parse(WaveLoad, CultureInfo.InvariantCulture.NumberFormat);
+        cooldownforShooting = float.Parse(CooldownLoad, CultureInfo.InvariantCulture.NumberFormat);
+
+        if (int.Parse(randomLoad, CultureInfo.InvariantCulture.NumberFormat) == 0)
+        {
+            SpawnFormationFromSamePosition = false;
+        }
+        else
+        {
+            SpawnFormationFromSamePosition = true;
+        }
 
     }
 
@@ -89,46 +120,40 @@ public class EnemySystemAndInGameControl : MonoBehaviour
         if (time >= cooldownforShooting)
         {
             time = 0.0f;
-
-            int NumberOfChields = this.gameObject.transform.childCount;
-
-            int RandomChoosenEnemyForShoot = Random.Range(0,NumberOfChields);
-
             try
             {
+                int NumberOfChields = this.gameObject.transform.childCount;
+                int RandomChoosenEnemyForShoot = Random.Range(0, NumberOfChields);
+
                 this.gameObject.transform.GetChild(RandomChoosenEnemyForShoot).GetComponent<EnemyControl>().setShootEnabled(true);
             }
             catch (System.Exception e) { };
-
-           
-
-        }
+        } // Shooting
 
         // spawn again when child = 0 or less then 0
         if (this.transform.childCount <= 0)
         {
-            SpawnFormationBool = true;
+            if (NumberOfWaves <= 0)
+            {
+                Debug.Log("Call done level");
+            }
+            else
+            {
+                PositionOfSpawnFromListHelper += 1;
+                SpawnFormationBool = true;
+            }
         }
 
         if (SpawnFormationBool == true)
         {
             SpawnFormationBool = false;
-            // DELETE THAT *for playable(
-            int b = Random.Range(0,2);
 
-            if (b == 0)
-            {
-                SpawnFormationFromSamePosition = true;
-            }
-            else
-            {
-                SpawnFormationFromSamePosition = false;
-            }
+            string[] LoadedParameters = PlayerPrefs.GetString("LEVELCONTROLFORMATION").Split('-');
 
-            int c = Random.Range(3, 8);
-            int d = Random.Range(0,4);
+            int temp = int.Parse(LoadedParameters[PositionOfSpawnFromListHelper], CultureInfo.InvariantCulture.NumberFormat);
+            Debug.Log(PositionOfSpawnFromListHelper);
 
-            SpawnEnemyShipInControlledFormation(c, d);
+            SpawnEnemyShipInControlledFormation(temp, 1);
 
 
         }
