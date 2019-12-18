@@ -68,14 +68,13 @@ public class EnemySystemAndInGameControl : MonoBehaviour
         //Save_Load SV = new Save_Load(Save_Load.Method_Type.Save, "Save", "0-0");
         #endregion
 
-        // first parameter is number of waves
+        //first parameter is number of waves
         // second is enemy shooting cooldown
-        //third is 0 or 1, for spawn randomm or no        
-        //PlayerPrefs.SetString("LEVELCONTROL", "3-1-0");
-        // first is number in first wave
-        // ...
-        // in third wave
-        //PlayerPrefs.SetString("LEVELCONTROLFORMATION", "4-3-5");
+        //third is 0 or 1, for spawn randomm or no
+        //PlayerPrefs.SetString("LEVELCONTROL", "1-0-0");
+        //first is number in first wave ...
+         //in third wave
+        //PlayerPrefs.SetString("LEVELCONTROLFORMATION", "7");
 
     }
 
@@ -92,6 +91,7 @@ public class EnemySystemAndInGameControl : MonoBehaviour
         //cooldownforShooting = float.Parse(SaveParameters[0], CultureInfo.InvariantCulture.NumberFormat);
         #endregion
 
+        // TODO - set that on awake
         string[] LoadedParameters = PlayerPrefs.GetString("LEVELCONTROL").Split('-');
 
         string WaveLoad = LoadedParameters[0];
