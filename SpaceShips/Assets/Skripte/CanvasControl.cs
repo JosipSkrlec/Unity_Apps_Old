@@ -5,11 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class CanvasControl : MonoBehaviour
 {
-
-
-
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -25,20 +20,8 @@ public class CanvasControl : MonoBehaviour
     public void OpenCampaign()
     {
         SceneManager.LoadScene("CampaignScene");
+                             
 
-
-
-        
-
-    }
-
-    public void OpenGameSceneAndSetParameters()
-    {
-
-
-
-
-        SceneManager.LoadScene("Game");
     }
 
 

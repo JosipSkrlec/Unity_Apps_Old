@@ -1,7 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// This class is used to spawn enemy, choose random enemy ship for shooting from formation
@@ -73,8 +73,27 @@ public class EnemySystemAndInGameControl : MonoBehaviour
         //third is 0 or 1, for spawn randomm or no
         //PlayerPrefs.SetString("LEVELCONTROL", "1-0-0");
         //first is number in first wave ...
-         //in third wave
+        //in third wave
         //PlayerPrefs.SetString("LEVELCONTROLFORMATION", "7");
+
+        try
+        {
+            int NumberOfEnemyWaves = PlayerPrefs.GetInt("NumberOfEnemyWaves");
+            float EnemyAttackCooldown = PlayerPrefs.GetFloat("EnemyAttackCooldown");
+            int SpawnEnemyRandom = PlayerPrefs.GetInt("SpawnEnemyRandom");
+
+            NumberOfWaves = NumberOfEnemyWaves -1; // -1 zbog array counter-a
+            cooldownforShooting = EnemyAttackCooldown;
+
+            if (SpawnEnemyRandom == 0){SpawnFormationFromSamePosition = false;}
+            else{SpawnFormationFromSamePosition = true;}
+
+
+
+#pragma warning disable CS0168 // Variable is declared but never used
+        }
+        catch (System.Exception e) { }
+#pragma warning restore CS0168 // Variable is declared but never used
 
     }
 
@@ -90,28 +109,6 @@ public class EnemySystemAndInGameControl : MonoBehaviour
 
         //cooldownforShooting = float.Parse(SaveParameters[0], CultureInfo.InvariantCulture.NumberFormat);
         #endregion
-
-        // TODO - set that on awake
-        string[] LoadedParameters = PlayerPrefs.GetString("LEVELCONTROL").Split('-');
-
-        string WaveLoad = LoadedParameters[0];
-        string CooldownLoad = LoadedParameters[1];
-        string randomLoad = LoadedParameters[2];
-
-        Debug.Log(WaveLoad);
-
-        NumberOfWaves = int.Parse(WaveLoad, CultureInfo.InvariantCulture.NumberFormat);
-        cooldownforShooting = float.Parse(CooldownLoad, CultureInfo.InvariantCulture.NumberFormat);
-
-        if (int.Parse(randomLoad, CultureInfo.InvariantCulture.NumberFormat) == 0)
-        {
-            SpawnFormationFromSamePosition = false;
-        }
-        else
-        {
-            SpawnFormationFromSamePosition = true;
-        }
-
     }
 
     // Update is called once per frame
@@ -137,14 +134,17 @@ public class EnemySystemAndInGameControl : MonoBehaviour
         {
             if (NumberOfWaves <= 0)
             {
-
-                Application.LoadLevel("test");
+                SpawnFormationBool = false;
+                SceneManager.LoadScene("StartingScene");
+                //Application.LoadLevel("test");
+                Debug.Log("palim scenu");
             }
             else
             {                
                 PositionOfSpawnFromListHelper += 1;
                 NumberOfWaves -= 1;
                 SpawnFormationBool = true;
+                Debug.Log("spawnam ponovo");
             }
 
         }
@@ -152,12 +152,11 @@ public class EnemySystemAndInGameControl : MonoBehaviour
         if (SpawnFormationBool == true)
         {
             SpawnFormationBool = false;
-
             string[] LoadedParameters = PlayerPrefs.GetString("LEVELCONTROLFORMATION").Split('-');
-
+            
             int temp = int.Parse(LoadedParameters[PositionOfSpawnFromListHelper], CultureInfo.InvariantCulture.NumberFormat);
 
-            SpawnEnemyShipInControlledFormation(temp, 1);
+            SpawnEnemyShipInControlledFormation(temp, Random.Range(0,3));
 
 
         }
