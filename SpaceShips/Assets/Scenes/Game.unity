@@ -265,36 +265,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &69640913
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 69640914}
-  m_Layer: 0
-  m_Name: HELPER
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &69640914
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 69640913}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1443627298}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &402625048
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,6 +592,50 @@ MonoBehaviour:
   PositionOfGizmoLineEndPosition: {x: 4, y: -10, z: 0}
   PositionOfGizmoSphere: {x: 0, y: 0, z: 0}
   SphereGizmoSize: 1
+--- !u!1 &649805720
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 649805721}
+  - component: {fileID: 649805722}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &649805721
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649805720}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1443627298}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &649805722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 649805720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671a4fe0a20d7b041ac36809e94d9ca5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DestroyAfter: 2
 --- !u!1 &682056474
 GameObject:
   m_ObjectHideFlags: 0
@@ -1248,7 +1262,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_Children:
-  - {fileID: 69640914}
+  - {fileID: 649805721}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1278,8 +1292,8 @@ MonoBehaviour:
     type: 3}
   NumberOfWaves: 0
   cooldownforShooting: 5
-  MoveFormationLeftAndRightBool: 0
-  MoveFormationInCircleBool: 1
+  MoveFormationLeftAndRightBool: 1
+  MoveFormationInCircleBool: 0
   MoveFormationUpAndDOwnBool: 0
 --- !u!1 &1692760599
 GameObject:
@@ -1592,7 +1606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72662e0e4ea6d0a4f95c7f67ec59f450, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerShootingCooldown: 0.5
+  PlayerShootingCooldown: 0.1
   Projectile01: {fileID: 4480014070588930875, guid: 97b0ba8f8ab46594eaacc3e31ae7df44,
     type: 3}
   Projectile02: {fileID: 3305589170120535723, guid: a1b01911ff2fe0e4cb5396d5158c937d,

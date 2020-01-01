@@ -85,6 +85,7 @@ public class EnemySystemAndInGameControl : MonoBehaviour
             int SpawnEnemyRandom = PlayerPrefs.GetInt("SpawnEnemyRandom");
 
             NumberOfWaves = NumberOfEnemyWaves -1; // -1 zbog array counter-a
+            Debug.Log(NumberOfWaves);
             cooldownforShooting = EnemyAttackCooldown;
 
             if (SpawnEnemyRandom == 0){SpawnFormationFromSamePosition = false;}
@@ -129,7 +130,7 @@ public class EnemySystemAndInGameControl : MonoBehaviour
         if (MoveFormationUpAndDOwnBool == true)
         {
             MoveFormationUpAndDown();
-        }       
+        }
 
         if (TimeForShooting >= cooldownforShooting)
         {
