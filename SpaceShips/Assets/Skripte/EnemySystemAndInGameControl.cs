@@ -40,19 +40,21 @@ public class EnemySystemAndInGameControl : MonoBehaviour
     public float getcooldownforShooting() { return this.cooldownforShooting; }
     public void setcooldownforShooting(float value) { this.cooldownforShooting = value; }
 
+    public bool MoveFormationLeftAndRightBool = false;
+    public bool MoveFormationInCircleBool = false; 
+    public bool MoveFormationUpAndDOwnBool = false; 
+
     //private protected List<string> ListToStoreGameLevelControl = new List<string>();
     //private protected string SaveHelper;
 
     private protected List<int> NumberInFormation = new List<int>();
     private int PositionOfSpawnFromListHelper = 0;
 
-    private int NumberOfColumnInFormation = 0;
-
     bool SpawnFormationBool = true;
     bool SpawnFormationFromSamePosition = true;
 
     // HELPERS
-    float time;
+    float TimeForShooting;
 
     // spawn first wave
     private void Awake()
@@ -114,11 +116,24 @@ public class EnemySystemAndInGameControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
+        TimeForShooting += Time.deltaTime;
 
-        if (time >= cooldownforShooting)
+        if (MoveFormationLeftAndRightBool == true)
         {
-            time = 0.0f;
+            MoveFormationLeftAndRight();
+        }
+        if (MoveFormationInCircleBool == true)
+        {
+            MoveFormationInCircle();
+        }
+        if (MoveFormationUpAndDOwnBool == true)
+        {
+            MoveFormationUpAndDown();
+        }       
+
+        if (TimeForShooting >= cooldownforShooting)
+        {
+            TimeForShooting = 0.0f;
             try
             {
                 int NumberOfChields = this.gameObject.transform.childCount;
@@ -492,5 +507,39 @@ public class EnemySystemAndInGameControl : MonoBehaviour
 
     }
 
+    // TODO - staviti gore na pocetak
+    // helpers
+    float timeCounter01 = 0;
+
+    void MoveFormationLeftAndRight()
+    {
+        timeCounter01 += Time.deltaTime;
+        float x = Mathf.Sin(timeCounter01);
+        float y = 0;
+        float z = 0;
+        transform.position = new Vector3(x, y, z);
+
+    }
+
+    void MoveFormationInCircle()
+    {
+        timeCounter01 += Time.deltaTime;
+        Debug.Log(timeCounter01);
+        float x = Mathf.Cos(timeCounter01);
+        float y = Mathf.Sin(timeCounter01);
+        float z = 0;
+        transform.position = new Vector3(x, y, z);
+
+    }
+
+    void MoveFormationUpAndDown()
+    {
+        timeCounter01 += Time.deltaTime;
+        float x = 0;
+        float y = Mathf.Sin(timeCounter01);
+        float z = 0;
+        transform.position = new Vector3(x, y, z);
+
+    }
 
 }// End of Class

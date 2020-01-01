@@ -1,0 +1,13 @@
+Igra SpaceShips
+-----
+PlayerPref:
+Moonstones = broj skupljenih Moonstones-a
+
+NumberOfEnemyWaves = broj enemy valova
+EnemyAttackCooldown = broj koji oznacava coldown za pucanje enemy-a
+//TODO - napraviti za svaki wave di da se spawn-a
+SpawnEnemyRandom = broj je 0 il i1, ako je 1 tada se spawna s istog
+// string should be the same number as numberofenemywaves
+// like if number is 3 then enemyformation should be 3-5-4,
+// numbers from 3-7 included both separated with "-"
+LEVELCONTROLFORMATION = objasnjeno iznad

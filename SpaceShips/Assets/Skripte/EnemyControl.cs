@@ -21,6 +21,8 @@ public class EnemyControl : MonoBehaviour
     public GameObject Projectile02;
     // game object for explosion
     public GameObject Explosion;
+    public GameObject Shield;
+    public GameObject Upgrade;
 
     private float timeToReachTarget = 3.0f;
     public float gettimeToReachTarget() { return this.timeToReachTarget; }
@@ -97,8 +99,25 @@ public class EnemyControl : MonoBehaviour
                     ExplosionSpawnedPref.transform.parent = this.transform.parent;
                     ExplosionSpawnedPref.transform.localPosition = this.gameObject.transform.localPosition;
 
-                    Destroy(this.gameObject); // TODO - set destroy in EnemySystemAndInGameCOntoler script
+                    // TODO - napraviti chance za spawn shield-a
+                    // SPAWN SHIELD
 
+                    int a = Random.Range(1,3);
+                    if (a == 1)
+                    {
+                        GameObject ShieldPref = Instantiate(Shield, transform.position, Quaternion.identity);
+                        ShieldPref.transform.parent = null;
+                        ShieldPref.transform.position = transform.position;
+                    }
+                    else if (a == 2)
+                    {
+                        GameObject UpgradePref = Instantiate(Upgrade, transform.position, Quaternion.identity);
+                        UpgradePref.transform.parent = null;
+                        UpgradePref.transform.position = transform.position;
+
+                    }                    
+
+                    Destroy(this.gameObject);
                 }
 
 
@@ -111,11 +130,11 @@ public class EnemyControl : MonoBehaviour
 
 
 
-    //public void SetDestination(Vector3 destination, float time)
+    //public void SetDestination(Vector3 destination, float TimeForShooting)
     //{
     //    t = 0;
     //    startPosition = transform.position;
-    //    timeToReachTarget = time;
+    //    timeToReachTarget = TimeForShooting;
     //    target = destination;
     //}
 

@@ -149,6 +149,8 @@ MonoBehaviour:
   Projectile02: {fileID: 0}
   Explosion: {fileID: 3149982673036943676, guid: bda18fa9387a6fd4da51f515b1153ed3,
     type: 3}
+  Shield: {fileID: 5997155409476498969, guid: d04df23034173184da63d447c499ac2b, type: 3}
+  Upgrade: {fileID: 0}
 --- !u!1001 &5272042737458177600
 PrefabInstance:
   m_ObjectHideFlags: 0
