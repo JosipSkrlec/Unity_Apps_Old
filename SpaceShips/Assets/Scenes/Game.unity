@@ -1607,7 +1607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerShootingCooldown: 0.1
-  Projectile01: {fileID: 4480014070588930875, guid: 97b0ba8f8ab46594eaacc3e31ae7df44,
+  Projectile01: {fileID: 3305589170120535723, guid: a1b01911ff2fe0e4cb5396d5158c937d,
     type: 3}
   Projectile02: {fileID: 3305589170120535723, guid: a1b01911ff2fe0e4cb5396d5158c937d,
     type: 3}

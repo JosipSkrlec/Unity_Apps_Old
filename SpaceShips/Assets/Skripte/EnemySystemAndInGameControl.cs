@@ -85,7 +85,6 @@ public class EnemySystemAndInGameControl : MonoBehaviour
             int SpawnEnemyRandom = PlayerPrefs.GetInt("SpawnEnemyRandom");
 
             NumberOfWaves = NumberOfEnemyWaves -1; // -1 zbog array counter-a
-            Debug.Log(NumberOfWaves);
             cooldownforShooting = EnemyAttackCooldown;
 
             if (SpawnEnemyRandom == 0){SpawnFormationFromSamePosition = false;}
@@ -142,7 +141,7 @@ public class EnemySystemAndInGameControl : MonoBehaviour
 
                 this.gameObject.transform.GetChild(RandomChoosenEnemyForShoot).GetComponent<EnemyControl>().setShootEnabled(true);
             }
-            catch (System.Exception e) { };
+            catch (System.Exception) { };
         } // Shooting
 
         // spawn again when child = 0 or less then 0
@@ -152,15 +151,23 @@ public class EnemySystemAndInGameControl : MonoBehaviour
             {
                 SpawnFormationBool = false;
                 SceneManager.LoadScene("StartingScene");
+
+                // TODO - set number of moonstones earned when killed all enemy
+                // TODO - napraviti public var gdje ce se upisivati koliko da se dobije
+                int MoonstonesCount = PlayerPrefs.GetInt("Moonstones");
+
+                MoonstonesCount += 250;
+
+                PlayerPrefs.SetInt("Moonstones", MoonstonesCount);
+
                 //Application.LoadLevel("test");
-                Debug.Log("palim scenu");
+                Debug.Log("Opening Start Scene");
             }
             else
             {                
                 PositionOfSpawnFromListHelper += 1;
                 NumberOfWaves -= 1;
                 SpawnFormationBool = true;
-                Debug.Log("spawnam ponovo");
             }
 
         }
