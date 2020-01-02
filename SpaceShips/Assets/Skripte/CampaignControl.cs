@@ -11,6 +11,8 @@ public class CampaignControl : MonoBehaviour
     public int SpawnEnemyRandom;
     public string EnemyFormation;
 
+    public int NumberOfLVL;
+
 
     #endregion
 
@@ -42,6 +44,7 @@ public class CampaignControl : MonoBehaviour
         PlayerPrefs.SetInt("NumberOfEnemyWaves", NumberOfEnemyWaves);
         PlayerPrefs.SetFloat("EnemyAttackCooldown", EnemyAttackCooldown);
         PlayerPrefs.SetFloat("SpawnEnemyRandom", SpawnEnemyRandom);
+        PlayerPrefs.SetInt("CurrentCampaignLVL", NumberOfLVL);
         // string should be the same number as numberofenemywaves
         // like if number is 3 then enemyformation should be 3-5-4,
         // numbers from 3-7 included both separated with "-"

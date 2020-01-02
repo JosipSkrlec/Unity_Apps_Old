@@ -6,6 +6,7 @@ public class CanvasControl : MonoBehaviour
 {
     public bool RefreshMoonstones = false;
     public bool CheckIfEndlessModeisPaid = false;
+    public bool CheckCampaignLvl = false;
 
     public Text MoonstoneTextUI;
     public GameObject EndlessPanel;
@@ -24,7 +25,52 @@ public class CanvasControl : MonoBehaviour
         //catch (System.Exception) { }
 
         // refresh endless mode to 0(LOCKED)
+        if (CheckCampaignLvl == true)
+        {
+            try
+            {
+                int CampaignFinished = PlayerPrefs.GetInt("CampaignFinished");
+
+                Debug.Log(CampaignFinished);
+                for (int x = 0; x <= CampaignFinished; x++)
+                {
+                    if (x < CampaignFinished)
+                    {
+                        Transform currentButtoninCampaign = this.gameObject.transform.GetChild(x);
+
+                        currentButtoninCampaign.GetComponent<Image>().color = Color.green;
+                        currentButtoninCampaign.GetComponent<Button>().enabled = false;
+                        currentButtoninCampaign.GetComponent<Animator>().enabled = false;
+
+                    }
+                    if (x == CampaignFinished)
+                    {
+                        Transform currentButtoninCampaign = this.gameObject.transform.GetChild(x);
+
+                        currentButtoninCampaign.GetComponent<Image>().color = new Color(1, 1, 1, 1);
+                        currentButtoninCampaign.GetComponent<Button>().enabled = true;
+                        currentButtoninCampaign.GetComponent<Animator>().enabled = true;
+
+                    }
+
+                }
+
+
+
+            }
+            catch (System.Exception) { }
+        }
+
+        // REFRESH
+        // REFRESH
+
         //PlayerPrefs.SetInt("EndlessMode", 0);
+        //PlayerPrefs.SetInt("CampaignFinished", 0);
+        //PlayerPrefs.SetInt("Moonstones", 0);
+
+        // REFRESH
+        // REFRESH
+
     }
 
     // Update is called once per frame
@@ -61,10 +107,6 @@ public class CanvasControl : MonoBehaviour
                     // disable locker-a
                     LockerImage.SetActive(false);
 
-                }
-                else
-                {
-                    Debug.Log("Not Unlocked");
                 }
 
             }
@@ -124,9 +166,11 @@ public class CanvasControl : MonoBehaviour
 
     }
 
-    public void UnlockEndlessMode()
+    public void REFRESH()
     {
-        
+        PlayerPrefs.SetInt("EndlessMode", 0);
+        PlayerPrefs.SetInt("CampaignFinished", 0);
+        PlayerPrefs.SetInt("Moonstones", 0);
 
     }
 

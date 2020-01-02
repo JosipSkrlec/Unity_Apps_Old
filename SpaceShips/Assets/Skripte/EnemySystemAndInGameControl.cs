@@ -150,18 +150,18 @@ public class EnemySystemAndInGameControl : MonoBehaviour
             if (NumberOfWaves <= 0)
             {
                 SpawnFormationBool = false;
-                SceneManager.LoadScene("StartingScene");
+                SceneManager.LoadScene("CampaignScene");
 
                 // TODO - set number of moonstones earned when killed all enemy
                 // TODO - napraviti public var gdje ce se upisivati koliko da se dobije
                 int MoonstonesCount = PlayerPrefs.GetInt("Moonstones");
-
                 MoonstonesCount += 250;
-
                 PlayerPrefs.SetInt("Moonstones", MoonstonesCount);
 
-                //Application.LoadLevel("test");
-                Debug.Log("Opening Start Scene");
+                // campaignlvlcompleted
+                int currentplayedlvl = PlayerPrefs.GetInt("CurrentCampaignLVL");
+                Debug.Log(currentplayedlvl);
+                PlayerPrefs.SetInt("CampaignFinished", currentplayedlvl);
             }
             else
             {                
