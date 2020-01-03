@@ -2,6 +2,7 @@
 using System.Globalization;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 /// <summary>
 /// This class is used to spawn enemy, choose random enemy ship for shooting from formation
@@ -31,7 +32,11 @@ public class EnemySystemAndInGameControl : MonoBehaviour
     private Vector3 RightUpperFormationSpawner = new Vector3(-60.0f, -30.0f, 0.0f);
     private Vector3 RightBottomrFormationSpawner = new Vector3(-40.0f, 0.0f, 0.0f);
 
-    [Header("Game System Control")]         
+    [Header("Game System Control")]
+    public Text CountingText;
+    public bool CountingSecondsForSpawnFormation = true;
+    private int CountingSecondsForSpawnFormationHelper = 0;
+
     public int NumberOfWaves = 0;
     public int getNumberOfWaves() { return this.NumberOfWaves; }
     public void setNumberOfWaves(int value) { this.NumberOfWaves = value; }
@@ -55,10 +60,14 @@ public class EnemySystemAndInGameControl : MonoBehaviour
 
     // HELPERS
     float TimeForShooting;
+    float TimeForCountThreeSeconds;
 
     // spawn first wave
     private void Awake()
     {
+        //Time.timeScale = 0.1f;
+
+
         #region LOAD SAVE EXAMPLE
         // EXAMPLE
         // this is example of calling level control,
@@ -164,23 +173,50 @@ public class EnemySystemAndInGameControl : MonoBehaviour
                 PlayerPrefs.SetInt("CampaignFinished", currentplayedlvl);
             }
             else
-            {                
-                PositionOfSpawnFromListHelper += 1;
-                NumberOfWaves -= 1;
-                SpawnFormationBool = true;
+            {
+                if (CountingSecondsForSpawnFormation == true)
+                {
+                    TimeForCountThreeSeconds += Time.deltaTime;
+
+                    if (TimeForCountThreeSeconds >= 1.0f && CountingSecondsForSpawnFormationHelper < 4)
+                    {
+                        TimeForCountThreeSeconds = 0.0f;
+                        CountingSecondsForSpawnFormationHelper += 1;
+                        Debug.Log(CountingSecondsForSpawnFormationHelper);
+                        CountingText.gameObject.SetActive(true);
+                        CountingText.text = (4 - CountingSecondsForSpawnFormationHelper).ToString();
+                    }
+                    if (CountingSecondsForSpawnFormationHelper >= 4)
+                    {
+                        CountingText.gameObject.SetActive(false);
+
+                        PositionOfSpawnFromListHelper += 1;
+                        NumberOfWaves -= 1;
+                        SpawnFormationBool = true;
+                    }
+
+                }
+                else if (CountingSecondsForSpawnFormation == false)
+                {
+                    PositionOfSpawnFromListHelper += 1;
+                    NumberOfWaves -= 1;
+                    SpawnFormationBool = true;
+                }
             }
 
         }
 
         if (SpawnFormationBool == true)
         {
+
+            CountingSecondsForSpawnFormationHelper = 0;
+
             SpawnFormationBool = false;
             string[] LoadedParameters = PlayerPrefs.GetString("LEVELCONTROLFORMATION").Split('-');
-            
+
             int temp = int.Parse(LoadedParameters[PositionOfSpawnFromListHelper], CultureInfo.InvariantCulture.NumberFormat);
 
-            SpawnEnemyShipInControlledFormation(temp, Random.Range(0,3));
-
+            SpawnEnemyShipInControlledFormation(temp, Random.Range(0, 3));
 
         }
 

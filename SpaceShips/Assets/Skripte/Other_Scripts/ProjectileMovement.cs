@@ -24,7 +24,7 @@ public class ProjectileMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         //this.gameObject.transform.position += Vector3.up * Time.deltaTime * MovementSpeed;
         if (UpDirection == false)
         {

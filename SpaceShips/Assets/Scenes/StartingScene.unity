@@ -2443,7 +2443,7 @@ MonoBehaviour:
   CheckIfEndlessModeisPaid: 0
   CheckCampaignLvl: 0
   MoonstoneTextUI: {fileID: 625307016}
-  EndlessPanel: {fileID: 0}
+  EndlessPanel: {fileID: 448239605}
   LockerImage: {fileID: 0}
 --- !u!114 &1225939370
 MonoBehaviour:

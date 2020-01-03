@@ -160,7 +160,7 @@ public class CanvasControl : MonoBehaviour
             MoonstoneTextUI.text = MoonstonesCount.ToString();
             PlayerPrefs.SetInt("Moonstones", MoonstonesCount);
 
-           PlayerPrefs.SetInt("EndlessMode", 1);
+            PlayerPrefs.SetInt("EndlessMode", 1);
         }
 
 

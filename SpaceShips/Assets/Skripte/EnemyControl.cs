@@ -56,7 +56,7 @@ public class EnemyControl : MonoBehaviour
     {
         //timeForMovement += Time.deltaTime / timeToReachTarget;
         //transform.localPosition = Vector3.Lerp(startPosition, targetPosition, timeForMovement);
-        
+
         if (MoveEnemyFormationOnce == true)
         {
             timeForMovementFormation += Time.deltaTime / timeToReachTarget;
