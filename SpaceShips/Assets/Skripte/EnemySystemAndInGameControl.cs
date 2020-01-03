@@ -55,12 +55,15 @@ public class EnemySystemAndInGameControl : MonoBehaviour
     private protected List<int> NumberInFormation = new List<int>();
     private int PositionOfSpawnFromListHelper = 0;
 
-    bool SpawnFormationBool = true;
+    bool SpawnFormationBool = false;
     bool SpawnFormationFromSamePosition = true;
 
     // HELPERS
     float TimeForShooting;
     float TimeForCountThreeSeconds;
+    int numberOfTotalWaves;
+    bool spawnFirstWaveHelper = true;
+    int numberofCurrentWave = 1;
 
     // spawn first wave
     private void Awake()
@@ -93,11 +96,12 @@ public class EnemySystemAndInGameControl : MonoBehaviour
             float EnemyAttackCooldown = PlayerPrefs.GetFloat("EnemyAttackCooldown");
             int SpawnEnemyRandom = PlayerPrefs.GetInt("SpawnEnemyRandom");
 
-            NumberOfWaves = NumberOfEnemyWaves -1; // -1 zbog array counter-a
+            numberOfTotalWaves = NumberOfEnemyWaves;
+            NumberOfWaves = NumberOfEnemyWaves; // -1 zbog array counter-a
             cooldownforShooting = EnemyAttackCooldown;
 
-            if (SpawnEnemyRandom == 0){SpawnFormationFromSamePosition = false;}
-            else{SpawnFormationFromSamePosition = true;}
+            if (SpawnEnemyRandom == 0) { SpawnFormationFromSamePosition = false; }
+            else { SpawnFormationFromSamePosition = true; }
 
 
 
@@ -158,6 +162,8 @@ public class EnemySystemAndInGameControl : MonoBehaviour
         {
             if (NumberOfWaves <= 0)
             {
+                
+
                 SpawnFormationBool = false;
                 SceneManager.LoadScene("CampaignScene");
 
@@ -180,34 +186,41 @@ public class EnemySystemAndInGameControl : MonoBehaviour
 
                     if (TimeForCountThreeSeconds >= 1.0f && CountingSecondsForSpawnFormationHelper < 4)
                     {
+                        Debug.Log("1");
                         TimeForCountThreeSeconds = 0.0f;
                         CountingSecondsForSpawnFormationHelper += 1;
-                        Debug.Log(CountingSecondsForSpawnFormationHelper);
+
                         CountingText.gameObject.SetActive(true);
-                        CountingText.text = (4 - CountingSecondsForSpawnFormationHelper).ToString();
+                        CountingText.text = numberofCurrentWave + "/" + numberOfTotalWaves;
+                        //CountingText.text = (4 - CountingSecondsForSpawnFormationHelper).ToString();
                     }
                     if (CountingSecondsForSpawnFormationHelper >= 4)
                     {
-                        CountingText.gameObject.SetActive(false);
+                        if (spawnFirstWaveHelper == false)
+                        {
+                            CountingText.gameObject.SetActive(false);
 
-                        PositionOfSpawnFromListHelper += 1;
-                        NumberOfWaves -= 1;
-                        SpawnFormationBool = true;
+                            PositionOfSpawnFromListHelper += 1;
+                            NumberOfWaves -= 1;
+                            SpawnFormationBool = true;
+
+                        }
+                        else 
+                        {
+                            CountingText.gameObject.SetActive(false);
+                            spawnFirstWaveHelper = false;
+
+                            NumberOfWaves -= 1;
+                            SpawnFormationBool = true;
+                        }
                     }
-
-                }
-                else if (CountingSecondsForSpawnFormation == false)
-                {
-                    PositionOfSpawnFromListHelper += 1;
-                    NumberOfWaves -= 1;
-                    SpawnFormationBool = true;
                 }
             }
-
         }
-
         if (SpawnFormationBool == true)
         {
+            Debug.Log("aasdasdasdasd");
+            numberofCurrentWave += 1;
 
             CountingSecondsForSpawnFormationHelper = 0;
 
