@@ -645,6 +645,7 @@ MonoBehaviour:
   SpawnEnemyRandom: 1
   EnemyFormation: 3-4-5-7
   NumberOfLVL: 4
+  MoonstonesReward: 213
 --- !u!95 &183000527
 Animator:
   serializedVersion: 3
@@ -815,6 +816,7 @@ MonoBehaviour:
   SpawnEnemyRandom: 1
   EnemyFormation: 3-5
   NumberOfLVL: 2
+  MoonstonesReward: 157
 --- !u!95 &281889823
 Animator:
   serializedVersion: 3
@@ -1385,6 +1387,7 @@ MonoBehaviour:
   SpawnEnemyRandom: 0
   EnemyFormation: 3
   NumberOfLVL: 1
+  MoonstonesReward: 124
 --- !u!95 &509167443
 Animator:
   serializedVersion: 3
@@ -2074,6 +2077,7 @@ MonoBehaviour:
   SpawnEnemyRandom: 1
   EnemyFormation: 3-4-6
   NumberOfLVL: 3
+  MoonstonesReward: 198
 --- !u!95 &1067281530
 Animator:
   serializedVersion: 3
@@ -2871,6 +2875,7 @@ MonoBehaviour:
   SpawnEnemyRandom: 1
   EnemyFormation: 3-6-7
   NumberOfLVL: 5
+  MoonstonesReward: 256
 --- !u!95 &1389648979
 Animator:
   serializedVersion: 3

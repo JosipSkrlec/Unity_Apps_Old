@@ -33,6 +33,8 @@ public class EnemySystemAndInGameControl : MonoBehaviour
     private Vector3 RightBottomrFormationSpawner = new Vector3(-40.0f, 0.0f, 0.0f);
 
     [Header("Game System Control")]
+    public GameObject WinPanel;
+    public Text MoonstonesRewardText;
     public Text CountingText;
     public bool CountingSecondsForSpawnFormation = true;
     private int CountingSecondsForSpawnFormationHelper = 0;
@@ -47,7 +49,11 @@ public class EnemySystemAndInGameControl : MonoBehaviour
 
     public bool MoveFormationLeftAndRightBool = false;
     public bool MoveFormationInCircleBool = false; 
-    public bool MoveFormationUpAndDOwnBool = false; 
+    public bool MoveFormationUpAndDOwnBool = false;
+
+    public int Moonstones = 0;
+    public int getMoonstones() { return this.Moonstones; }
+    public void setMoonstones(int value) { this.Moonstones = value; }
 
     //private protected List<string> ListToStoreGameLevelControl = new List<string>();
     //private protected string SaveHelper;
@@ -69,7 +75,7 @@ public class EnemySystemAndInGameControl : MonoBehaviour
     private void Awake()
     {
         //Time.timeScale = 0.1f;
-
+        Time.timeScale = 1.0f;
 
         #region LOAD SAVE EXAMPLE
         // EXAMPLE
@@ -162,21 +168,21 @@ public class EnemySystemAndInGameControl : MonoBehaviour
         {
             if (NumberOfWaves <= 0)
             {
-                
-
                 SpawnFormationBool = false;
-                SceneManager.LoadScene("CampaignScene");
 
-                // TODO - set number of moonstones earned when killed all enemy
-                // TODO - napraviti public var gdje ce se upisivati koliko da se dobije
-                int MoonstonesCount = PlayerPrefs.GetInt("Moonstones");
-                MoonstonesCount += 250;
-                PlayerPrefs.SetInt("Moonstones", MoonstonesCount);
+                Time.timeScale = 0.0f;
 
                 // campaignlvlcompleted
                 int currentplayedlvl = PlayerPrefs.GetInt("CurrentCampaignLVL");
                 Debug.Log(currentplayedlvl);
                 PlayerPrefs.SetInt("CampaignFinished", currentplayedlvl);
+
+                int CurrentMoonstonesReward = PlayerPrefs.GetInt("CurrentLvlMoonstones");
+
+                MoonstonesRewardText.text = CurrentMoonstonesReward.ToString();
+
+                WinPanel.SetActive(true);                
+
             }
             else
             {
@@ -186,7 +192,6 @@ public class EnemySystemAndInGameControl : MonoBehaviour
 
                     if (TimeForCountThreeSeconds >= 1.0f && CountingSecondsForSpawnFormationHelper < 4)
                     {
-                        Debug.Log("1");
                         TimeForCountThreeSeconds = 0.0f;
                         CountingSecondsForSpawnFormationHelper += 1;
 

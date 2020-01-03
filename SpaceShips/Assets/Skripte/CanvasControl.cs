@@ -60,7 +60,6 @@ public class CanvasControl : MonoBehaviour
             }
             catch (System.Exception) { }
         }
-
         // REFRESH
         // REFRESH
 
@@ -119,10 +118,26 @@ public class CanvasControl : MonoBehaviour
 
     public void OpenCampaign()
     {
-        SceneManager.LoadScene("CampaignScene");
-                             
+        Time.timeScale = 1.0f;
+
+        SceneManager.LoadScene("CampaignScene");                            
 
     }
+
+    public void OpenCampaignFromWinGame()
+    {
+        int MoonstonesCount = PlayerPrefs.GetInt("Moonstones");
+        int CurrentMoonstonesReward = PlayerPrefs.GetInt("CurrentLvlMoonstones");
+        MoonstonesCount += CurrentMoonstonesReward;
+        Debug.Log(MoonstonesCount + "=" + CurrentMoonstonesReward + "=" + MoonstonesCount);
+        PlayerPrefs.SetInt("Moonstones", MoonstonesCount);
+        PlayerPrefs.GetInt("CurrentLvlMoonstones", 0);
+
+        Time.timeScale = 1.0f;
+
+        SceneManager.LoadScene("CampaignScene");
+    }
+
 
     public void OpenEndlessModePanel()
     {

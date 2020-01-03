@@ -12,6 +12,7 @@ public class CampaignControl : MonoBehaviour
     public string EnemyFormation;
 
     public int NumberOfLVL;
+    public int MoonstonesReward;
 
 
     #endregion
@@ -45,6 +46,7 @@ public class CampaignControl : MonoBehaviour
         PlayerPrefs.SetFloat("EnemyAttackCooldown", EnemyAttackCooldown);
         PlayerPrefs.SetFloat("SpawnEnemyRandom", SpawnEnemyRandom);
         PlayerPrefs.SetInt("CurrentCampaignLVL", NumberOfLVL);
+        PlayerPrefs.SetInt("CurrentLvlMoonstones", MoonstonesReward);        
         // string should be the same number as numberofenemywaves
         // like if number is 3 then enemyformation should be 3-5-4,
         // numbers from 3-7 included both separated with "-"
