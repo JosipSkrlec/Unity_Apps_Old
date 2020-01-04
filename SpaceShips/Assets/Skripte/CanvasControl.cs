@@ -135,7 +135,7 @@ public class CanvasControl : MonoBehaviour
 
         Time.timeScale = 1.0f;
 
-        SceneManager.LoadScene("CampaignScene");
+        SceneManager.LoadScene("StartingScene");
     }
 
 
