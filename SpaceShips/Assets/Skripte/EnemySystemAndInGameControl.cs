@@ -224,7 +224,7 @@ public class EnemySystemAndInGameControl : MonoBehaviour
         }
         if (SpawnFormationBool == true)
         {
-            Debug.Log("aasdasdasdasd");
+            Debug.Log("SpawnNewWave");
             numberofCurrentWave += 1;
 
             CountingSecondsForSpawnFormationHelper = 0;

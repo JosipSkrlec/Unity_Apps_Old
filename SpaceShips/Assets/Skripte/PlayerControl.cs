@@ -25,7 +25,14 @@ public class PlayerControl : MonoBehaviour
     public GameObject LosePanel;
 
     public GameObject HealthIndicatorParent;
+    public bool healthCheckerbool = false;
     public int PlayerHealth = 3;
+
+    public GameObject SpellIndicatorImage;
+    // 0-100
+    private int SpecialSpell = 0;
+    public int getSpecialSpell() { return this.SpecialSpell; }
+    public void setSpecialSpell(int value) { this.SpecialSpell += value; }
 
     #endregion
 
@@ -41,6 +48,8 @@ public class PlayerControl : MonoBehaviour
 
     #region Help Variables
     private float time;
+    private float time2;
+    bool FastShootingEnabled = false;
 
     #endregion
 
@@ -48,8 +57,6 @@ public class PlayerControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-
 
         IndicatorForChoosenProjectile = 1;
         PlayerProjectilelvl = 0;
@@ -59,9 +66,23 @@ public class PlayerControl : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
+        time2 += Time.deltaTime;
+
+        if (FastShootingEnabled == true)
+        {
+            Debug.Log(time + " aasdasd " + time2);
+            if (time2 >= 3.0f)
+            {
+                time2 = 0.0f;
+                PlayerShootingCooldown = 0.5f;
+                FastShootingEnabled = false;
+            }
+
+        }
 
         if (time >= PlayerShootingCooldown)
         {
+
             if (IndicatorForChoosenProjectile == 1)
             {
                 ShootProjectilelvl(Projectile01);
@@ -75,14 +96,42 @@ public class PlayerControl : MonoBehaviour
             time = 0.0f;
         }
 
-        CheckHealth();
+        if (healthCheckerbool == true)
+        {
+            CheckHealth();
+        }
+        if (FastShootingEnabled == false)
+        {
+            CheckIndicatorForSpell();
+        }
         
+    }
+
+    private void CheckIndicatorForSpell()
+    {
+        float spellindicatorcounted = SpecialSpell * 0.01f;
+
+        SpellIndicatorImage.GetComponent<Image>().fillAmount = spellindicatorcounted;
+
+        if (spellindicatorcounted >= 1.0f)
+        {            
+            SpecialSpell = 0;
+            spellindicatorcounted = 0.0f;
+            time2 = 0.0f;
+            SpellIndicatorImage.GetComponent<Image>().fillAmount = 0.0f;
+            PlayerShootingCooldown = 0.1f;
+            FastShootingEnabled = true;
+        }
+
     }
 
     private void CheckHealth()
     {
+        healthCheckerbool = false;
+
         for (int x = 0; x <= 4; x++)
         {
+            Debug.Log("Povjeravam health-e i uzimam -1");
 
             if (PlayerHealth-1 >= x)
             {
@@ -90,7 +139,7 @@ public class PlayerControl : MonoBehaviour
                 HealthIndicatorParent.transform.GetChild(x).GetComponent<Image>().enabled = true;
                 
             }
-            else if (PlayerHealth-1 < x)
+            else if (PlayerHealth -1 < x)
             {
                 HealthIndicatorParent.transform.GetChild(x).GetComponent<Image>().enabled = false;
             }
@@ -229,6 +278,7 @@ public class PlayerControl : MonoBehaviour
         //}
         else if (collision.transform.name.Contains("Ship"))
         {
+            healthCheckerbool = true;
             PlayerHealth -= 1;
             Destroy(collision.gameObject);
         }
@@ -255,6 +305,7 @@ public class PlayerControl : MonoBehaviour
                 }
                 else if (Shield.activeSelf == false)
                 {
+                    healthCheckerbool = true;
                     PlayerHealth -= 1;
 
                     Destroy(collision.gameObject);

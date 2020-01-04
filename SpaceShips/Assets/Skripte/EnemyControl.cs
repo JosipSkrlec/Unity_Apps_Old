@@ -93,6 +93,10 @@ public class EnemyControl : MonoBehaviour
                 // TODO on projectile make setters and getters for projectile damage
                 Health -= 30;
 
+                // TODO- set somewhere else
+                GameObject playerinScene = GameObject.Find("Player");
+                playerinScene.GetComponent<PlayerControl>().setSpecialSpell(1);
+
                 if (Health <= 0.0f)
                 {
                     GameObject ExplosionSpawnedPref = Instantiate(Explosion, this.gameObject.transform.localPosition, Quaternion.identity);

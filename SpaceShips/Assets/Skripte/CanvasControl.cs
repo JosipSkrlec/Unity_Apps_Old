@@ -161,6 +161,7 @@ public class CanvasControl : MonoBehaviour
 
     public void OpenStartingMenu()
     {
+        Time.timeScale = 1.0f;
         SceneManager.LoadScene("StartingScene");
     }
     public void PayEndlessMode()
