@@ -25,7 +25,8 @@ public class EnemySystemAndInGameControl : MonoBehaviour
     #endregion
 
     private protected float[] Formation_ArrayX = new float[] { 14.0f, 9.2f, 4.6f, 0.0f, -4.6f, -9.2f, -14.0f }; // 7 numbers //COLUMN
-    private protected float[] Formation_ArrayY = new float[] { -28.0f, -24.0f, -20.0f, -16.0f, -12.0f, -8.0f, -4.0f }; // 8 numbers // ROW
+    //private protected float[] Formation_ArrayY = new float[] { -28.0f, -24.0f, -20.0f, -16.0f, -12.0f, -8.0f, -4.0f }; // 8 numbers // ROW
+    private protected float[] Formation_ArrayY = new float[] { 72.0f, 76.0f, 80.0f, 84.0f, 88.0f, 92.0f, 96.0f }; // 8 numbers // ROW
 
     private Vector3 LeftUpperFormationSpawner = new Vector3(60.0f, -30.0f, 0.0f);
     private Vector3 LeftBottomFormationSpawner = new Vector3(40.0f, 0.0f, 0.0f);
@@ -577,7 +578,7 @@ public class EnemySystemAndInGameControl : MonoBehaviour
     {
         timeCounter01 += Time.deltaTime;
         float x = Mathf.Sin(timeCounter01);
-        float y = 0;
+        float y = 15;
         float z = 0;
         transform.position = new Vector3(x, y, z);
 

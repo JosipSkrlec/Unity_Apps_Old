@@ -87,7 +87,7 @@ public class PlayerControl : MonoBehaviour
             {
                 ShootProjectilelvl(Projectile01);
             }
-            if (IndicatorForChoosenProjectile == 1)
+            if (IndicatorForChoosenProjectile == 2)
             {
                 ShootProjectilelvl(Projectile02);
             }

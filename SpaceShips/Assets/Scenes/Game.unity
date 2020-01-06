@@ -1087,7 +1087,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.50842476, y: 0.21727252}
@@ -1159,7 +1159,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475249450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.48, y: 10.7, z: 0}
+  m_LocalPosition: {x: 0, y: 6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1763,7 +1763,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.50842476, y: -1.8004599}
@@ -1835,7 +1835,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 682056474}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.48, y: -9.53, z: 0}
+  m_LocalPosition: {x: 0, y: -4.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2088,7 +2088,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.5072026, y: 4.7511997}
@@ -2160,7 +2160,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832589718}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4, y: -5, z: 0}
+  m_LocalPosition: {x: 3.5, y: -5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2286,7 +2286,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.56492233, y: 4.7511997}
@@ -2358,7 +2358,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1039073163}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.13, y: -5, z: 0}
+  m_LocalPosition: {x: -3.5, y: -5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2696,9 +2696,9 @@ MonoBehaviour:
   DrawLine: 1
   DrawSphere: 0
   TextForGizmo: Projectiles Will Die Here
-  PositionOfGizmoText: {x: -3, y: -11, z: 0}
-  PositionOfGizmoLineStartPosition: {x: -20, y: -10.5, z: 0}
-  PositionOfGizmoLineEndPosition: {x: 20, y: -10.5, z: 0}
+  PositionOfGizmoText: {x: -2, y: -5.48, z: 0}
+  PositionOfGizmoLineStartPosition: {x: -20, y: -5, z: 0}
+  PositionOfGizmoLineEndPosition: {x: 20, y: -5, z: 0}
   PositionOfGizmoSphere: {x: 0, y: 0, z: 0}
   SphereGizmoSize: 1
 --- !u!1 &1384348135
@@ -2802,7 +2802,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1443627297}
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 15, z: 0}
   m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_Children:
   - {fileID: 649805721}
@@ -3231,7 +3231,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1692760600
 Transform:
   m_ObjectHideFlags: 0
@@ -3390,7 +3390,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0
+  m_FillAmount: 0.685
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -3449,9 +3449,9 @@ MonoBehaviour:
   DrawLine: 1
   DrawSphere: 0
   TextForGizmo: Projectiles Will Die Here
-  PositionOfGizmoText: {x: -3, y: 11, z: 0}
-  PositionOfGizmoLineStartPosition: {x: -20, y: 10, z: 0}
-  PositionOfGizmoLineEndPosition: {x: 20, y: 10.04, z: 0}
+  PositionOfGizmoText: {x: -2, y: 5.7, z: 0}
+  PositionOfGizmoLineStartPosition: {x: -20, y: 5, z: 0}
+  PositionOfGizmoLineEndPosition: {x: 20, y: 5, z: 0}
   PositionOfGizmoSphere: {x: 0, y: 0, z: 0}
   SphereGizmoSize: 0
 --- !u!1 &1859121061
@@ -3486,10 +3486,10 @@ RectTransform:
   m_Father: {fileID: 802580799}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.11, y: 22.170044}
-  m_SizeDelta: {x: 799.7, y: 44.35}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.11000522, y: -687.82996}
+  m_SizeDelta: {x: 799.7, y: 44.349976}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1859121063
 MonoBehaviour:
