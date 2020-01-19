@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 /// <summary>
@@ -75,19 +74,7 @@ public class EnemySystemAndInGameControl : MonoBehaviour
     // spawn first wave
     private void Awake()
     {
-        //Time.timeScale = 0.1f;
         Time.timeScale = 1.0f;
-
-        #region LOAD SAVE EXAMPLE
-        // EXAMPLE
-        // this is example of calling level control,
-        // making object with parameters, first.save,second.nameoffile in persistance path see more https://docs.unity3d.com/ScriptReference/Application-persistentDataPath.html
-        // third is example of level, so first number is number of waves which will be stored in start() method in parameter waves
-        // then separator - then number for shooting cooldown
-
-
-        //Save_Load SV = new Save_Load(Save_Load.Method_Type.Save, "Save", "0-0");
-        #endregion
 
         //first parameter is number of waves
         // second is enemy shooting cooldown
