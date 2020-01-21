@@ -39,6 +39,8 @@ public class EnemySystemAndInGameControl : MonoBehaviour
     public bool CountingSecondsForSpawnFormation = true;
     private int CountingSecondsForSpawnFormationHelper = 0;
 
+    private int DropChance = 0;
+
     public int NumberOfWaves = 0;
     public int getNumberOfWaves() { return this.NumberOfWaves; }
     public void setNumberOfWaves(int value) { this.NumberOfWaves = value; }
@@ -89,6 +91,13 @@ public class EnemySystemAndInGameControl : MonoBehaviour
             int NumberOfEnemyWaves = PlayerPrefs.GetInt("NumberOfEnemyWaves");
             float EnemyAttackCooldown = PlayerPrefs.GetFloat("EnemyAttackCooldown");
             int SpawnEnemyRandom = PlayerPrefs.GetInt("SpawnEnemyRandom");
+
+            DropChance = PlayerPrefs.GetInt("DropChance");
+
+            if (DropChance == 0)
+            {
+                PlayerPrefs.SetInt("DropChance",10);
+            }
 
             numberOfTotalWaves = NumberOfEnemyWaves;
             NumberOfWaves = NumberOfEnemyWaves; // -1 zbog array counter-a
@@ -162,8 +171,12 @@ public class EnemySystemAndInGameControl : MonoBehaviour
 
                 // campaignlvlcompleted
                 int currentplayedlvl = PlayerPrefs.GetInt("CurrentCampaignLVL");
-                Debug.Log(currentplayedlvl);
-                PlayerPrefs.SetInt("CampaignFinished", currentplayedlvl);
+
+                if (currentplayedlvl != 0)
+                {
+                    Debug.Log(currentplayedlvl);
+                    PlayerPrefs.SetInt("CampaignFinished", currentplayedlvl);
+                }
 
                 int CurrentMoonstonesReward = PlayerPrefs.GetInt("CurrentLvlMoonstones");
 
@@ -298,6 +311,8 @@ public class EnemySystemAndInGameControl : MonoBehaviour
 
                         GO_Spawn.GetComponent<EnemyControl>().setstartPosition(LeftUpperFormationSpawner);
                         GO_Spawn.GetComponent<EnemyControl>().settargetPosition(new Vector3(Formation_ArrayX[x], Formation_ArrayY[y], 0.0f));
+
+                        GO_Spawn.GetComponent<EnemyControl>().setDropChance(DropChance);
                     }
                     else if (x == 4)
                     {
@@ -308,6 +323,8 @@ public class EnemySystemAndInGameControl : MonoBehaviour
 
                         GO_Spawn.GetComponent<EnemyControl>().setstartPosition(LeftUpperFormationSpawner);
                         GO_Spawn.GetComponent<EnemyControl>().settargetPosition(new Vector3(Formation_ArrayX[x], Formation_ArrayY[y], 0.0f));
+
+                        GO_Spawn.GetComponent<EnemyControl>().setDropChance(DropChance);
                     }
                     else if (x == 6)
                     {
@@ -318,6 +335,8 @@ public class EnemySystemAndInGameControl : MonoBehaviour
 
                         GO_Spawn.GetComponent<EnemyControl>().setstartPosition(LeftUpperFormationSpawner);
                         GO_Spawn.GetComponent<EnemyControl>().settargetPosition(new Vector3(Formation_ArrayX[x], Formation_ArrayY[y], 0.0f));
+
+                        GO_Spawn.GetComponent<EnemyControl>().setDropChance(DropChance);
                     }
 
                 } //done
@@ -471,7 +490,9 @@ public class EnemySystemAndInGameControl : MonoBehaviour
 
                     GO_Spawn.GetComponent<EnemyControl>().setstartPosition(LeftUpperFormationSpawner);
                     GO_Spawn.GetComponent<EnemyControl>().settargetPosition(new Vector3(Formation_ArrayX[x], Formation_ArrayY[y], 0.0f));
-                    
+
+                    GO_Spawn.GetComponent<EnemyControl>().setDropChance(DropChance);
+
                 }//done
                 else{continue;}
 
@@ -493,6 +514,12 @@ public class EnemySystemAndInGameControl : MonoBehaviour
 
             GO_Spawn.GetComponent<EnemyControl>().setstartPosition(LeftUpperFormationSpawner);
             GO_Spawn.GetComponent<EnemyControl>().settargetPosition(new Vector3(FormationX, FormationY, 0.0f));
+            
+            // drop chance
+            GO_Spawn.GetComponent<EnemyControl>().setDropChance(DropChance);
+
+            Debug.Log(DropChance);
+
         }
         else if (ChoosenPositionForSpawnEnemy == 1)
         {
@@ -501,6 +528,8 @@ public class EnemySystemAndInGameControl : MonoBehaviour
 
             GO_Spawn.GetComponent<EnemyControl>().setstartPosition(LeftBottomFormationSpawner);
             GO_Spawn.GetComponent<EnemyControl>().settargetPosition(new Vector3(FormationX, FormationY, 0.0f));
+
+            GO_Spawn.GetComponent<EnemyControl>().setDropChance(DropChance);
         }
         else if (ChoosenPositionForSpawnEnemy == 2)
         {
@@ -509,6 +538,8 @@ public class EnemySystemAndInGameControl : MonoBehaviour
 
             GO_Spawn.GetComponent<EnemyControl>().setstartPosition(RightUpperFormationSpawner);
             GO_Spawn.GetComponent<EnemyControl>().settargetPosition(new Vector3(FormationX, FormationY, 0.0f));
+
+            GO_Spawn.GetComponent<EnemyControl>().setDropChance(DropChance);
         }
         else if (ChoosenPositionForSpawnEnemy == 3)
         {
@@ -517,6 +548,8 @@ public class EnemySystemAndInGameControl : MonoBehaviour
 
             GO_Spawn.GetComponent<EnemyControl>().setstartPosition(RightBottomrFormationSpawner);
             GO_Spawn.GetComponent<EnemyControl>().settargetPosition(new Vector3(FormationX, FormationY, 0.0f));
+
+            GO_Spawn.GetComponent<EnemyControl>().setDropChance(DropChance);
         }
 
     }
@@ -529,6 +562,8 @@ public class EnemySystemAndInGameControl : MonoBehaviour
 
             GO_Spawn.GetComponent<EnemyControl>().setstartPosition(LeftUpperFormationSpawner);
             GO_Spawn.GetComponent<EnemyControl>().settargetPosition(new Vector3(FormationX, FormationY, 0.0f));
+
+            GO_Spawn.GetComponent<EnemyControl>().setDropChance(DropChance);
         }
         else if (positionofSpawn == 1)
         {
@@ -537,6 +572,8 @@ public class EnemySystemAndInGameControl : MonoBehaviour
 
             GO_Spawn.GetComponent<EnemyControl>().setstartPosition(LeftBottomFormationSpawner);
             GO_Spawn.GetComponent<EnemyControl>().settargetPosition(new Vector3(FormationX, FormationY, 0.0f));
+
+            GO_Spawn.GetComponent<EnemyControl>().setDropChance(DropChance);
         }
         else if (positionofSpawn == 2)
         {
@@ -545,6 +582,8 @@ public class EnemySystemAndInGameControl : MonoBehaviour
 
             GO_Spawn.GetComponent<EnemyControl>().setstartPosition(RightUpperFormationSpawner);
             GO_Spawn.GetComponent<EnemyControl>().settargetPosition(new Vector3(FormationX, FormationY, 0.0f));
+
+            GO_Spawn.GetComponent<EnemyControl>().setDropChance(DropChance);
         }
         else if (positionofSpawn == 3)
         {
@@ -553,6 +592,8 @@ public class EnemySystemAndInGameControl : MonoBehaviour
 
             GO_Spawn.GetComponent<EnemyControl>().setstartPosition(RightBottomrFormationSpawner);
             GO_Spawn.GetComponent<EnemyControl>().settargetPosition(new Vector3(FormationX, FormationY, 0.0f));
+
+            GO_Spawn.GetComponent<EnemyControl>().setDropChance(DropChance);
         }
 
     }

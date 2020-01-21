@@ -24,6 +24,10 @@ public class EnemyControl : MonoBehaviour
     public GameObject Shield;
     public GameObject Upgrade;
 
+    public int DropChance = 10;
+    public int getDropChance() { return this.DropChance; }
+    public void setDropChance(int value) { this.DropChance = value; }
+
     private float timeToReachTarget = 3.0f;
     public float gettimeToReachTarget() { return this.timeToReachTarget; }
     public void settimeToReachTarget(float value) { this.timeToReachTarget = value; }
@@ -43,14 +47,9 @@ public class EnemyControl : MonoBehaviour
     private Vector3 targetPosition;
     public Vector3 gettargetPosition(){return this.targetPosition;}
     public void settargetPosition(Vector3 value){this.targetPosition = value;}
-    #endregion
+    #endregion    
 
     float timeForMovementFormation;
-
-    private void Start()
-    {
-
-    }
 
     void Update()
     {
@@ -94,8 +93,8 @@ public class EnemyControl : MonoBehaviour
                 Health -= 30;
 
                 // TODO- set somewhere else
-                GameObject playerinScene = GameObject.Find("Player");
-                playerinScene.GetComponent<PlayerControl>().setSpecialSpell(1);
+                //GameObject playerinScene = GameObject.Find("Player");
+                //playerinScene.GetComponent<PlayerControl>().setSpecialSpell(1);
 
                 if (Health <= 0.0f)
                 {
@@ -106,20 +105,26 @@ public class EnemyControl : MonoBehaviour
                     // TODO - napraviti chance za spawn shield-a
                     // SPAWN SHIELD
 
-                    int a = Random.Range(1,3);
-                    if (a == 1)
-                    {
-                        GameObject ShieldPref = Instantiate(Shield, transform.position, Quaternion.identity);
-                        ShieldPref.transform.parent = null;
-                        ShieldPref.transform.position = transform.position;
-                    }
-                    else if (a == 2)
-                    {
-                        GameObject UpgradePref = Instantiate(Upgrade, transform.position, Quaternion.identity);
-                        UpgradePref.transform.parent = null;
-                        UpgradePref.transform.position = transform.position;
+                    int randomChance = Random.Range(0, 100);
 
-                    }                    
+                    if (randomChance < DropChance)
+                    {
+                        int a = Random.Range(1, 3);
+                        if (a == 1)
+                        {
+                            GameObject ShieldPref = Instantiate(Shield, transform.position, Quaternion.identity);
+                            ShieldPref.transform.parent = null;
+                            ShieldPref.transform.position = transform.position;
+                        }
+                        else if (a == 2)
+                        {
+                            GameObject UpgradePref = Instantiate(Upgrade, transform.position, Quaternion.identity);
+                            UpgradePref.transform.parent = null;
+                            UpgradePref.transform.position = transform.position;
+
+                        }
+                    }
+                 
 
                     Destroy(this.gameObject);
                 }

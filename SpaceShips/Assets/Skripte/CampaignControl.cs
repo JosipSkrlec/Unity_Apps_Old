@@ -6,12 +6,12 @@ using UnityEngine.SceneManagement;
 public class CampaignControl : MonoBehaviour
 {
     #region Campaign Veriables
+    public int NumberOfLVL;
     public int NumberOfEnemyWaves;
     public float EnemyAttackCooldown;
     public int SpawnEnemyRandom;
     public string EnemyFormation;
 
-    public int NumberOfLVL;
     public int MoonstonesReward;
 
 
@@ -42,10 +42,10 @@ public class CampaignControl : MonoBehaviour
 
     public void OpenGameSceneAndSetParameters()
     {
+        PlayerPrefs.SetInt("CurrentCampaignLVL", NumberOfLVL);
         PlayerPrefs.SetInt("NumberOfEnemyWaves", NumberOfEnemyWaves);
         PlayerPrefs.SetFloat("EnemyAttackCooldown", EnemyAttackCooldown);
         PlayerPrefs.SetFloat("SpawnEnemyRandom", SpawnEnemyRandom);
-        PlayerPrefs.SetInt("CurrentCampaignLVL", NumberOfLVL);
         PlayerPrefs.SetInt("CurrentLvlMoonstones", MoonstonesReward);        
         // string should be the same number as numberofenemywaves
         // like if number is 3 then enemyformation should be 3-5-4,

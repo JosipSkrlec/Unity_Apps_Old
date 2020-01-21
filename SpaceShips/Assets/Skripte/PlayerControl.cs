@@ -56,9 +56,21 @@ public class PlayerControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        int playershotcooldown = PlayerPrefs.GetInt("PlayerShotCooldown");
+
+        if (playershotcooldown == 0)
+        {
+            PlayerShootingCooldown = 0.5f;
+        }
+        else
+        {
+            PlayerShootingCooldown = playershotcooldown;
+        }
 
         IndicatorForChoosenProjectile = 1;
         PlayerProjectilelvl = 0;
+
+
     }
 
     // Update is called once per frame
