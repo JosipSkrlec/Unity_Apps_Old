@@ -8,132 +8,82 @@ public class PlayerControl : MonoBehaviour
     #region Game Cotrol Variables
     // PLAYER VARIABLES
     [SerializeField]
+    // varijabla za brzinu pucanja sa getterima i setterima
     private float PlayerShootingCooldown;
     public float getPlayerShootingCooldown(){return this.PlayerShootingCooldown; }
     public void setPlayerShootingCooldown(float value){this.PlayerShootingCooldown = value;}
-
+    
+    // projectilelvl oznacava kako ce player pucati
     private float PlayerProjectilelvl;
     public float getPlayerProjectilelvl() { return this.PlayerProjectilelvl; }
     public void setPlayerProjectilelvl(float value) { this.PlayerProjectilelvl = value; }
 
-    // 1 is projectile01(blue)
-    // 2 is projectile01(green)
-    private int IndicatorForChoosenProjectile;
-    public int getIndicatorForChoosenProjectile() { return this.IndicatorForChoosenProjectile; }
-    public void setIndicatorForChoosenProjectile(int value) { this.IndicatorForChoosenProjectile = value; }
-
+    [Header("Helpers")]
     public GameObject LosePanel;
-
     public GameObject HealthIndicatorParent;
     public bool healthCheckerbool = false;
     public int PlayerHealth = 3;
 
-    public GameObject SpellIndicatorImage;
+    //(DEPRECATED)
+    //public GameObject SpellIndicatorImage;
     // 0-100
-    private int SpecialSpell = 0;
-    public int getSpecialSpell() { return this.SpecialSpell; }
-    public void setSpecialSpell(int value) { this.SpecialSpell += value; }
+    //private int SpecialSpell = 0;
+    //public int getSpecialSpell() { return this.SpecialSpell; }
+    //public void setSpecialSpell(int value) { this.SpecialSpell += value; }
 
     #endregion
 
     #region Main Objects
     [Header("Projectiles")]
     public GameObject Projectile01;
-    public GameObject Projectile02;
 
     [Header("Bonuses")]
     public GameObject Shield;
 
     #endregion
 
-    #region Help Variables
+    #region Helper Variables
     private float time;
     private float time2;
-    bool FastShootingEnabled = false;
+    //bool FastShootingEnabled = false;
 
     #endregion
 
-    // Start is called before the first frame update
+    // postavljanje shooting cooldown-a koji se cita iz playerpref koji je prethodno zapisan u shop-u
+    // postavlja se player projectile lvl
     void Start()
     {
-        int playershotcooldown = PlayerPrefs.GetInt("PlayerShotCooldown");
-
-        if (playershotcooldown == 0)
-        {
-            PlayerShootingCooldown = 0.5f;
-        }
+        float playerShootingCooldown = PlayerPrefs.GetFloat("playerShootingCooldown");
+        
+        // ako ne postoji zapisano u playerpref postavlja se na default
+        if (playerShootingCooldown == 0){PlayerShootingCooldown = 0.5f;}
         else
         {
-            PlayerShootingCooldown = playershotcooldown;
+            PlayerShootingCooldown = playerShootingCooldown;
         }
 
-        IndicatorForChoosenProjectile = 1;
+
         PlayerProjectilelvl = 0;
-
-
     }
 
     // Update is called once per frame
     void Update()
     {
         time += Time.deltaTime;
-        time2 += Time.deltaTime;
 
-        if (FastShootingEnabled == true)
-        {
-            Debug.Log(time + " aasdasd " + time2);
-            if (time2 >= 3.0f)
-            {
-                time2 = 0.0f;
-                PlayerShootingCooldown = 0.5f;
-                FastShootingEnabled = false;
-            }
-
-        }
-
+        // pucanje
         if (time >= PlayerShootingCooldown)
         {
+            ShootProjectilelvl(Projectile01);
 
-            if (IndicatorForChoosenProjectile == 1)
-            {
-                ShootProjectilelvl(Projectile01);
-            }
-            if (IndicatorForChoosenProjectile == 2)
-            {
-                ShootProjectilelvl(Projectile02);
-            }
-
-            //----------
             time = 0.0f;
         }
-
+        // provjera health-a
         if (healthCheckerbool == true)
         {
             CheckHealth();
         }
-        if (FastShootingEnabled == false)
-        {
-            CheckIndicatorForSpell();
-        }
         
-    }
-
-    private void CheckIndicatorForSpell()
-    {
-        float spellindicatorcounted = SpecialSpell * 0.01f;
-
-        SpellIndicatorImage.GetComponent<Image>().fillAmount = spellindicatorcounted;
-
-        if (spellindicatorcounted >= 1.0f)
-        {            
-            SpecialSpell = 0;
-            spellindicatorcounted = 0.0f;
-            time2 = 0.0f;
-            SpellIndicatorImage.GetComponent<Image>().fillAmount = 0.0f;
-            PlayerShootingCooldown = 0.1f;
-            FastShootingEnabled = true;
-        }
-
     }
 
     private void CheckHealth()

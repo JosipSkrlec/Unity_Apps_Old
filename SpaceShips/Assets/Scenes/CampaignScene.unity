@@ -640,11 +640,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bb0932af7350e448e192f73af9c852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NumberOfLVL: 4
   NumberOfEnemyWaves: 4
   EnemyAttackCooldown: 1
   SpawnEnemyRandom: 1
   EnemyFormation: 3-4-5-7
-  NumberOfLVL: 4
   MoonstonesReward: 213
 --- !u!95 &183000527
 Animator:
@@ -811,11 +811,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bb0932af7350e448e192f73af9c852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NumberOfLVL: 2
   NumberOfEnemyWaves: 2
   EnemyAttackCooldown: 4
   SpawnEnemyRandom: 1
   EnemyFormation: 3-5
-  NumberOfLVL: 2
   MoonstonesReward: 157
 --- !u!95 &281889823
 Animator:
@@ -1274,7 +1274,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -150, y: -2184.6504}
+  m_AnchoredPosition: {x: -150, y: -2182}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &509167439
@@ -1382,11 +1382,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bb0932af7350e448e192f73af9c852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NumberOfLVL: 1
   NumberOfEnemyWaves: 1
   EnemyAttackCooldown: 5
   SpawnEnemyRandom: 0
   EnemyFormation: 3
-  NumberOfLVL: 1
   MoonstonesReward: 124
 --- !u!95 &509167443
 Animator:
@@ -1924,7 +1924,7 @@ MonoBehaviour:
   CheckIfEndlessModeisPaid: 0
   CheckCampaignLvl: 1
   MoonstoneTextUI: {fileID: 0}
-  EndlessPanel: {fileID: 0}
+  EndlessPanelForBuy: {fileID: 0}
   LockerImage: {fileID: 0}
 --- !u!1 &1067281524
 GameObject:
@@ -2072,11 +2072,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bb0932af7350e448e192f73af9c852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NumberOfLVL: 3
   NumberOfEnemyWaves: 3
   EnemyAttackCooldown: 2
   SpawnEnemyRandom: 1
   EnemyFormation: 3-4-6
-  NumberOfLVL: 3
   MoonstonesReward: 198
 --- !u!95 &1067281530
 Animator:
@@ -2870,11 +2870,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bb0932af7350e448e192f73af9c852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NumberOfLVL: 5
   NumberOfEnemyWaves: 3
   EnemyAttackCooldown: 0.2
   SpawnEnemyRandom: 1
   EnemyFormation: 3-6-7
-  NumberOfLVL: 5
   MoonstonesReward: 256
 --- !u!95 &1389648979
 Animator:
@@ -3122,7 +3122,7 @@ MonoBehaviour:
   CheckIfEndlessModeisPaid: 0
   CheckCampaignLvl: 0
   MoonstoneTextUI: {fileID: 0}
-  EndlessPanel: {fileID: 0}
+  EndlessPanelForBuy: {fileID: 0}
   LockerImage: {fileID: 0}
 --- !u!1 &1808318300
 GameObject:

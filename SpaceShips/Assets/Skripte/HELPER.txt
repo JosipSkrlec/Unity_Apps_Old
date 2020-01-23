@@ -1,13 +1,11 @@
 Igra SpaceShips
 -----
 PlayerPref:
-Moonstones = broj skupljenih Moonstones-a
 
-NumberOfEnemyWaves = broj enemy valova
-EnemyAttackCooldown = broj koji oznacava coldown za pucanje enemy-a
-//TODO - napraviti za svaki wave di da se spawn-a
-SpawnEnemyRandom = broj je 0 il i1, ako je 1 tada se spawna s istog
-// string should be the same number as numberofenemywaves
-// like if number is 3 then enemyformation should be 3-5-4,
-// numbers from 3-7 included both separated with "-"
-LEVELCONTROLFORMATION = objasnjeno iznad
+/// MAIN TEXT
+int CampaignFinished = PlayerPrefs.GetInt("CampaignFinished"); // broj zavrsenih campaign-a
+int MoonstonesCount = PlayerPrefs.GetInt("Moonstones"); // broj skupljenih moonstones-a
+int EndlessModePaid = PlayerPrefs.GetInt("EndlessModePaid"); // provjera da li je placen endless mode
+float playerShootingCooldown = PlayerPrefs.GetFloat("playerShootingCooldown"); // provjera koliko player ima cooldown reduction koji se postavlja u shop-u a po default-u ima 0.5f
+
+

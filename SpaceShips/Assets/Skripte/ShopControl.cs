@@ -8,7 +8,7 @@ public class ShopControl : MonoBehaviour
     public bool refresh = false;
 
     int MoonstonesCount;
-    int cooldown;
+    float cooldown;
     int DropChance;
 
 
@@ -26,6 +26,13 @@ public class ShopControl : MonoBehaviour
         {
             PlayerPrefs.SetInt("DropChance", 10);
         }
+
+        cooldown = PlayerPrefs.GetFloat("playerShootingCooldown");
+
+        if (cooldown == 0.0f)
+        {
+            PlayerPrefs.SetFloat("playerShootingCooldown", 0.5f);
+        }
     }
 
     // Update is called once per frame
@@ -39,9 +46,9 @@ public class ShopControl : MonoBehaviour
 
             DropChance = PlayerPrefs.GetInt("DropChance");
 
-            DropChanceText.text = DropChance.ToString();
+            DropChanceText.text = DropChance.ToString() + "%";
 
-            cooldown = PlayerPrefs.GetInt("PlayerShotCooldown");
+            cooldown = PlayerPrefs.GetFloat("playerShootingCooldown");
 
             CooldownText.text = cooldown.ToString();
         }
@@ -128,6 +135,61 @@ public class ShopControl : MonoBehaviour
         }
     }
 
+    public void BuyCooldown()
+    {
+        MoonstonesCount = PlayerPrefs.GetInt("Moonstones");
+
+        if (MoonstonesCount > 10)
+        {
+            if (cooldown == 0.2f)
+            {
+                MoonstonesCount -= 10;
+
+                PlayerPrefs.SetInt("Moonstones", MoonstonesCount);
+
+                PlayerPrefs.SetFloat("playerShootingCooldown", 0.1f);
+
+            }
+            if (cooldown == 0.3f)
+            {
+                MoonstonesCount -= 10;
+
+                PlayerPrefs.SetInt("Moonstones", MoonstonesCount);
+
+                PlayerPrefs.SetFloat("playerShootingCooldown", 0.2f);
+
+            }
+            if (cooldown == 0.4f)
+            {
+                MoonstonesCount -= 10;
+
+                PlayerPrefs.SetInt("Moonstones", MoonstonesCount);
+
+                PlayerPrefs.SetFloat("playerShootingCooldown", 0.3f);
+
+            }
+            if (cooldown == 0.5f)
+            {
+                MoonstonesCount -= 10;
+
+                PlayerPrefs.SetInt("Moonstones", MoonstonesCount);
+
+                PlayerPrefs.SetFloat("playerShootingCooldown", 0.4f);
+
+            }
+
+            else
+            {
+                Debug.Log("cooldown Upgraded to MAX!");
+            }
+
+
+        }
+        else
+        {
+            Debug.Log("Not enought moonstones");
+        }
+    }
 
 
 

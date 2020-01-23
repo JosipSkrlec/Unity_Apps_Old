@@ -178,7 +178,7 @@ public class EnemySystemAndInGameControl : MonoBehaviour
                     PlayerPrefs.SetInt("CampaignFinished", currentplayedlvl);
                 }
 
-                int CurrentMoonstonesReward = PlayerPrefs.GetInt("CurrentLvlMoonstones");
+                int CurrentMoonstonesReward = PlayerPrefs.GetInt("MoonstonesReward");
 
                 MoonstonesRewardText.text = CurrentMoonstonesReward.ToString();
 
