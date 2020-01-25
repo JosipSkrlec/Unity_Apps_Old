@@ -8,193 +8,279 @@ public class ShopControl : MonoBehaviour
 {
     public bool refresh = false;
 
-    int MoonstonesCount;
-    float cooldown;
-    int DropChance;
+    int MoonstonesCountREF;
 
+    int DropChancePREF;
+    float cooldownPREF;
+    float playerDamagePREF;
+
+    public GameObject NotificationText;
     public Text MoonstonesText;
+
     public Text DropChanceText;
     public Text CooldownText;
+    public Text DamageText;
 
+    // VARIJABLE ZA KOSTANJE UPGREJDA XD
+    [Header("UPGRADE VALUE")]
+    public int DropChanceMoonstonesCost;
+    public int playerShootingCooldownMoonstonesCost;
+    public int playerDamageCost;
+
+    [Header("BUTTONS")]
+    public Button ButtonChanceUpgrade;
+    public Button ButtonCooldownUpgrade;
+    public Button ButtonDamageUpgrade;
 
     // Start is called before the first frame update
     void Start()
     {
-        DropChance = PlayerPrefs.GetInt("DropChance");
+        DropChancePREF = PlayerPrefs.GetInt("DropChance");
 
-        if (DropChance == 0)
+
+        if (DropChancePREF == 0)
         {
             PlayerPrefs.SetInt("DropChance", 10);
         }
 
-        cooldown = PlayerPrefs.GetFloat("playerShootingCooldown");
+        // OVO JE ZA COOLDOWN
+        cooldownPREF = PlayerPrefs.GetFloat("playerShootingCooldown");
 
-        if (cooldown == 0.0f)
+        if (cooldownPREF == 0.0f)
         {
             PlayerPrefs.SetFloat("playerShootingCooldown", 0.5f);
         }
+
+        // OVO JE ZA DAMAGE
+        playerDamagePREF = PlayerPrefs.GetFloat("playerDamage");
+
+        // ako ne postoji zapisano u playerpref postavlja se na default
+        if (playerDamagePREF == 0.0f)
+        {
+            PlayerPrefs.SetFloat("playerDamage", 50.0f);
+        }
+
+        Debug.Log("drop chance = " + DropChancePREF + " cooldownref = " + cooldownPREF + " damage = " + playerDamagePREF);
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(refresh == true)
+        if (refresh == true)
         {
-            MoonstonesCount = PlayerPrefs.GetInt("Moonstones");
 
-            MoonstonesText.text = MoonstonesCount.ToString();
+            MoonstonesCountREF = PlayerPrefs.GetInt("Moonstones");
 
-            DropChance = PlayerPrefs.GetInt("DropChance");
+            MoonstonesText.text = MoonstonesCountREF.ToString();
 
-            DropChanceText.text = DropChance.ToString() + "%";
+            DropChancePREF = PlayerPrefs.GetInt("DropChance");
 
-            cooldown = PlayerPrefs.GetFloat("playerShootingCooldown");
+            DropChanceText.text = DropChancePREF.ToString() + "%";
 
-            CooldownText.text = cooldown.ToString();
+            cooldownPREF = PlayerPrefs.GetFloat("playerShootingCooldown");
+
+            CooldownText.text = cooldownPREF.ToString();
+
+            playerDamagePREF = PlayerPrefs.GetFloat("playerDamage");
+
+            DamageText.text = playerDamagePREF.ToString();
+
+            // unable button-e koji su na MAX
+            if (DropChancePREF == 30)
+            {
+                ButtonChanceUpgrade.enabled = false;
+            }
+            //Debug.Log(cooldownPREF);
+
+            if (cooldownPREF == 0.2f)
+            {
+                ButtonCooldownUpgrade.enabled = false;
+            }
+            //if ()
+            //{
+
+            //}
+
         }
 
 
     }
-
+    // radi
     public void BuyChance()
     {
-        MoonstonesCount = PlayerPrefs.GetInt("Moonstones");
+        MoonstonesCountREF = PlayerPrefs.GetInt("Moonstones");
 
-        if (MoonstonesCount > 100)
+        if (MoonstonesCountREF >= DropChanceMoonstonesCost)
         {
-            if (DropChance == 50)
+            NotificationText.SetActive(true);
+            NotificationText.GetComponent<Text>().text = "Drop Chance Upgraded";
+            NotificationText.GetComponent<ActiveObjectToUnactiveAfterSeconds>().enabled = true;
+
+            if (DropChancePREF == 30)
             {
-                MoonstonesCount -= 100;
+                Debug.Log("NA MAX" + DropChancePREF);
 
-                PlayerPrefs.SetInt("Moonstones", MoonstonesCount);
-
-                DropChance += 10;
-
-                PlayerPrefs.SetInt("DropChance", DropChance);
 
             }
 
-            if (DropChance == 40)
+            if (DropChancePREF == 25)
             {
-                MoonstonesCount -= 100;
+                MoonstonesCountREF -= DropChanceMoonstonesCost;
 
-                PlayerPrefs.SetInt("Moonstones", MoonstonesCount);
+                PlayerPrefs.SetInt("Moonstones", MoonstonesCountREF);
 
-                DropChance += 10;
+                DropChancePREF += 5;
 
-                PlayerPrefs.SetInt("DropChance", DropChance);
+                PlayerPrefs.SetInt("DropChance", DropChancePREF);
 
             }
 
-            if (DropChance == 30)
+            if (DropChancePREF == 15)
             {
-                MoonstonesCount -= 100;
+                MoonstonesCountREF -= DropChanceMoonstonesCost;
 
-                PlayerPrefs.SetInt("Moonstones", MoonstonesCount);
+                PlayerPrefs.SetInt("Moonstones", MoonstonesCountREF);
 
-                DropChance += 10;
+                DropChancePREF += 10;
 
-                PlayerPrefs.SetInt("DropChance", DropChance);
+                PlayerPrefs.SetInt("DropChance", DropChancePREF);
+
 
             }
 
-            if (DropChance == 20)
+            if (DropChancePREF == 10)
             {
-                MoonstonesCount -= 100;
+                MoonstonesCountREF -= DropChanceMoonstonesCost;
 
-                PlayerPrefs.SetInt("Moonstones", MoonstonesCount);
+                PlayerPrefs.SetInt("Moonstones", MoonstonesCountREF);
 
-                DropChance += 10;
+                DropChancePREF += 5;
+                PlayerPrefs.SetInt("DropChance", DropChancePREF);
 
-                PlayerPrefs.SetInt("DropChance", DropChance);
 
             }
-
-            if (DropChance == 10)
-            {
-                MoonstonesCount -= 100;
-
-                PlayerPrefs.SetInt("Moonstones", MoonstonesCount);
-
-                DropChance += 10;
-
-                PlayerPrefs.SetInt("DropChance", DropChance);
-
-            }
-
-            else
-            {
-                Debug.Log("Chance Upgraded to MAX!");
-            }
-
 
         }
+
         else
         {
+            NotificationText.SetActive(true);
+            NotificationText.GetComponent<Text>().text = "Not enought moonstones";
+            NotificationText.GetComponent<ActiveObjectToUnactiveAfterSeconds>().enabled = true;
+
             Debug.Log("Not enought moonstones");
         }
     }
-
+    // fix needed TODO - FACKING NE DELA
     public void BuyCooldown()
     {
-        MoonstonesCount = PlayerPrefs.GetInt("Moonstones");
+        MoonstonesCountREF = PlayerPrefs.GetInt("Moonstones");
 
-        if (MoonstonesCount > 10)
+        if (MoonstonesCountREF > playerShootingCooldownMoonstonesCost)
         {
-            if (cooldown == 0.2f)
+            NotificationText.SetActive(true);
+
+            NotificationText.SetActive(true);
+            NotificationText.GetComponent<Text>().text = "Cooldown Upgraded";
+            NotificationText.GetComponent<ActiveObjectToUnactiveAfterSeconds>().enabled = true;
+            Debug.Log(cooldownPREF);
+
+            if (cooldownPREF == 0.2f)
             {
-                MoonstonesCount -= 10;
+                MoonstonesCountREF -= playerShootingCooldownMoonstonesCost;
+                Debug.Log("22222222222222222222222222222222222");
+                cooldownPREF -= 0.1f;
 
-                PlayerPrefs.SetInt("Moonstones", MoonstonesCount);
+                PlayerPrefs.SetInt("Moonstones", MoonstonesCountREF);
 
-                PlayerPrefs.SetFloat("playerShootingCooldown", 0.1f);
+                PlayerPrefs.SetFloat("playerShootingCooldown", cooldownPREF);
 
             }
-            if (cooldown == 0.3f)
+            if (cooldownPREF == 0.3f)
             {
-                MoonstonesCount -= 10;
+                MoonstonesCountREF -= playerShootingCooldownMoonstonesCost;
+                Debug.Log("33333333333333333333");
+                cooldownPREF -= 0.1f;
 
-                PlayerPrefs.SetInt("Moonstones", MoonstonesCount);
+                PlayerPrefs.SetInt("Moonstones", MoonstonesCountREF);
 
-                PlayerPrefs.SetFloat("playerShootingCooldown", 0.2f);
+                PlayerPrefs.SetFloat("playerShootingCooldown", cooldownPREF);
+
 
             }
-            if (cooldown == 0.4f)
+            if (cooldownPREF == 0.4f)
             {
-                MoonstonesCount -= 10;
+                MoonstonesCountREF -= playerShootingCooldownMoonstonesCost;
+                Debug.Log("44444444444444444444444");
+                cooldownPREF -= 0.1f;
 
-                PlayerPrefs.SetInt("Moonstones", MoonstonesCount);
+                PlayerPrefs.SetInt("Moonstones", MoonstonesCountREF);
 
-                PlayerPrefs.SetFloat("playerShootingCooldown", 0.3f);
+                PlayerPrefs.SetFloat("playerShootingCooldown", cooldownPREF);
 
             }
-            if (cooldown == 0.5f)
+            if (cooldownPREF == 0.5f)
             {
-                MoonstonesCount -= 10;
+                MoonstonesCountREF -= playerShootingCooldownMoonstonesCost;
+                Debug.Log("55555555555555555555555555");
+                cooldownPREF -= 0.1f;
 
-                PlayerPrefs.SetInt("Moonstones", MoonstonesCount);
+                PlayerPrefs.SetInt("Moonstones", MoonstonesCountREF);
 
-                PlayerPrefs.SetFloat("playerShootingCooldown", 0.4f);
+                PlayerPrefs.SetFloat("playerShootingCooldown", cooldownPREF);
 
             }
 
-            else
-            {
-                Debug.Log("cooldown Upgraded to MAX!");
-            }
-
-
+            Debug.Log(cooldownPREF);
         }
         else
         {
+            NotificationText.SetActive(true);
+            NotificationText.GetComponent<Text>().text = "Not enought Moonstones";
+            NotificationText.GetComponent<ActiveObjectToUnactiveAfterSeconds>().enabled = true;
+
             Debug.Log("Not enought moonstones");
         }
     }
+    // radi
+    public void BuyDamage()
+    {
+        MoonstonesCountREF = PlayerPrefs.GetInt("Moonstones");
+
+        if (MoonstonesCountREF >= playerDamageCost)
+        {
+            NotificationText.SetActive(true);
+            NotificationText.GetComponent<Text>().text = "Damage Upgraded";
+            NotificationText.GetComponent<ActiveObjectToUnactiveAfterSeconds>().enabled = true;
+
+            if (playerDamagePREF == 100)
+            {
+                MoonstonesCountREF -= playerDamageCost;
+
+                PlayerPrefs.SetInt("Moonstones", MoonstonesCountREF);
+
+                playerDamagePREF += 50;
+
+                PlayerPrefs.SetInt("playerDamage", DropChancePREF);
+
+            }
+
+            if (playerDamagePREF == 50)
+            {
+                MoonstonesCountREF -= playerDamageCost;
+
+                PlayerPrefs.SetInt("Moonstones", MoonstonesCountREF);
+
+                playerDamagePREF += 50;
+                PlayerPrefs.SetInt("playerDamage", DropChancePREF);
 
 
+            }
 
+        }
 
+    }// end of buy damage method
 
-
-
-}
+} // end of main class

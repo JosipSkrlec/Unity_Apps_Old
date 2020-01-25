@@ -191,7 +191,6 @@ public class EnemySystemAndInGameControl : MonoBehaviour
 
                 if (currentplayedlvl != 0)
                 {
-                    Debug.Log(currentplayedlvl);
                     PlayerPrefs.SetInt("CampaignFinished", currentplayedlvl);
                 }
 

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ActiveObjectToUnactiveAfterSeconds : MonoBehaviour
 {
+    [SerializeField]
     private float Cooldown = 5.0f;
     public float getCooldown() { return this.Cooldown; }
     public void setCooldown(float value) { this.Cooldown = value; }

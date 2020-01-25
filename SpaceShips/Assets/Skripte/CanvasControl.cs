@@ -190,10 +190,9 @@ public class CanvasControl : MonoBehaviour
         PlayerPrefs.SetInt("DropChance",10);
         PlayerPrefs.SetFloat("playerShootingCooldown", 0.5f);
 
-
         PlayerPrefs.SetInt("EndlessModePaid", 0);
         PlayerPrefs.SetInt("CampaignFinished", 0);
-        PlayerPrefs.SetInt("Moonstones", 0);
+        PlayerPrefs.SetInt("Moonstones", 10);
 
     }
 
