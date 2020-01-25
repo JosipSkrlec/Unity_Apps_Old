@@ -24,6 +24,8 @@ public class PlayerControl : MonoBehaviour
     public void setplayUpdate(bool value) { this.playUpdate = value; }
 
     [Header("Helpers")]
+    public GameObject Explosion;
+
     public GameObject LosePanel;
     public GameObject HealthIndicatorParent;
     public bool healthCheckerbool = false;
@@ -234,6 +236,10 @@ public class PlayerControl : MonoBehaviour
                 }
                 else if (Shield.activeSelf == false)
                 {
+                    GameObject ExplosionSpawnedPref = Instantiate(Explosion, this.gameObject.transform.localPosition, Quaternion.identity);
+                    ExplosionSpawnedPref.transform.parent = this.transform.parent;
+                    ExplosionSpawnedPref.transform.localPosition = this.gameObject.transform.localPosition;
+
                     healthCheckerbool = true;
                     PlayerHealth -= 1;
 

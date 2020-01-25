@@ -642,8 +642,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NumberOfLVL: 4
   NumberOfEnemyWaves: 4
-  EnemyAttackCooldown: 1
   EnemyFormation: 3-4-5-7
+  EnemyAttackCooldown: 1
+  EnemyHealth: 0
   MoonstonesReward: 213
 --- !u!95 &183000527
 Animator:
@@ -812,8 +813,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NumberOfLVL: 2
   NumberOfEnemyWaves: 2
-  EnemyAttackCooldown: 4
   EnemyFormation: 3-5
+  EnemyAttackCooldown: 4
+  EnemyHealth: 200
   MoonstonesReward: 157
 --- !u!95 &281889823
 Animator:
@@ -1382,8 +1384,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NumberOfLVL: 1
   NumberOfEnemyWaves: 1
-  EnemyAttackCooldown: 5
   EnemyFormation: 7
+  EnemyAttackCooldown: 5
+  EnemyHealth: 50
   MoonstonesReward: 124
 --- !u!95 &509167443
 Animator:
@@ -2071,8 +2074,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NumberOfLVL: 3
   NumberOfEnemyWaves: 3
-  EnemyAttackCooldown: 2
   EnemyFormation: 3-4-6
+  EnemyAttackCooldown: 2
+  EnemyHealth: 0
   MoonstonesReward: 198
 --- !u!95 &1067281530
 Animator:
@@ -2868,8 +2872,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NumberOfLVL: 5
   NumberOfEnemyWaves: 3
-  EnemyAttackCooldown: 0.2
   EnemyFormation: 3-6-7
+  EnemyAttackCooldown: 0.2
+  EnemyHealth: 0
   MoonstonesReward: 256
 --- !u!95 &1389648979
 Animator:

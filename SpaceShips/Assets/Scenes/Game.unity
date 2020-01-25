@@ -3207,7 +3207,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1692760600
 Transform:
   m_ObjectHideFlags: 0
@@ -3724,6 +3724,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerShootingCooldown: 0.5
+  Explosion: {fileID: 3149982673036943676, guid: bda18fa9387a6fd4da51f515b1153ed3,
+    type: 3}
   LosePanel: {fileID: 28225596}
   HealthIndicatorParent: {fileID: 226121069}
   healthCheckerbool: 0

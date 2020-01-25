@@ -18,7 +18,6 @@ public class EnemyControl : MonoBehaviour
     [Header("Projectiles and Game Pref")]
     // projectiles which enemy can spawn
     public GameObject Projectile01;
-    public GameObject Projectile02;
     // game object for explosion
     public GameObject Explosion;
     public GameObject Shield;

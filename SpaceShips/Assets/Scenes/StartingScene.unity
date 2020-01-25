@@ -873,7 +873,7 @@ MonoBehaviour:
   CheckIfEndlessModeisPaid: 0
   CheckCampaignLvl: 0
   MoonstoneTextUI: {fileID: 0}
-  EndlessPanel: {fileID: 0}
+  EndlessPanelForBuy: {fileID: 0}
   LockerImage: {fileID: 0}
 --- !u!1 &448239605
 GameObject:
@@ -2140,7 +2140,7 @@ MonoBehaviour:
   CheckIfEndlessModeisPaid: 0
   CheckCampaignLvl: 0
   MoonstoneTextUI: {fileID: 0}
-  EndlessPanel: {fileID: 0}
+  EndlessPanelForBuy: {fileID: 0}
   LockerImage: {fileID: 0}
 --- !u!1 &1123556424
 GameObject:
@@ -2474,7 +2474,7 @@ MonoBehaviour:
   CheckIfEndlessModeisPaid: 0
   CheckCampaignLvl: 0
   MoonstoneTextUI: {fileID: 625307016}
-  EndlessPanel: {fileID: 0}
+  EndlessPanelForBuy: {fileID: 0}
   LockerImage: {fileID: 0}
 --- !u!1 &1225939367
 GameObject:
@@ -2533,7 +2533,7 @@ MonoBehaviour:
   CheckIfEndlessModeisPaid: 0
   CheckCampaignLvl: 0
   MoonstoneTextUI: {fileID: 625307016}
-  EndlessPanel: {fileID: 448239605}
+  EndlessPanelForBuy: {fileID: 0}
   LockerImage: {fileID: 0}
 --- !u!114 &1225939370
 MonoBehaviour:
@@ -3011,7 +3011,7 @@ MonoBehaviour:
   CheckIfEndlessModeisPaid: 0
   CheckCampaignLvl: 0
   MoonstoneTextUI: {fileID: 0}
-  EndlessPanel: {fileID: 448239605}
+  EndlessPanelForBuy: {fileID: 0}
   LockerImage: {fileID: 0}
 --- !u!114 &1419193293
 MonoBehaviour:
@@ -3347,7 +3347,7 @@ MonoBehaviour:
   CheckIfEndlessModeisPaid: 0
   CheckCampaignLvl: 0
   MoonstoneTextUI: {fileID: 0}
-  EndlessPanel: {fileID: 0}
+  EndlessPanelForBuy: {fileID: 0}
   LockerImage: {fileID: 0}
 --- !u!1 &1955217400
 GameObject:
@@ -3664,7 +3664,7 @@ MonoBehaviour:
   CheckIfEndlessModeisPaid: 1
   CheckCampaignLvl: 0
   MoonstoneTextUI: {fileID: 625307016}
-  EndlessPanel: {fileID: 448239605}
+  EndlessPanelForBuy: {fileID: 0}
   LockerImage: {fileID: 464455019}
 --- !u!114 &2121627944
 MonoBehaviour:
@@ -3680,7 +3680,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NumberOfLVL: 0
   NumberOfEnemyWaves: 10
-  EnemyAttackCooldown: 0.1
-  SpawnEnemyRandom: 0
   EnemyFormation: 3-3-4-5-3-7-4-7-3-7
+  EnemyAttackCooldown: 0.1
+  EnemyHealth: 150
   MoonstonesReward: 2500

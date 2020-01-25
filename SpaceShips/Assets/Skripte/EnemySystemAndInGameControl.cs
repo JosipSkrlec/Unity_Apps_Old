@@ -452,7 +452,7 @@ public class EnemySystemAndInGameControl : MonoBehaviour
     //KORISTI se kao helper u SpawnEnemyShipInControlledFormation
     void SpawnEnemyHelper(float FormationX,float FormationY)
     {
-        GameObject GO_Spawn = Instantiate(EnemyShip);
+        GameObject GO_Spawn = Instantiate(EnemyShip,transform.position,Quaternion.identity);
         GO_Spawn.transform.parent = this.transform;
 
         GO_Spawn.GetComponent<EnemyControl>().setHealth(EnemyHealth);
