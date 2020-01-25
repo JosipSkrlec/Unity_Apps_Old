@@ -14,9 +14,9 @@ public class PlayerControl : MonoBehaviour
     public void setPlayerShootingCooldown(float value){this.PlayerShootingCooldown = value;}
     
     // projectilelvl oznacava kako ce player pucati
-    private float PlayerProjectilelvl;
-    public float getPlayerProjectilelvl() { return this.PlayerProjectilelvl; }
-    public void setPlayerProjectilelvl(float value) { this.PlayerProjectilelvl = value; }
+    private float PlayerDamage;
+    public float getPlayerDamage() { return this.PlayerDamage; }
+    public void setPlayerDamage(float value) { this.PlayerDamage = value; }
 
     // kada je upaljena win ili lose scena unable-a se update tu u skripti playercontrol
     private bool playUpdate = true;
@@ -28,13 +28,7 @@ public class PlayerControl : MonoBehaviour
     public GameObject HealthIndicatorParent;
     public bool healthCheckerbool = false;
     public int PlayerHealth = 3;
-
-    //(DEPRECATED)
-    //public GameObject SpellIndicatorImage;
-    // 0-100
-    //private int SpecialSpell = 0;
-    //public int getSpecialSpell() { return this.SpecialSpell; }
-    //public void setSpecialSpell(int value) { this.SpecialSpell += value; }
+    float PlayerProjectilelvl;
 
     #endregion
 
@@ -58,15 +52,29 @@ public class PlayerControl : MonoBehaviour
     // postavlja se player projectile lvl
     void Start()
     {
-        float playerShootingCooldown = PlayerPrefs.GetFloat("playerShootingCooldown");
-        
+        // OVO JE ZA DAMAGE
+        float playerDamagePREF = PlayerPrefs.GetFloat("playerDamage");
+
+        Debug.Log(PlayerDamage);
         // ako ne postoji zapisano u playerpref postavlja se na default
-        if (playerShootingCooldown == 0){PlayerShootingCooldown = 0.5f;}
+        if (PlayerDamage == 0.0f)
+        {
+            PlayerDamage = 50.0f;
+        }
         else
         {
-            PlayerShootingCooldown = playerShootingCooldown;
+            PlayerDamage = playerDamagePREF;
         }
 
+        // OVO JE ZA COOLDOWN
+        float playerShootingCooldownPREF = PlayerPrefs.GetFloat("playerShootingCooldown");
+        
+        // ako ne postoji zapisano u playerpref postavlja se na default
+        if (playerShootingCooldownPREF == 0){PlayerShootingCooldown = 0.5f;}
+        else
+        {
+            PlayerShootingCooldown = playerShootingCooldownPREF;
+        }
 
         PlayerProjectilelvl = 0;
     }
@@ -100,8 +108,6 @@ public class PlayerControl : MonoBehaviour
 
         for (int x = 0; x <= 4; x++)
         {
-            Debug.Log("Povjeravam health-e i uzimam -1");
-
             if (PlayerHealth-1 >= x)
             {
                 Debug.Log(x + " " + PlayerHealth);
@@ -117,7 +123,7 @@ public class PlayerControl : MonoBehaviour
             if (PlayerHealth <= 0)
             {
                 Time.timeScale = 0.0f;
-
+                playUpdate = false;
                 LosePanel.SetActive(true);
 
             }
@@ -184,48 +190,6 @@ public class PlayerControl : MonoBehaviour
             GO_ForSpawn2.transform.position = new Vector3(PositionOfPlayer.x + 0.13f, PositionOfPlayer.y + 0.5f, PositionOfPlayer.z);
             GO_ForSpawn2.transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
         }
-        else if (PlayerProjectilelvl == 3)
-        {
-            GameObject GO_ForSpawn = (GameObject)Instantiate(ChoosenProjectile);
-            GO_ForSpawn.name = "ProjectileFromPlayer";
-            GO_ForSpawn.GetComponent<ProjectileMovement>().setFriendlyToPlayer(true);
-            GO_ForSpawn.GetComponent<ProjectileMovement>().setUpDirection(true);
-
-            GO_ForSpawn.transform.position = new Vector3(PositionOfPlayer.x - 0.13f, PositionOfPlayer.y + 0.5f, PositionOfPlayer.z);
-            GO_ForSpawn.transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
-
-            GameObject GO_ForSpawn1 = (GameObject)Instantiate(ChoosenProjectile);
-            GO_ForSpawn1.name = "ProjectileFromPlayer";
-            GO_ForSpawn1.GetComponent<ProjectileMovement>().setFriendlyToPlayer(true);
-            GO_ForSpawn1.GetComponent<ProjectileMovement>().setUpDirection(true);
-
-            GO_ForSpawn1.transform.position = new Vector3(PositionOfPlayer.x + 0.0f, PositionOfPlayer.y + 0.5f, PositionOfPlayer.z);
-            GO_ForSpawn1.transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
-
-            GameObject GO_ForSpawn2 = (GameObject)Instantiate(ChoosenProjectile);
-            GO_ForSpawn2.name = "ProjectileFromPlayer";
-            GO_ForSpawn2.GetComponent<ProjectileMovement>().setFriendlyToPlayer(true);
-            GO_ForSpawn2.GetComponent<ProjectileMovement>().setUpDirection(true);
-
-            GO_ForSpawn2.transform.position = new Vector3(PositionOfPlayer.x + 0.13f, PositionOfPlayer.y + 0.5f, PositionOfPlayer.z);
-            GO_ForSpawn2.transform.eulerAngles = new Vector3(0.0f, 0.0f, 0.0f);
-
-            GameObject GO_ForSpawn3 = (GameObject)Instantiate(ChoosenProjectile);
-            GO_ForSpawn3.name = "ProjectileFromPlayer";
-            GO_ForSpawn3.GetComponent<ProjectileMovement>().setFriendlyToPlayer(true);
-            GO_ForSpawn3.GetComponent<ProjectileMovement>().setUpDirection(true);
-
-            GO_ForSpawn3.transform.position = new Vector3(PositionOfPlayer.x, PositionOfPlayer.y + 0.5f, PositionOfPlayer.z);
-            GO_ForSpawn3.transform.eulerAngles = new Vector3(0.0f, 0.0f, 20.0f);
-
-            GameObject GO_ForSpawn4 = (GameObject)Instantiate(ChoosenProjectile);
-            GO_ForSpawn4.name = "ProjectileFromPlayer";
-            GO_ForSpawn4.GetComponent<ProjectileMovement>().setFriendlyToPlayer(true);
-            GO_ForSpawn4.GetComponent<ProjectileMovement>().setUpDirection(true);
-
-            GO_ForSpawn4.transform.position = new Vector3(PositionOfPlayer.x, PositionOfPlayer.y + 0.5f, PositionOfPlayer.z);
-            GO_ForSpawn4.transform.eulerAngles = new Vector3(0.0f, 0.0f, -20.0f);
-        }
 
     }
 
@@ -241,10 +205,7 @@ public class PlayerControl : MonoBehaviour
 
 
         }
-        //else if (collision.transform.name.Contains("UpgradeBonus"))
-        //{
 
-        //}
         else if (collision.transform.name.Contains("Ship"))
         {
             healthCheckerbool = true;
@@ -253,7 +214,7 @@ public class PlayerControl : MonoBehaviour
         }
         else if (collision.transform.name.Contains("UpgradeBonus"))
         {
-            if (PlayerProjectilelvl < 3)
+            if (PlayerProjectilelvl < 2)
             {
                 PlayerProjectilelvl++;
             }
@@ -266,7 +227,6 @@ public class PlayerControl : MonoBehaviour
             {
                 if (Shield.activeSelf == true)
                 {
-                    //Debug.Log("PROJECTILE CHANGE"+ collision.transform.name + " ");
                     collision.gameObject.transform.GetComponent<ProjectileMovement>().setMovementSpeed(10);
                     collision.gameObject.transform.GetComponent<ProjectileMovement>().setFriendlyToPlayer(true);
                     collision.gameObject.transform.GetComponent<ProjectileMovement>().setUpDirection(true);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// skripta se bavi nadogradnjom nekih od stats-a
 public class ShopControl : MonoBehaviour
 {
     public bool refresh = false;
@@ -10,7 +11,6 @@ public class ShopControl : MonoBehaviour
     int MoonstonesCount;
     float cooldown;
     int DropChance;
-
 
     public Text MoonstonesText;
     public Text DropChanceText;

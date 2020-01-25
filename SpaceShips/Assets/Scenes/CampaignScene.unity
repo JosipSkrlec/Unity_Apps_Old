@@ -643,7 +643,6 @@ MonoBehaviour:
   NumberOfLVL: 4
   NumberOfEnemyWaves: 4
   EnemyAttackCooldown: 1
-  SpawnEnemyRandom: 1
   EnemyFormation: 3-4-5-7
   MoonstonesReward: 213
 --- !u!95 &183000527
@@ -814,7 +813,6 @@ MonoBehaviour:
   NumberOfLVL: 2
   NumberOfEnemyWaves: 2
   EnemyAttackCooldown: 4
-  SpawnEnemyRandom: 1
   EnemyFormation: 3-5
   MoonstonesReward: 157
 --- !u!95 &281889823
@@ -1385,8 +1383,7 @@ MonoBehaviour:
   NumberOfLVL: 1
   NumberOfEnemyWaves: 1
   EnemyAttackCooldown: 5
-  SpawnEnemyRandom: 0
-  EnemyFormation: 3
+  EnemyFormation: 7
   MoonstonesReward: 124
 --- !u!95 &509167443
 Animator:
@@ -2075,7 +2072,6 @@ MonoBehaviour:
   NumberOfLVL: 3
   NumberOfEnemyWaves: 3
   EnemyAttackCooldown: 2
-  SpawnEnemyRandom: 1
   EnemyFormation: 3-4-6
   MoonstonesReward: 198
 --- !u!95 &1067281530
@@ -2873,7 +2869,6 @@ MonoBehaviour:
   NumberOfLVL: 5
   NumberOfEnemyWaves: 3
   EnemyAttackCooldown: 0.2
-  SpawnEnemyRandom: 1
   EnemyFormation: 3-6-7
   MoonstonesReward: 256
 --- !u!95 &1389648979

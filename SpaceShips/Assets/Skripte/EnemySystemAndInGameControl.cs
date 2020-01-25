@@ -16,6 +16,8 @@ public class EnemySystemAndInGameControl : MonoBehaviour
     public GameObject PLAYER;
 
     [Header("Enemy Ships / Resistance")]
+    private GameObject EnemyShip;
+
     public GameObject ResistanceEnemyShip01;
     public GameObject ResistanceEnemyShip02;
     public GameObject ResistanceEnemyShip03;
@@ -38,7 +40,7 @@ public class EnemySystemAndInGameControl : MonoBehaviour
     private int CountingSecondsForSpawnFormationHelper = 0;
 
     private int DropChance = 0;
-
+    private int EnemyHealth = 0;
     public int NumberOfWaves = 0;
     public int getNumberOfWaves() { return this.NumberOfWaves; }
     public void setNumberOfWaves(int value) { this.NumberOfWaves = value; }
@@ -60,36 +62,47 @@ public class EnemySystemAndInGameControl : MonoBehaviour
 
     private protected List<int> NumberInFormation = new List<int>();
     private int PositionOfSpawnFromListHelper = 0;
-
-    bool SpawnFormationBool = false;
-    bool SpawnFormationFromSamePosition = true;
-
+    
     // HELPERS
+    bool SpawnFormationBool = false;
     float TimeForShooting;
     float TimeForCountThreeSeconds;
     int numberOfTotalWaves;
     bool spawnFirstWaveHelper = true;
     int numberofCurrentWave = 1;
+    // OVO JE ZA KRATANJE METODE KOJE SE NALAZE NA DNU
+    float timeCounter01 = 0;
 
-    // spawn first wave
+    // u awake se priprema za start i update , ucitavaju se parametri broj wave-ova enemycooldown i spawnenemyrendom
+    // ucitava se i dropchance
     private void Awake()
     {
-        Time.timeScale = 1.0f;
+        // biranje izgleda enemy-a
+        int EnemyShipRandomChose = Random.Range(1,4);
 
-        //first parameter is number of waves
-        // second is enemy shooting cooldown
-        //third is 0 or 1, for spawn randomm or no
-        //PlayerPrefs.SetString("LEVELCONTROL", "1-0-0");
-        //first is number in first wave ...
-        //in third wave
-        //PlayerPrefs.SetString("LEVELCONTROLFORMATION", "7");
+        if (EnemyShipRandomChose == 1)
+        {
+            EnemyShip = ResistanceEnemyShip01;
+        }
+        else if (EnemyShipRandomChose == 2)
+        {
+
+            EnemyShip = ResistanceEnemyShip02;
+        }
+        else if (EnemyShipRandomChose == 3)
+        {
+
+            EnemyShip = ResistanceEnemyShip03;
+        }
+
+        Time.timeScale = 1.0f;
 
         try
         {
             int NumberOfEnemyWaves = PlayerPrefs.GetInt("NumberOfEnemyWaves");
             float EnemyAttackCooldown = PlayerPrefs.GetFloat("EnemyAttackCooldown");
-            int SpawnEnemyRandom = PlayerPrefs.GetInt("SpawnEnemyRandom");
 
+            EnemyHealth = PlayerPrefs.GetInt("EnemyHealth");
             DropChance = PlayerPrefs.GetInt("DropChance");
 
             if (DropChance == 0)
@@ -101,11 +114,6 @@ public class EnemySystemAndInGameControl : MonoBehaviour
             NumberOfWaves = NumberOfEnemyWaves; // -1 zbog array counter-a
             cooldownforShooting = EnemyAttackCooldown;
 
-            if (SpawnEnemyRandom == 0) { SpawnFormationFromSamePosition = false; }
-            else { SpawnFormationFromSamePosition = true; }
-
-
-
 #pragma warning disable CS0168 // Variable is declared but never used
         }
         catch (System.Exception e) { }
@@ -113,25 +121,32 @@ public class EnemySystemAndInGameControl : MonoBehaviour
 
     }
 
-    // Start is called before the first frame update
+    // postavljanje movement-a random
     void Start()
     {
-        #region LOAD SAVE EXAMPLE
-        //Save_Load SV = new Save_Load(Save_Load.Method_Type.Load, "Save", "a");
+        int EnemyMovement = Random.Range(1,4);
 
-        //string SaveHelper = SV.getOutput();
-
-        //string[] SaveParameters = SaveHelper.Split('-');
-
-        //cooldownforShooting = float.Parse(SaveParameters[0], CultureInfo.InvariantCulture.NumberFormat);
-        #endregion
+        if (EnemyMovement == 1)
+        {
+            MoveFormationLeftAndRightBool = true;
+        }
+        else if (EnemyMovement == 2)
+        {
+            MoveFormationInCircleBool = true;
+        }
+        else
+        {
+            MoveFormationUpAndDOwnBool = true;
+        }
     }
 
-    // Update is called once per frame
+    // enemy shooting trigger
+
     void Update()
     {
         TimeForShooting += Time.deltaTime;
 
+        // kretanje random stavljano u START() metodi
         if (MoveFormationLeftAndRightBool == true)
         {
             MoveFormationLeftAndRight();
@@ -145,6 +160,7 @@ public class EnemySystemAndInGameControl : MonoBehaviour
             MoveFormationUpAndDown();
         }
 
+        // pucanje, pronalazi se random child i on puca sa odredenim cooldown-om
         if (TimeForShooting >= cooldownforShooting)
         {
             TimeForShooting = 0.0f;
@@ -156,9 +172,10 @@ public class EnemySystemAndInGameControl : MonoBehaviour
                 this.gameObject.transform.GetChild(RandomChoosenEnemyForShoot).GetComponent<EnemyControl>().setShootEnabled(true);
             }
             catch (System.Exception) { };
-        } // Shooting
+        } 
 
-        // spawn again when child = 0 or less then 0
+        // provjera da li je children 0ili manji u glavnom objektu za spawn, pocetno je tamo jedan objekt koji se destroy-a nakon 2 sec
+        // te pocinje pravi spawn,
         if (this.transform.childCount <= 0)
         {
             if (NumberOfWaves <= 0)
@@ -185,6 +202,7 @@ public class EnemySystemAndInGameControl : MonoBehaviour
                 WinPanel.SetActive(true);                
 
             }
+            // ako ima jos wave-ova za spawn tada se prikazuje text broja trenutnog i max wave-a
             else
             {
                 if (CountingSecondsForSpawnFormation == true)
@@ -202,6 +220,7 @@ public class EnemySystemAndInGameControl : MonoBehaviour
                     }
                     if (CountingSecondsForSpawnFormationHelper >= 4)
                     {
+                        // spawn-a se prvi wave
                         if (spawnFirstWaveHelper == false)
                         {
                             CountingText.gameObject.SetActive(false);
@@ -211,6 +230,7 @@ public class EnemySystemAndInGameControl : MonoBehaviour
                             SpawnFormationBool = true;
 
                         }
+                        // trigera se za spawn
                         else 
                         {
                             CountingText.gameObject.SetActive(false);
@@ -222,7 +242,10 @@ public class EnemySystemAndInGameControl : MonoBehaviour
                     }
                 }
             }
+
         }
+
+        // to se trigger-a u linijama u else iznad
         if (SpawnFormationBool == true)
         {
             Debug.Log("SpawnNewWave");
@@ -233,58 +256,43 @@ public class EnemySystemAndInGameControl : MonoBehaviour
             SpawnFormationBool = false;
             string[] LoadedParameters = PlayerPrefs.GetString("LEVELCONTROLFORMATION").Split('-');
 
-            int temp = int.Parse(LoadedParameters[PositionOfSpawnFromListHelper], CultureInfo.InvariantCulture.NumberFormat);
+            int numberOfFormationColumn = int.Parse(LoadedParameters[PositionOfSpawnFromListHelper], CultureInfo.InvariantCulture.NumberFormat);
 
-            SpawnEnemyShipInControlledFormation(temp, Random.Range(0, 3));
+            SpawnEnemyShipInControlledFormation(numberOfFormationColumn);
 
         }
-
         
     }
-    // CALL method with numbers of first parameter 3,4,5,6,7
-    void SpawnEnemyShipInControlledFormation(int NumberOfColumnsInEnemyFormation,int SpawnPositionPointer)
+
+    // tu se smao poziva metoda za spawn SpawnEnemyHelper
+    // poziva se metoda koja spawn-a enemy-e sa parametrom broj stupova formacije 3,4,5,6,7 i spawn pos pointer sa koje pozicije spawn-a
+    void SpawnEnemyShipInControlledFormation(int NumberOfColumnsInEnemyFormation)
     {
+        // COLUMN
         for (int x = 0; x <= Formation_ArrayX.Length - 1; x++) // COLUMN
         {
+            // ROW
             for (int y = 0; y <= Formation_ArrayY.Length - 1; y++) // ROW
             {
                 if (NumberOfColumnsInEnemyFormation == 3)
                 {
                     if (x == 1)
                     {
-                        if (SpawnFormationFromSamePosition == true)
-                        {
-                            SpawnOneEnemyFromSamePosition(Formation_ArrayX[x], Formation_ArrayY[y], SpawnPositionPointer);
 
-                        }
-                        else
-                        {
-                            SpawnOneEnemyFromDifferentPosition(Formation_ArrayX[x], Formation_ArrayY[y]);
-                        }
+                        SpawnEnemyHelper(Formation_ArrayX[x], Formation_ArrayY[y]);
+
                     }
                     else if (x == 3)
                     {
-                        if (SpawnFormationFromSamePosition == true)
-                        {
-                            SpawnOneEnemyFromSamePosition(Formation_ArrayX[x], Formation_ArrayY[y], SpawnPositionPointer);
 
-                        }
-                        else
-                        {
-                            SpawnOneEnemyFromDifferentPosition(Formation_ArrayX[x], Formation_ArrayY[y]);
-                        }
+                        SpawnEnemyHelper(Formation_ArrayX[x], Formation_ArrayY[y]);
+                        
                     }
                     else if (x == 5)
                     {
-                        if (SpawnFormationFromSamePosition == true)
-                        {
-                            SpawnOneEnemyFromSamePosition(Formation_ArrayX[x], Formation_ArrayY[y], SpawnPositionPointer);
 
-                        }
-                        else
-                        {
-                            SpawnOneEnemyFromDifferentPosition(Formation_ArrayX[x], Formation_ArrayY[y]);
-                        }
+                        SpawnEnemyHelper(Formation_ArrayX[x], Formation_ArrayY[y]);
+
                     }
 
                 } // done
@@ -292,51 +300,21 @@ public class EnemySystemAndInGameControl : MonoBehaviour
                 {
                     if (x == 0)
                     {
-                        if (SpawnFormationFromSamePosition == true)
-                        {
-                            SpawnOneEnemyFromSamePosition(Formation_ArrayX[x], Formation_ArrayY[y], SpawnPositionPointer);
 
-                        }
-                        else
-                        {
-                            SpawnOneEnemyFromDifferentPosition(Formation_ArrayX[x], Formation_ArrayY[y]);
-                        }
+                        SpawnEnemyHelper(Formation_ArrayX[x], Formation_ArrayY[y]);
+                        
                     }
                     else if (x == 2)
                     {
-                        //spawn formation on place 1
-                        GameObject GO_Spawn = Instantiate(ResistanceEnemyShip01);
-                        GO_Spawn.transform.parent = this.transform;
-                        GO_Spawn.transform.localPosition = new Vector3(-40.0f, -30.0f, 0.0f); // set position and animate
-
-                        GO_Spawn.GetComponent<EnemyControl>().setstartPosition(LeftUpperFormationSpawner);
-                        GO_Spawn.GetComponent<EnemyControl>().settargetPosition(new Vector3(Formation_ArrayX[x], Formation_ArrayY[y], 0.0f));
-
-                        GO_Spawn.GetComponent<EnemyControl>().setDropChance(DropChance);
+                        SpawnEnemyHelper(Formation_ArrayX[x], Formation_ArrayY[y]);
                     }
                     else if (x == 4)
                     {
-                        //spawn formation on place 1
-                        GameObject GO_Spawn = Instantiate(ResistanceEnemyShip01);
-                        GO_Spawn.transform.parent = this.transform;
-                        GO_Spawn.transform.localPosition = new Vector3(-40.0f, -30.0f, 0.0f); // set position and animate
-
-                        GO_Spawn.GetComponent<EnemyControl>().setstartPosition(LeftUpperFormationSpawner);
-                        GO_Spawn.GetComponent<EnemyControl>().settargetPosition(new Vector3(Formation_ArrayX[x], Formation_ArrayY[y], 0.0f));
-
-                        GO_Spawn.GetComponent<EnemyControl>().setDropChance(DropChance);
+                        SpawnEnemyHelper(Formation_ArrayX[x], Formation_ArrayY[y]);
                     }
                     else if (x == 6)
                     {
-                        //spawn formation on place 1
-                        GameObject GO_Spawn = Instantiate(ResistanceEnemyShip01);
-                        GO_Spawn.transform.parent = this.transform;
-                        GO_Spawn.transform.localPosition = new Vector3(-40.0f, -30.0f, 0.0f); // set position and animate
-
-                        GO_Spawn.GetComponent<EnemyControl>().setstartPosition(LeftUpperFormationSpawner);
-                        GO_Spawn.GetComponent<EnemyControl>().settargetPosition(new Vector3(Formation_ArrayX[x], Formation_ArrayY[y], 0.0f));
-
-                        GO_Spawn.GetComponent<EnemyControl>().setDropChance(DropChance);
+                        SpawnEnemyHelper(Formation_ArrayX[x], Formation_ArrayY[y]);
                     }
 
                 } //done
@@ -344,63 +322,33 @@ public class EnemySystemAndInGameControl : MonoBehaviour
                 {
                     if (x == 0)
                     {
-                        if (SpawnFormationFromSamePosition == true)
-                        {
-                            SpawnOneEnemyFromSamePosition(Formation_ArrayX[x], Formation_ArrayY[y], SpawnPositionPointer);
-
-                        }
-                        else
-                        {
-                            SpawnOneEnemyFromDifferentPosition(Formation_ArrayX[x], Formation_ArrayY[y]);
-                        }
+  
+                        SpawnEnemyHelper(Formation_ArrayX[x], Formation_ArrayY[y]);
+                        
                     }
                     else if (x == 1)
                     {
-                        if (SpawnFormationFromSamePosition == true)
-                        {
-                            SpawnOneEnemyFromSamePosition(Formation_ArrayX[x], Formation_ArrayY[y], SpawnPositionPointer);
 
-                        }
-                        else
-                        {
-                            SpawnOneEnemyFromDifferentPosition(Formation_ArrayX[x], Formation_ArrayY[y]);
-                        }
+                        SpawnEnemyHelper(Formation_ArrayX[x], Formation_ArrayY[y]);
+                        
                     }
                     else if (x == 3)
                     {
-                        if (SpawnFormationFromSamePosition == true)
-                        {
-                            SpawnOneEnemyFromSamePosition(Formation_ArrayX[x], Formation_ArrayY[y], SpawnPositionPointer);
 
-                        }
-                        else
-                        {
-                            SpawnOneEnemyFromDifferentPosition(Formation_ArrayX[x], Formation_ArrayY[y]);
-                        }
+                        SpawnEnemyHelper(Formation_ArrayX[x], Formation_ArrayY[y]);
+                        
                     }
                     else if (x == 5)
                     {
-                        if (SpawnFormationFromSamePosition == true)
-                        {
-                            SpawnOneEnemyFromSamePosition(Formation_ArrayX[x], Formation_ArrayY[y], SpawnPositionPointer);
-
-                        }
-                        else
-                        {
-                            SpawnOneEnemyFromDifferentPosition(Formation_ArrayX[x], Formation_ArrayY[y]);
-                        }
+    
+                        SpawnEnemyHelper(Formation_ArrayX[x], Formation_ArrayY[y]);
+                        
                     }
                     else if (x == 6)
                     {
-                        if (SpawnFormationFromSamePosition == true)
-                        {
-                            SpawnOneEnemyFromSamePosition(Formation_ArrayX[x], Formation_ArrayY[y], SpawnPositionPointer);
 
-                        }
-                        else
-                        {
-                            SpawnOneEnemyFromDifferentPosition(Formation_ArrayX[x], Formation_ArrayY[y]);
-                        }
+                        SpawnEnemyHelper(Formation_ArrayX[x], Formation_ArrayY[y]);
+                        
                     }
 
                 }//done
@@ -408,200 +356,164 @@ public class EnemySystemAndInGameControl : MonoBehaviour
                 {
                     if (x == 0)
                     {
-                        if (SpawnFormationFromSamePosition == true)
-                        {
-                            SpawnOneEnemyFromSamePosition(Formation_ArrayX[x], Formation_ArrayY[y], SpawnPositionPointer);
 
-                        }
-                        else
-                        {
-                            SpawnOneEnemyFromDifferentPosition(Formation_ArrayX[x], Formation_ArrayY[y]);
-                        }
+                        SpawnEnemyHelper(Formation_ArrayX[x], Formation_ArrayY[y]);
+                        
                     }
                     else if (x == 1)
                     {
-                        if (SpawnFormationFromSamePosition == true)
-                        {
-                            SpawnOneEnemyFromSamePosition(Formation_ArrayX[x], Formation_ArrayY[y], SpawnPositionPointer);
 
-                        }
-                        else
-                        {
-                            SpawnOneEnemyFromDifferentPosition(Formation_ArrayX[x], Formation_ArrayY[y]);
-                        }
+                        SpawnEnemyHelper(Formation_ArrayX[x], Formation_ArrayY[y]);
+
                     }
                     else if (x == 3)
                     {
-                        if (SpawnFormationFromSamePosition == true)
-                        {
-                            SpawnOneEnemyFromSamePosition(Formation_ArrayX[x], Formation_ArrayY[y], SpawnPositionPointer);
 
-                        }
-                        else
-                        {
-                            SpawnOneEnemyFromDifferentPosition(Formation_ArrayX[x], Formation_ArrayY[y]);
-                        }
+                        SpawnEnemyHelper(Formation_ArrayX[x], Formation_ArrayY[y]);
+                        
                     }
                     else if (x == 5)
                     {
-                        if (SpawnFormationFromSamePosition == true)
-                        {
-                            SpawnOneEnemyFromSamePosition(Formation_ArrayX[x], Formation_ArrayY[y], SpawnPositionPointer);
 
-                        }
-                        else
-                        {
-                            SpawnOneEnemyFromDifferentPosition(Formation_ArrayX[x], Formation_ArrayY[y]);
-                        }
+                        SpawnEnemyHelper(Formation_ArrayX[x], Formation_ArrayY[y]);
+                        
                     }
                     else if (x == 6)
                     {
-                        if (SpawnFormationFromSamePosition == true)
-                        {
-                            SpawnOneEnemyFromSamePosition(Formation_ArrayX[x], Formation_ArrayY[y], SpawnPositionPointer);
 
-                        }
-                        else
-                        {
-                            SpawnOneEnemyFromDifferentPosition(Formation_ArrayX[x], Formation_ArrayY[y]);
-                        }
+                        SpawnEnemyHelper(Formation_ArrayX[x], Formation_ArrayY[y]);
+                        
                     }
                     else if (x == 7)
                     {
-                        if (SpawnFormationFromSamePosition == true)
-                        {
-                            SpawnOneEnemyFromSamePosition(Formation_ArrayX[x], Formation_ArrayY[y], SpawnPositionPointer);
+                        SpawnEnemyHelper(Formation_ArrayX[x], Formation_ArrayY[y]);
 
-                        }
-                        else
-                        {
-                            SpawnOneEnemyFromDifferentPosition(Formation_ArrayX[x], Formation_ArrayY[y]);
-                        }
                     }
 
                 }//done
                 else if (NumberOfColumnsInEnemyFormation == 7)
                 {
 
-                    //spawn formation on place 1
-                    GameObject GO_Spawn = Instantiate(ResistanceEnemyShip01);
-                    GO_Spawn.transform.parent = this.transform;
-                    GO_Spawn.transform.localPosition = new Vector3(-40.0f, -30.0f, 0.0f); // set position and animate
+                    if (x == 0)
+                    {
 
-                    GO_Spawn.GetComponent<EnemyControl>().setstartPosition(LeftUpperFormationSpawner);
-                    GO_Spawn.GetComponent<EnemyControl>().settargetPosition(new Vector3(Formation_ArrayX[x], Formation_ArrayY[y], 0.0f));
+                        SpawnEnemyHelper(Formation_ArrayX[x], Formation_ArrayY[y]);
 
-                    GO_Spawn.GetComponent<EnemyControl>().setDropChance(DropChance);
+                    }
+                    else if (x == 1)
+                    {
+
+                        SpawnEnemyHelper(Formation_ArrayX[x], Formation_ArrayY[y]);
+
+                    }
+                    else if (x == 2)
+                    {
+
+                        SpawnEnemyHelper(Formation_ArrayX[x], Formation_ArrayY[y]);
+
+                    }
+                    else if (x == 3)
+                    {
+
+                        SpawnEnemyHelper(Formation_ArrayX[x], Formation_ArrayY[y]);
+
+                    }
+                    else if (x == 4)
+                    {
+
+                        SpawnEnemyHelper(Formation_ArrayX[x], Formation_ArrayY[y]);
+
+                    }
+                    else if (x == 5)
+                    {
+
+                        SpawnEnemyHelper(Formation_ArrayX[x], Formation_ArrayY[y]);
+
+                    }
+                    else if (x == 6)
+                    {
+
+                        SpawnEnemyHelper(Formation_ArrayX[x], Formation_ArrayY[y]);
+
+                    }
+                    else if (x == 7)
+                    {
+                        SpawnEnemyHelper(Formation_ArrayX[x], Formation_ArrayY[y]);
+
+                    }
 
                 }//done
+
                 else{continue;}
-
-
-
             }//End of for loop Y        
         }//End of for loop X
     }//End of Spawn Method
 
-    //spawn formation on place 1
-    void SpawnOneEnemyFromDifferentPosition(float FormationX,float FormationY)
+    //KORISTI se kao helper u SpawnEnemyShipInControlledFormation
+    void SpawnEnemyHelper(float FormationX,float FormationY)
     {
-        int ChoosenPositionForSpawnEnemy = Random.Range(0, 4);
+        GameObject GO_Spawn = Instantiate(EnemyShip);
+        GO_Spawn.transform.parent = this.transform;
 
-        if (ChoosenPositionForSpawnEnemy == 0)
-        {
-            GameObject GO_Spawn = Instantiate(ResistanceEnemyShip01);
-            GO_Spawn.transform.parent = this.transform;
+        GO_Spawn.GetComponent<EnemyControl>().setHealth(EnemyHealth);
+        GO_Spawn.GetComponent<EnemyControl>().setstartPosition(LeftUpperFormationSpawner);
+        GO_Spawn.GetComponent<EnemyControl>().settargetPosition(new Vector3(FormationX, FormationY, 0.0f));
+        GO_Spawn.GetComponent<EnemyControl>().setDropChance(DropChance);
 
-            GO_Spawn.GetComponent<EnemyControl>().setstartPosition(LeftUpperFormationSpawner);
-            GO_Spawn.GetComponent<EnemyControl>().settargetPosition(new Vector3(FormationX, FormationY, 0.0f));
+        //// random number iz pozicije od 1-4 (pogledati u editor-u)
+        //int ChoosenPositionForSpawnEnemy = Random.Range(0, 4);
+
+        //if (ChoosenPositionForSpawnEnemy == 0)
+        //{
+
+
+        //}
+        //else if (ChoosenPositionForSpawnEnemy == 1)
+        //{
+        //    GameObject GO_Spawn = Instantiate(EnemyShip);
+        //    GO_Spawn.transform.parent = this.transform;
+
+        //    GO_Spawn.GetComponent<EnemyControl>().setstartPosition(LeftBottomFormationSpawner);
+        //    GO_Spawn.GetComponent<EnemyControl>().settargetPosition(new Vector3(FormationX, FormationY, 0.0f));
+
+        //    GO_Spawn.GetComponent<EnemyControl>().setDropChance(DropChance);
+        //}
+        //else if (ChoosenPositionForSpawnEnemy == 2)
+        //{
+        //    GameObject GO_Spawn = Instantiate(EnemyShip);
+        //    GO_Spawn.transform.parent = this.transform;
+
+        //    GO_Spawn.GetComponent<EnemyControl>().setstartPosition(RightUpperFormationSpawner);
+        //    GO_Spawn.GetComponent<EnemyControl>().settargetPosition(new Vector3(FormationX, FormationY, 0.0f));
+
+        //    GO_Spawn.GetComponent<EnemyControl>().setDropChance(DropChance);
+        //}
+        //else if (ChoosenPositionForSpawnEnemy == 3)
+        //{
+        //    GameObject GO_Spawn = Instantiate(EnemyShip);
+        //    GO_Spawn.transform.parent = this.transform;
+
+        //    GO_Spawn.GetComponent<EnemyControl>().setstartPosition(RightBottomrFormationSpawner);
+        //    GO_Spawn.GetComponent<EnemyControl>().settargetPosition(new Vector3(FormationX, FormationY, 0.0f));
+
+        //    GO_Spawn.GetComponent<EnemyControl>().setDropChance(DropChance);
+        //}
+
+    }   
+
+
+    //GameObject GO_Spawn = Instantiate(EnemyShip);
+    //GO_Spawn.transform.parent = this.transform;
+
+    //        GO_Spawn.GetComponent<EnemyControl>().setstartPosition(LeftUpperFormationSpawner);
+    //GO_Spawn.GetComponent<EnemyControl>().settargetPosition(new Vector3(FormationX, FormationY, 0.0f));
             
-            // drop chance
-            GO_Spawn.GetComponent<EnemyControl>().setDropChance(DropChance);
+    //        // drop chance
+    //        GO_Spawn.GetComponent<EnemyControl>().setDropChance(DropChance);
 
-            Debug.Log(DropChance);
 
-        }
-        else if (ChoosenPositionForSpawnEnemy == 1)
-        {
-            GameObject GO_Spawn = Instantiate(ResistanceEnemyShip01);
-            GO_Spawn.transform.parent = this.transform;
 
-            GO_Spawn.GetComponent<EnemyControl>().setstartPosition(LeftBottomFormationSpawner);
-            GO_Spawn.GetComponent<EnemyControl>().settargetPosition(new Vector3(FormationX, FormationY, 0.0f));
-
-            GO_Spawn.GetComponent<EnemyControl>().setDropChance(DropChance);
-        }
-        else if (ChoosenPositionForSpawnEnemy == 2)
-        {
-            GameObject GO_Spawn = Instantiate(ResistanceEnemyShip01);
-            GO_Spawn.transform.parent = this.transform;
-
-            GO_Spawn.GetComponent<EnemyControl>().setstartPosition(RightUpperFormationSpawner);
-            GO_Spawn.GetComponent<EnemyControl>().settargetPosition(new Vector3(FormationX, FormationY, 0.0f));
-
-            GO_Spawn.GetComponent<EnemyControl>().setDropChance(DropChance);
-        }
-        else if (ChoosenPositionForSpawnEnemy == 3)
-        {
-            GameObject GO_Spawn = Instantiate(ResistanceEnemyShip01);
-            GO_Spawn.transform.parent = this.transform;
-
-            GO_Spawn.GetComponent<EnemyControl>().setstartPosition(RightBottomrFormationSpawner);
-            GO_Spawn.GetComponent<EnemyControl>().settargetPosition(new Vector3(FormationX, FormationY, 0.0f));
-
-            GO_Spawn.GetComponent<EnemyControl>().setDropChance(DropChance);
-        }
-
-    }
-    void SpawnOneEnemyFromSamePosition(float FormationX,float FormationY,int positionofSpawn) // positionofspawn is from 0-3 0 is left upper...
-    {
-        if (positionofSpawn == 0)
-        {
-            GameObject GO_Spawn = Instantiate(ResistanceEnemyShip01);
-            GO_Spawn.transform.parent = this.transform;
-
-            GO_Spawn.GetComponent<EnemyControl>().setstartPosition(LeftUpperFormationSpawner);
-            GO_Spawn.GetComponent<EnemyControl>().settargetPosition(new Vector3(FormationX, FormationY, 0.0f));
-
-            GO_Spawn.GetComponent<EnemyControl>().setDropChance(DropChance);
-        }
-        else if (positionofSpawn == 1)
-        {
-            GameObject GO_Spawn = Instantiate(ResistanceEnemyShip01);
-            GO_Spawn.transform.parent = this.transform;
-
-            GO_Spawn.GetComponent<EnemyControl>().setstartPosition(LeftBottomFormationSpawner);
-            GO_Spawn.GetComponent<EnemyControl>().settargetPosition(new Vector3(FormationX, FormationY, 0.0f));
-
-            GO_Spawn.GetComponent<EnemyControl>().setDropChance(DropChance);
-        }
-        else if (positionofSpawn == 2)
-        {
-            GameObject GO_Spawn = Instantiate(ResistanceEnemyShip01);
-            GO_Spawn.transform.parent = this.transform;
-
-            GO_Spawn.GetComponent<EnemyControl>().setstartPosition(RightUpperFormationSpawner);
-            GO_Spawn.GetComponent<EnemyControl>().settargetPosition(new Vector3(FormationX, FormationY, 0.0f));
-
-            GO_Spawn.GetComponent<EnemyControl>().setDropChance(DropChance);
-        }
-        else if (positionofSpawn == 3)
-        {
-            GameObject GO_Spawn = Instantiate(ResistanceEnemyShip01);
-            GO_Spawn.transform.parent = this.transform;
-
-            GO_Spawn.GetComponent<EnemyControl>().setstartPosition(RightBottomrFormationSpawner);
-            GO_Spawn.GetComponent<EnemyControl>().settargetPosition(new Vector3(FormationX, FormationY, 0.0f));
-
-            GO_Spawn.GetComponent<EnemyControl>().setDropChance(DropChance);
-        }
-
-    }
-
-    // TODO - staviti gore na pocetak
-    // helpers
-    float timeCounter01 = 0;
-
+    // MOVEMENT
     void MoveFormationLeftAndRight()
     {
         timeCounter01 += Time.deltaTime;
@@ -611,23 +523,22 @@ public class EnemySystemAndInGameControl : MonoBehaviour
         transform.position = new Vector3(x, y, z);
 
     }
-
+    // MOVEMENT
     void MoveFormationInCircle()
     {
         timeCounter01 += Time.deltaTime;
-        Debug.Log(timeCounter01);
         float x = Mathf.Cos(timeCounter01);
-        float y = Mathf.Sin(timeCounter01);
+        float y = Mathf.Sin(timeCounter01)+15;
         float z = 0;
         transform.position = new Vector3(x, y, z);
 
     }
-
+    // MOVEMENT
     void MoveFormationUpAndDown()
     {
         timeCounter01 += Time.deltaTime;
         float x = 0;
-        float y = Mathf.Sin(timeCounter01);
+        float y = Mathf.Sin(timeCounter01)+15;
         float z = 0;
         transform.position = new Vector3(x, y, z);
 

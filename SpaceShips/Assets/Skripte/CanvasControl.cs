@@ -133,7 +133,6 @@ public class CanvasControl : MonoBehaviour
             PlayerPrefs.SetInt("CurrentCampaignLVL", 0);
             PlayerPrefs.SetInt("NumberOfEnemyWaves", 10);
             PlayerPrefs.SetFloat("EnemyAttackCooldown", 0.1f);
-            PlayerPrefs.SetFloat("SpawnEnemyRandom", 0);
             PlayerPrefs.SetInt("MoonstonesReward", 2500);
             PlayerPrefs.SetString("LEVELCONTROLFORMATION", "3-3-4-5-3-7-4-7-3-7");
             

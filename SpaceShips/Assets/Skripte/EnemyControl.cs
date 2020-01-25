@@ -53,9 +53,6 @@ public class EnemyControl : MonoBehaviour
 
     void Update()
     {
-        //timeForMovement += Time.deltaTime / timeToReachTarget;
-        //transform.localPosition = Vector3.Lerp(startPosition, targetPosition, timeForMovement);
-
         if (MoveEnemyFormationOnce == true)
         {
             timeForMovementFormation += Time.deltaTime / timeToReachTarget;
@@ -86,15 +83,14 @@ public class EnemyControl : MonoBehaviour
     {
         if (collision.transform.name.Contains("ProjectileFrom"))
         {
-            // GetFriendly is inside of ProjectileMovement and this variable says if projectile is friendly to player or no
+            // ako je fendly za player-a tada nije za enemy-a
             if (collision.GetComponent<ProjectileMovement>().getFriendlyToPlayer() == true)
             {
-                // TODO on projectile make setters and getters for projectile damage
-                Health -= 30;
+                GameObject PLAYER = GameObject.Find("Player");
 
-                // TODO- set somewhere else
-                //GameObject playerinScene = GameObject.Find("Player");
-                //playerinScene.GetComponent<PlayerControl>().setSpecialSpell(1);
+                float playerDamage = PLAYER.GetComponent<PlayerControl>().getPlayerDamage();
+
+                Health -= playerDamage;
 
                 if (Health <= 0.0f)
                 {
@@ -128,24 +124,13 @@ public class EnemyControl : MonoBehaviour
 
                     Destroy(this.gameObject);
                 }
-
-
+                
                 Destroy(collision.transform.gameObject);
 
             }
         }      
 
     }
-
-
-
-    //public void SetDestination(Vector3 destination, float TimeForShooting)
-    //{
-    //    t = 0;
-    //    startPosition = transform.position;
-    //    timeToReachTarget = TimeForShooting;
-    //    target = destination;
-    //}
 
 
 }// Main Class

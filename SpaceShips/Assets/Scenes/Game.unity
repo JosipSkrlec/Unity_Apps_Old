@@ -1053,10 +1053,10 @@ MonoBehaviour:
   DrawLine: 0
   DrawSphere: 1
   TextForGizmo: 40 0 0 - position of spawn
-  PositionOfGizmoText: {x: -9.55, y: 1, z: 0}
+  PositionOfGizmoText: {x: -9.55, y: 16, z: 0}
   PositionOfGizmoLineStartPosition: {x: 0, y: 0, z: 0}
   PositionOfGizmoLineEndPosition: {x: 0, y: 0, z: 0}
-  PositionOfGizmoSphere: {x: -6, y: 0, z: 0}
+  PositionOfGizmoSphere: {x: -6, y: 15, z: 0}
   SphereGizmoSize: 1
 --- !u!1 &475249450
 GameObject:
@@ -1071,7 +1071,7 @@ GameObject:
   - component: {fileID: 475249451}
   - component: {fileID: 475249455}
   m_Layer: 0
-  m_Name: ProjectileRemover
+  m_Name: OutOfSceneGORemover1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1159,7 +1159,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475249450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.76, z: 0}
+  m_LocalPosition: {x: 0, y: 6.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1716,7 +1716,7 @@ GameObject:
   - component: {fileID: 682056477}
   - component: {fileID: 682056476}
   m_Layer: 0
-  m_Name: ProjectileRemover1
+  m_Name: OutOfSceneGORemover2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1816,7 +1816,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 682056474}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.03, z: 0}
+  m_LocalPosition: {x: 0, y: -4.81, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1949,10 +1949,10 @@ MonoBehaviour:
   DrawLine: 0
   DrawSphere: 1
   TextForGizmo: -40 0 0 - position of spawn
-  PositionOfGizmoText: {x: 4.46, y: 1, z: 0}
+  PositionOfGizmoText: {x: 4.46, y: 16, z: 0}
   PositionOfGizmoLineStartPosition: {x: 0, y: 0, z: 0}
   PositionOfGizmoLineEndPosition: {x: 0, y: 0, z: 0}
-  PositionOfGizmoSphere: {x: 6, y: 0, z: 0}
+  PositionOfGizmoSphere: {x: 6, y: 15, z: 0}
   SphereGizmoSize: 1
 --- !u!1 &811087752
 GameObject:
@@ -2041,7 +2041,7 @@ GameObject:
   - component: {fileID: 832589720}
   - component: {fileID: 832589719}
   m_Layer: 0
-  m_Name: ProjectileRemover3
+  m_Name: OutOfSceneGORemove3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2141,7 +2141,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832589718}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.32, y: -5, z: 0}
+  m_LocalPosition: {x: 4.14, y: -5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2239,7 +2239,7 @@ GameObject:
   - component: {fileID: 1039073165}
   - component: {fileID: 1039073164}
   m_Layer: 0
-  m_Name: ProjectileRemover4
+  m_Name: OutOfSceneGORemover4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2339,7 +2339,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1039073163}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.38, y: -5, z: 0}
+  m_LocalPosition: {x: -4.2, y: -5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3549,10 +3549,10 @@ MonoBehaviour:
   DrawLine: 0
   DrawSphere: 1
   TextForGizmo: 60 -30 0 - position of spawn
-  PositionOfGizmoText: {x: -12, y: 6, z: 0}
+  PositionOfGizmoText: {x: -12, y: 21, z: 0}
   PositionOfGizmoLineStartPosition: {x: 0, y: 0, z: 0}
   PositionOfGizmoLineEndPosition: {x: 0, y: 0, z: 0}
-  PositionOfGizmoSphere: {x: -8.95, y: 4.6, z: 0}
+  PositionOfGizmoSphere: {x: -8.95, y: 19.6, z: 0}
   SphereGizmoSize: 1
 --- !u!1 &1869939254
 GameObject:
@@ -4000,10 +4000,10 @@ MonoBehaviour:
   DrawLine: 0
   DrawSphere: 1
   TextForGizmo: -60 -30 0 - position of spawn
-  PositionOfGizmoText: {x: 6, y: 6, z: 0}
+  PositionOfGizmoText: {x: 6, y: 21, z: 0}
   PositionOfGizmoLineStartPosition: {x: 0, y: 0, z: 0}
   PositionOfGizmoLineEndPosition: {x: 0, y: 0, z: 0}
-  PositionOfGizmoSphere: {x: 8.95, y: 4.6, z: 0}
+  PositionOfGizmoSphere: {x: 8.95, y: 19.6, z: 0}
   SphereGizmoSize: 1
 --- !u!1 &1984912922
 GameObject:

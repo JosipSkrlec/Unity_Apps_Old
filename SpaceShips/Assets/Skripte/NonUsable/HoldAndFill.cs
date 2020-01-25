@@ -14,22 +14,22 @@ public class HoldAndFill : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PointerDown)
-        {
-            pointerDownTimer += Time.deltaTime;
+        //if (PointerDown)
+        //{
+        //    pointerDownTimer += Time.deltaTime;
 
-            if (pointerDownTimer >= RequiredHoldTime)
-            {
-                Reset();
-            }
+        //    if (pointerDownTimer >= RequiredHoldTime)
+        //    {
+        //        Reset();
+        //    }
 
-            if (pointerDownTimer < RequiredHoldTime)
-            {
+        //    if (pointerDownTimer < RequiredHoldTime)
+        //    {
 
-                FillImage.fillAmount = pointerDownTimer / RequiredHoldTime;
-            }
+        //        FillImage.fillAmount = pointerDownTimer / RequiredHoldTime;
+        //    }
 
-        }
+        //}
 
     }
 

@@ -7,5 +7,6 @@ int CampaignFinished = PlayerPrefs.GetInt("CampaignFinished"); // broj zavrsenih
 int MoonstonesCount = PlayerPrefs.GetInt("Moonstones"); // broj skupljenih moonstones-a
 int EndlessModePaid = PlayerPrefs.GetInt("EndlessModePaid"); // provjera da li je placen endless mode
 float playerShootingCooldown = PlayerPrefs.GetFloat("playerShootingCooldown"); // provjera koliko player ima cooldown reduction koji se postavlja u shop-u a po default-u ima 0.5f
-
+float playerDamage = PlayerPrefs.GetFloat("playerDamage"); // player damge, 50 je po default-u
+int EnemyHealth = PlayerPrefs.GetInt("EnemyHealth"); // enemy health set
 

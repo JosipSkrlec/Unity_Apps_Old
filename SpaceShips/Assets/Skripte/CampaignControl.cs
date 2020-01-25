@@ -7,10 +7,12 @@ public class CampaignControl : MonoBehaviour
 {
     #region Campaign Veriables
     public int NumberOfLVL;
+    // koliko wave-ova ima toliko mora u enemyformation biti zapisano npr. wave = 3 enemy formation = 3-5-7
     public int NumberOfEnemyWaves;
-    public float EnemyAttackCooldown;
-    public int SpawnEnemyRandom;
     public string EnemyFormation;
+
+    public float EnemyAttackCooldown;
+    public int EnemyHealth;
 
     public int MoonstonesReward;
 
@@ -40,15 +42,13 @@ public class CampaignControl : MonoBehaviour
     {
         PlayerPrefs.SetInt("CurrentCampaignLVL", NumberOfLVL);
         PlayerPrefs.SetInt("NumberOfEnemyWaves", NumberOfEnemyWaves);
-        PlayerPrefs.SetFloat("EnemyAttackCooldown", EnemyAttackCooldown);
-        PlayerPrefs.SetFloat("SpawnEnemyRandom", SpawnEnemyRandom);
-        PlayerPrefs.SetInt("MoonstonesReward", MoonstonesReward);        
-        // string should be the same number as numberofenemywaves
-        // like if number is 3 then enemyformation should be 3-5-4,
-        // numbers from 3-7 included both separated with "-"
         PlayerPrefs.SetString("LEVELCONTROLFORMATION", EnemyFormation);
 
+        PlayerPrefs.SetFloat("EnemyAttackCooldown", EnemyAttackCooldown);
+        PlayerPrefs.SetInt("EnemyHealth", EnemyHealth);
 
+        PlayerPrefs.SetInt("MoonstonesReward", MoonstonesReward);    
+               
         SceneManager.LoadScene("Game");
     }
 
