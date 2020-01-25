@@ -30,7 +30,7 @@ public class CanvasControl : MonoBehaviour
                         Transform currentButtoninCampaign = this.gameObject.transform.GetChild(x);
 
                         currentButtoninCampaign.GetComponent<Image>().color = Color.green;
-                        //currentButtoninCampaign.GetComponent<Button>().enabled = false;
+                        currentButtoninCampaign.GetComponent<Button>().enabled = false;
                         currentButtoninCampaign.GetComponent<Animator>().enabled = false;
 
                     }
@@ -39,7 +39,7 @@ public class CanvasControl : MonoBehaviour
                         Transform currentButtoninCampaign = this.gameObject.transform.GetChild(x);
 
                         currentButtoninCampaign.GetComponent<Image>().color = new Color(1, 1, 1, 1);
-                        //currentButtoninCampaign.GetComponent<Button>().enabled = true;
+                        currentButtoninCampaign.GetComponent<Button>().enabled = true;
                         currentButtoninCampaign.GetComponent<Animator>().enabled = true;
 
                     }
@@ -48,7 +48,6 @@ public class CanvasControl : MonoBehaviour
             }
             catch (System.Exception) { }
         }
-
     }// zavrsetak starta
 
     // Update is called once per frame

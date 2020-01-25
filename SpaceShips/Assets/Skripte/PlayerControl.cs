@@ -18,6 +18,11 @@ public class PlayerControl : MonoBehaviour
     public float getPlayerProjectilelvl() { return this.PlayerProjectilelvl; }
     public void setPlayerProjectilelvl(float value) { this.PlayerProjectilelvl = value; }
 
+    // kada je upaljena win ili lose scena unable-a se update tu u skripti playercontrol
+    private bool playUpdate = true;
+    public bool getplayUpdate() { return this.playUpdate; }
+    public void setplayUpdate(bool value) { this.playUpdate = value; }
+
     [Header("Helpers")]
     public GameObject LosePanel;
     public GameObject HealthIndicatorParent;
@@ -71,17 +76,20 @@ public class PlayerControl : MonoBehaviour
     {
         time += Time.deltaTime;
 
-        // pucanje
-        if (time >= PlayerShootingCooldown)
+        if (playUpdate == true)
         {
-            ShootProjectilelvl(Projectile01);
+            // pucanje
+            if (time >= PlayerShootingCooldown)
+            {
+                ShootProjectilelvl(Projectile01);
 
-            time = 0.0f;
-        }
-        // provjera health-a
-        if (healthCheckerbool == true)
-        {
-            CheckHealth();
+                time = 0.0f;
+            }
+            // provjera health-a
+            if (healthCheckerbool == true)
+            {
+                CheckHealth();
+            }
         }
         
     }

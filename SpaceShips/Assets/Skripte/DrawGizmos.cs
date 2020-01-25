@@ -1,6 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
+// skripta se koristi samo za vizualizaciju za edit scene u editoru
 [ExecuteInEditMode]
 public class DrawGizmos : MonoBehaviour
 {

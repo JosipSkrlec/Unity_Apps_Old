@@ -3057,7 +3057,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1608587619}
-        m_MethodName: OpenStartingMenu
+        m_MethodName: OpenStartingScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

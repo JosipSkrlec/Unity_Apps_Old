@@ -720,7 +720,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 240473616}
-        m_MethodName: OpenStartingMenu
+        m_MethodName: OpenCampaign
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2802,12 +2802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1193896ef51600c429ccc09a3160aa51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AllianceEnemyShip01: {fileID: 2387804790307509295, guid: 0e5cae20ce896e9469feeb9d643b3284,
-    type: 3}
-  AllianceEnemyShip02: {fileID: 5175565025195253020, guid: 60c3c65d3273cd74fa618e7d90c710a4,
-    type: 3}
-  AllianceEnemyShip03: {fileID: 4151182524559019578, guid: f83b78e0b6587ee40bb69c149ffcfd48,
-    type: 3}
+  PLAYER: {fileID: 1869939254}
   ResistanceEnemyShip01: {fileID: 6819602725781172276, guid: ad1559c1e3cb85943aff83289ad43450,
     type: 3}
   ResistanceEnemyShip02: {fileID: 2722985562706389029, guid: f6f82a0d084d2a24f98fe50ccae5819e,
@@ -2926,7 +2921,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1473479268}
-        m_MethodName: OpenCampaignFromWinGame
+        m_MethodName: OpenStartingSceneFronWinPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3733,10 +3728,7 @@ MonoBehaviour:
   HealthIndicatorParent: {fileID: 226121069}
   healthCheckerbool: 0
   PlayerHealth: 3
-  SpellIndicatorImage: {fileID: 1752302746}
   Projectile01: {fileID: 4480014070588930875, guid: 97b0ba8f8ab46594eaacc3e31ae7df44,
-    type: 3}
-  Projectile02: {fileID: 3305589170120535723, guid: a1b01911ff2fe0e4cb5396d5158c937d,
     type: 3}
   Shield: {fileID: 1984912922}
 --- !u!1 &1901124500

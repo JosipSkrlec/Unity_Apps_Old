@@ -12,10 +12,8 @@ public class EnemySystemAndInGameControl : MonoBehaviour
 {
 
     #region Main Objects
-    [Header("Enemy Ships / Alliance")]
-    public GameObject AllianceEnemyShip01;
-    public GameObject AllianceEnemyShip02;
-    public GameObject AllianceEnemyShip03;
+    [Header("Player GO")]
+    public GameObject PLAYER;
 
     [Header("Enemy Ships / Resistance")]
     public GameObject ResistanceEnemyShip01;
@@ -168,6 +166,8 @@ public class EnemySystemAndInGameControl : MonoBehaviour
                 SpawnFormationBool = false;
 
                 Time.timeScale = 0.0f;
+
+                PLAYER.GetComponent<PlayerControl>().setplayUpdate(false);
 
                 // campaignlvlcompleted
                 int currentplayedlvl = PlayerPrefs.GetInt("CurrentCampaignLVL");
