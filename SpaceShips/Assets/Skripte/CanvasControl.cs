@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Diagnostics;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -22,7 +23,7 @@ public class CanvasControl : MonoBehaviour
             {
                 int CampaignFinished = PlayerPrefs.GetInt("CampaignFinished");
 
-                Debug.Log(CampaignFinished);
+                //Debug.Log(CampaignFinished);
                 for (int x = 0; x <= CampaignFinished; x++)
                 {
                     if (x < CampaignFinished)
@@ -183,6 +184,14 @@ public class CanvasControl : MonoBehaviour
 
     }
 
+    // lvl 21_ u kojem se nalazi zavrsna scena
+    public void CallThanksScene()
+    {
+        Time.timeScale = 1.0f;
+
+        SceneManager.LoadScene("ThanksScene");
+    }
+
     // Helper metoda
     public void REFRESH()
     {
@@ -196,6 +205,7 @@ public class CanvasControl : MonoBehaviour
         PlayerPrefs.SetInt("Moonstones", 10);
 
     }
+
 
     
 }// zavrsetak main class-e
