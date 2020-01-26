@@ -1383,11 +1383,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NumberOfLVL: 1
-  NumberOfEnemyWaves: 1
-  EnemyFormation: 7
-  EnemyAttackCooldown: 5
+  NumberOfEnemyWaves: 3
+  EnemyFormation: 4-3-7
+  EnemyAttackCooldown: 2
   EnemyHealth: 50
-  MoonstonesReward: 124
+  MoonstonesReward: 250
 --- !u!95 &509167443
 Animator:
   serializedVersion: 3

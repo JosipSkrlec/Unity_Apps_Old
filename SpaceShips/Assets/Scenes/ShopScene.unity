@@ -2120,9 +2120,9 @@ MonoBehaviour:
   DropChanceText: {fileID: 0}
   CooldownText: {fileID: 0}
   DamageText: {fileID: 0}
-  DropChanceMoonstonesCost: 0
-  playerShootingCooldownMoonstonesCost: 0
-  playerDamageCost: 0
+  DropChanceMoonstonesCost: 200
+  playerShootingCooldownMoonstonesCost: 300
+  playerDamageCost: 400
   ButtonChanceUpgrade: {fileID: 0}
   ButtonCooldownUpgrade: {fileID: 0}
   ButtonDamageUpgrade: {fileID: 0}
@@ -2449,8 +2449,8 @@ MonoBehaviour:
   CooldownText: {fileID: 0}
   DamageText: {fileID: 0}
   DropChanceMoonstonesCost: 200
-  playerShootingCooldownMoonstonesCost: 0
-  playerDamageCost: 0
+  playerShootingCooldownMoonstonesCost: 300
+  playerDamageCost: 400
   ButtonChanceUpgrade: {fileID: 0}
   ButtonCooldownUpgrade: {fileID: 0}
   ButtonDamageUpgrade: {fileID: 0}

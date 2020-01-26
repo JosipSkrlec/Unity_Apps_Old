@@ -3011,7 +3011,7 @@ MonoBehaviour:
   CheckIfEndlessModeisPaid: 0
   CheckCampaignLvl: 0
   MoonstoneTextUI: {fileID: 0}
-  EndlessPanelForBuy: {fileID: 0}
+  EndlessPanelForBuy: {fileID: 448239605}
   LockerImage: {fileID: 0}
 --- !u!114 &1419193293
 MonoBehaviour:
@@ -3664,7 +3664,7 @@ MonoBehaviour:
   CheckIfEndlessModeisPaid: 1
   CheckCampaignLvl: 0
   MoonstoneTextUI: {fileID: 625307016}
-  EndlessPanelForBuy: {fileID: 0}
+  EndlessPanelForBuy: {fileID: 448239605}
   LockerImage: {fileID: 464455019}
 --- !u!114 &2121627944
 MonoBehaviour:

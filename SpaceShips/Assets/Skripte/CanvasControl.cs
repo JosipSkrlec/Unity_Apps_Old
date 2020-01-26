@@ -189,6 +189,7 @@ public class CanvasControl : MonoBehaviour
 
         PlayerPrefs.SetInt("DropChance",10);
         PlayerPrefs.SetFloat("playerShootingCooldown", 0.5f);
+        PlayerPrefs.SetFloat("playerDamage", 0.0f);
 
         PlayerPrefs.SetInt("EndlessModePaid", 0);
         PlayerPrefs.SetInt("CampaignFinished", 0);

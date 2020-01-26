@@ -32,6 +32,8 @@ public class PlayerControl : MonoBehaviour
     public int PlayerHealth = 3;
     float PlayerProjectilelvl;
 
+    [Header("GUI INFO")]
+    public Text PlayerDamageGUI;
     #endregion
 
     #region Main Objects
@@ -54,14 +56,20 @@ public class PlayerControl : MonoBehaviour
     // postavlja se player projectile lvl
     void Start()
     {
+        ShowInfoOnGUI();
+
         // OVO JE ZA DAMAGE
         float playerDamagePREF = PlayerPrefs.GetFloat("playerDamage");
 
-        Debug.Log(PlayerDamage);
+        Debug.Log(playerDamagePREF);
+
         // ako ne postoji zapisano u playerpref postavlja se na default
-        if (PlayerDamage == 0.0f)
+        if (playerDamagePREF == 0.0f)
         {
+            Debug.Log("lose");
             PlayerDamage = 50.0f;
+
+            PlayerDamageGUI.text = PlayerDamage.ToString();
         }
         else
         {
@@ -249,6 +257,13 @@ public class PlayerControl : MonoBehaviour
             }            
 
         }
+
+    }
+
+    void ShowInfoOnGUI()
+    {
+        float playerDamagePREF = PlayerPrefs.GetFloat("playerDamage");
+        PlayerDamageGUI.text = playerDamagePREF.ToString();
 
     }
 

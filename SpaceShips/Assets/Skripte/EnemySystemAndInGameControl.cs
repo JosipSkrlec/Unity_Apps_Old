@@ -41,6 +41,7 @@ public class EnemySystemAndInGameControl : MonoBehaviour
 
     private int DropChance = 0;
     private int EnemyHealth = 0;
+
     public int NumberOfWaves = 0;
     public int getNumberOfWaves() { return this.NumberOfWaves; }
     public void setNumberOfWaves(int value) { this.NumberOfWaves = value; }
@@ -56,6 +57,9 @@ public class EnemySystemAndInGameControl : MonoBehaviour
     public int Moonstones = 0;
     public int getMoonstones() { return this.Moonstones; }
     public void setMoonstones(int value) { this.Moonstones = value; }
+
+    [Header("GUI INFO")]
+    public Text EnemyHealthGUI;
 
     //private protected List<string> ListToStoreGameLevelControl = new List<string>();
     //private protected string SaveHelper;
@@ -124,6 +128,9 @@ public class EnemySystemAndInGameControl : MonoBehaviour
     // postavljanje movement-a random
     void Start()
     {
+
+        ShowInfoOnGUI();
+
         int EnemyMovement = Random.Range(1,4);
 
         if (EnemyMovement == 1)
@@ -540,6 +547,14 @@ public class EnemySystemAndInGameControl : MonoBehaviour
         float y = Mathf.Sin(timeCounter01)+15;
         float z = 0;
         transform.position = new Vector3(x, y, z);
+
+    }
+
+    void ShowInfoOnGUI()
+    {
+        EnemyHealth = PlayerPrefs.GetInt("EnemyHealth");
+
+        EnemyHealthGUI.text = EnemyHealth.ToString();
 
     }
 
