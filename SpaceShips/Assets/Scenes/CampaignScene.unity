@@ -353,12 +353,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bb0932af7350e448e192f73af9c852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfLVL: 5
-  NumberOfEnemyWaves: 3
-  EnemyFormation: 3-6-7
-  EnemyAttackCooldown: 0.2
-  EnemyHealth: 0
-  MoonstonesReward: 256
+  NumberOfLVL: 19
+  NumberOfEnemyWaves: 15
+  EnemyFormation: 3-4-5-3-4-7-4-7-7-7-4-7-4-7-5
+  EnemyAttackCooldown: -3
+  EnemyHealth: 550
+  MoonstonesReward: 1500
 --- !u!1 &25138969
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,12 +513,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bb0932af7350e448e192f73af9c852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfLVL: 5
-  NumberOfEnemyWaves: 3
-  EnemyFormation: 3-6-7
-  EnemyAttackCooldown: 0.2
-  EnemyHealth: 0
-  MoonstonesReward: 256
+  NumberOfLVL: 9
+  NumberOfEnemyWaves: 7
+  EnemyFormation: 5-4-5-3-4-7-5
+  EnemyAttackCooldown: 0.7
+  EnemyHealth: 200
+  MoonstonesReward: 550
 --- !u!1 &29140741
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,12 +797,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bb0932af7350e448e192f73af9c852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfLVL: 5
-  NumberOfEnemyWaves: 3
-  EnemyFormation: 3-6-7
-  EnemyAttackCooldown: 0.2
-  EnemyHealth: 0
-  MoonstonesReward: 256
+  NumberOfLVL: 17
+  NumberOfEnemyWaves: 12
+  EnemyFormation: 7-7-7-3-4-5-4-5-6-4-7-4
+  EnemyAttackCooldown: 0.4
+  EnemyHealth: 450
+  MoonstonesReward: 1240
 --- !u!95 &54790080
 Animator:
   serializedVersion: 3
@@ -1188,11 +1188,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NumberOfLVL: 4
-  NumberOfEnemyWaves: 4
-  EnemyFormation: 3-4-5-7
-  EnemyAttackCooldown: 1
-  EnemyHealth: 0
-  MoonstonesReward: 213
+  NumberOfEnemyWaves: 3
+  EnemyFormation: 5-6-7
+  EnemyAttackCooldown: 1.5
+  EnemyHealth: 100
+  MoonstonesReward: 320
 --- !u!95 &183000527
 Animator:
   serializedVersion: 3
@@ -1438,11 +1438,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NumberOfLVL: 2
-  NumberOfEnemyWaves: 2
-  EnemyFormation: 3-5
-  EnemyAttackCooldown: 4
-  EnemyHealth: 200
-  MoonstonesReward: 157
+  NumberOfEnemyWaves: 3
+  EnemyFormation: 3-3-4
+  EnemyAttackCooldown: 2
+  EnemyHealth: 50
+  MoonstonesReward: 300
 --- !u!95 &281889823
 Animator:
   serializedVersion: 3
@@ -1616,12 +1616,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bb0932af7350e448e192f73af9c852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfLVL: 5
-  NumberOfEnemyWaves: 3
-  EnemyFormation: 3-6-7
-  EnemyAttackCooldown: 0.2
-  EnemyHealth: 0
-  MoonstonesReward: 256
+  NumberOfLVL: 10
+  NumberOfEnemyWaves: 7
+  EnemyFormation: 7-3-3-7-3-4-7
+  EnemyAttackCooldown: 0.7
+  EnemyHealth: 250
+  MoonstonesReward: 600
 --- !u!1 &422692482
 GameObject:
   m_ObjectHideFlags: 0
@@ -1934,12 +1934,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bb0932af7350e448e192f73af9c852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfLVL: 5
-  NumberOfEnemyWaves: 3
-  EnemyFormation: 3-6-7
-  EnemyAttackCooldown: 0.2
-  EnemyHealth: 0
-  MoonstonesReward: 256
+  NumberOfLVL: 7
+  NumberOfEnemyWaves: 5
+  EnemyFormation: 3-4-3-4-7
+  EnemyAttackCooldown: 0.8
+  EnemyHealth: 150
+  MoonstonesReward: 400
 --- !u!1 &481599474
 GameObject:
   m_ObjectHideFlags: 0
@@ -2245,11 +2245,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NumberOfLVL: 1
-  NumberOfEnemyWaves: 3
-  EnemyFormation: 4-3-7
+  NumberOfEnemyWaves: 1
+  EnemyFormation: 3
   EnemyAttackCooldown: 2
   EnemyHealth: 50
-  MoonstonesReward: 250
+  MoonstonesReward: 300
 --- !u!95 &509167443
 Animator:
   serializedVersion: 3
@@ -2681,12 +2681,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bb0932af7350e448e192f73af9c852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfLVL: 5
-  NumberOfEnemyWaves: 3
-  EnemyFormation: 3-6-7
-  EnemyAttackCooldown: 0.2
-  EnemyHealth: 0
-  MoonstonesReward: 256
+  NumberOfLVL: 6
+  NumberOfEnemyWaves: 4
+  EnemyFormation: 4-5-6-7
+  EnemyAttackCooldown: 1
+  EnemyHealth: 150
+  MoonstonesReward: 380
 --- !u!1 &727055432
 GameObject:
   m_ObjectHideFlags: 0
@@ -2917,12 +2917,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bb0932af7350e448e192f73af9c852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfLVL: 5
-  NumberOfEnemyWaves: 3
-  EnemyFormation: 3-6-7
-  EnemyAttackCooldown: 0.2
-  EnemyHealth: 0
-  MoonstonesReward: 256
+  NumberOfLVL: 11
+  NumberOfEnemyWaves: 8
+  EnemyFormation: 3-3-4-5-3-4-5-7
+  EnemyAttackCooldown: 0.6
+  EnemyHealth: 250
+  MoonstonesReward: 620
 --- !u!1 &889835054
 GameObject:
   m_ObjectHideFlags: 0
@@ -3152,12 +3152,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bb0932af7350e448e192f73af9c852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfLVL: 5
-  NumberOfEnemyWaves: 3
-  EnemyFormation: 3-6-7
-  EnemyAttackCooldown: 0.2
-  EnemyHealth: 0
-  MoonstonesReward: 256
+  NumberOfLVL: 18
+  NumberOfEnemyWaves: 13
+  EnemyFormation: 3-4-5-6-7-3-4-5-6-7-3-4-5
+  EnemyAttackCooldown: 0.3
+  EnemyHealth: 450
+  MoonstonesReward: 1400
 --- !u!1 &1067281524
 GameObject:
   m_ObjectHideFlags: 0
@@ -3306,10 +3306,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NumberOfLVL: 3
   NumberOfEnemyWaves: 3
-  EnemyFormation: 3-4-6
-  EnemyAttackCooldown: 2
-  EnemyHealth: 0
-  MoonstonesReward: 198
+  EnemyFormation: 5-6-7
+  EnemyAttackCooldown: 1.5
+  EnemyHealth: 50
+  MoonstonesReward: 300
 --- !u!95 &1067281530
 Animator:
   serializedVersion: 3
@@ -3562,12 +3562,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bb0932af7350e448e192f73af9c852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfLVL: 5
-  NumberOfEnemyWaves: 3
-  EnemyFormation: 3-6-7
-  EnemyAttackCooldown: 0.2
-  EnemyHealth: 0
-  MoonstonesReward: 256
+  NumberOfLVL: 16
+  NumberOfEnemyWaves: 12
+  EnemyFormation: 3-3-4-5-3-4-7-5-4-3-4-7
+  EnemyAttackCooldown: 0.4
+  EnemyHealth: 400
+  MoonstonesReward: 950
 --- !u!1 &1127336530
 GameObject:
   m_ObjectHideFlags: 0
@@ -4153,12 +4153,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bb0932af7350e448e192f73af9c852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfLVL: 5
-  NumberOfEnemyWaves: 3
-  EnemyFormation: 3-6-7
-  EnemyAttackCooldown: 0.2
-  EnemyHealth: 0
-  MoonstonesReward: 256
+  NumberOfLVL: 8
+  NumberOfEnemyWaves: 6
+  EnemyFormation: 3-4-5-6-7-7
+  EnemyAttackCooldown: 0.7
+  EnemyHealth: 200
+  MoonstonesReward: 450
 --- !u!1 &1360717566
 GameObject:
   m_ObjectHideFlags: 0
@@ -4460,11 +4460,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NumberOfLVL: 5
-  NumberOfEnemyWaves: 3
-  EnemyFormation: 3-6-7
-  EnemyAttackCooldown: 0.2
-  EnemyHealth: 0
-  MoonstonesReward: 256
+  NumberOfEnemyWaves: 4
+  EnemyFormation: 3-3-3-4
+  EnemyAttackCooldown: 1
+  EnemyHealth: 100
+  MoonstonesReward: 340
 --- !u!95 &1389648979
 Animator:
   serializedVersion: 3
@@ -4696,12 +4696,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bb0932af7350e448e192f73af9c852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfLVL: 4
-  NumberOfEnemyWaves: 4
-  EnemyFormation: 3-4-5-7
-  EnemyAttackCooldown: 1
-  EnemyHealth: 0
-  MoonstonesReward: 213
+  NumberOfLVL: 14
+  NumberOfEnemyWaves: 10
+  EnemyFormation: 3-4-5-4-5-4-7-3-4-7
+  EnemyAttackCooldown: 0.5
+  EnemyHealth: 400
+  MoonstonesReward: 750
 --- !u!95 &1546620392
 Animator:
   serializedVersion: 3
@@ -5036,12 +5036,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bb0932af7350e448e192f73af9c852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfLVL: 2
-  NumberOfEnemyWaves: 2
-  EnemyFormation: 3-5
-  EnemyAttackCooldown: 4
-  EnemyHealth: 200
-  MoonstonesReward: 157
+  NumberOfLVL: 12
+  NumberOfEnemyWaves: 8
+  EnemyFormation: 3-4-7-5-3-4-5-7
+  EnemyAttackCooldown: 0.6
+  EnemyHealth: 300
+  MoonstonesReward: 680
 --- !u!95 &1686411307
 Animator:
   serializedVersion: 3
@@ -5497,12 +5497,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bb0932af7350e448e192f73af9c852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfLVL: 5
-  NumberOfEnemyWaves: 3
-  EnemyFormation: 3-6-7
-  EnemyAttackCooldown: 0.2
-  EnemyHealth: 0
-  MoonstonesReward: 256
+  NumberOfLVL: 15
+  NumberOfEnemyWaves: 10
+  EnemyFormation: 7-4-7-3-4-5-4-5-4-7
+  EnemyAttackCooldown: 0.5
+  EnemyHealth: 400
+  MoonstonesReward: 840
 --- !u!1 &1808318300
 GameObject:
   m_ObjectHideFlags: 0
@@ -5962,12 +5962,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bb0932af7350e448e192f73af9c852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfLVL: 3
-  NumberOfEnemyWaves: 3
-  EnemyFormation: 3-4-6
-  EnemyAttackCooldown: 2
-  EnemyHealth: 0
-  MoonstonesReward: 198
+  NumberOfLVL: 12
+  NumberOfEnemyWaves: 9
+  EnemyFormation: 3-4-5-3-3-4-5-7-7
+  EnemyAttackCooldown: 0.5
+  EnemyHealth: 300
+  MoonstonesReward: 700
 --- !u!95 &2018837613
 Animator:
   serializedVersion: 3
@@ -6151,12 +6151,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bb0932af7350e448e192f73af9c852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfLVL: 5
-  NumberOfEnemyWaves: 3
-  EnemyFormation: 3-6-7
+  NumberOfLVL: 20
+  NumberOfEnemyWaves: 20
+  EnemyFormation: 7-7-7-3-4-5-6-6-5-4-7-7-7-7-5-6-3-4-7-7
   EnemyAttackCooldown: 0.2
-  EnemyHealth: 0
-  MoonstonesReward: 256
+  EnemyHealth: 700
+  MoonstonesReward: 2000
 --- !u!95 &2115892607
 Animator:
   serializedVersion: 3

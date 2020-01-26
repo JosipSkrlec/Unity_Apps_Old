@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2722985562706389029}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_Children:
@@ -35,7 +35,7 @@ Transform:
   - {fileID: 5134231960897641773}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2722985562706389028
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -146,7 +146,6 @@ MonoBehaviour:
   Health: 100
   Projectile01: {fileID: 4744930313161493391, guid: 87f889c6702970543b21a6783bfbfc9c,
     type: 3}
-  Projectile02: {fileID: 0}
   Explosion: {fileID: 3149982673036943676, guid: bda18fa9387a6fd4da51f515b1153ed3,
     type: 3}
   Shield: {fileID: 4085051835790848219, guid: 2b001a454810fb14bb3a8ff1c8d465b3, type: 3}

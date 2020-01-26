@@ -131,20 +131,20 @@ public class EnemySystemAndInGameControl : MonoBehaviour
 
         ShowInfoOnGUI();
 
-        int EnemyMovement = Random.Range(1,4);
+        //int EnemyMovement = Random.Range(1,4);
 
-        if (EnemyMovement == 1)
-        {
-            MoveFormationLeftAndRightBool = true;
-        }
-        else if (EnemyMovement == 2)
-        {
-            MoveFormationInCircleBool = true;
-        }
-        else
-        {
-            MoveFormationUpAndDOwnBool = true;
-        }
+        //if (EnemyMovement == 1)
+        //{
+        //    MoveFormationLeftAndRightBool = true;
+        //}
+        //else if (EnemyMovement == 2)
+        //{
+        //    MoveFormationInCircleBool = true;
+        //}
+        //else
+        //{
+        //    MoveFormationUpAndDOwnBool = true;
+        //}
     }
 
     // enemy shooting trigger
@@ -254,7 +254,22 @@ public class EnemySystemAndInGameControl : MonoBehaviour
         // to se trigger-a u linijama u else iznad
         if (SpawnFormationBool == true)
         {
-            Debug.Log("SpawnNewWave");
+            // za movement
+            int EnemyMovement = Random.Range(1, 4);
+            Debug.Log("spawn again" + EnemyMovement);
+            if (EnemyMovement == 1)
+            {
+                MoveFormationLeftAndRightBool = true;
+            }
+            else if (EnemyMovement == 2)
+            {
+                MoveFormationInCircleBool = true;
+            }
+            else
+            {
+                MoveFormationUpAndDOwnBool = true;
+            }
+
             numberofCurrentWave += 1;
 
             CountingSecondsForSpawnFormationHelper = 0;
@@ -458,7 +473,7 @@ public class EnemySystemAndInGameControl : MonoBehaviour
     //KORISTI se kao helper u SpawnEnemyShipInControlledFormation
     void SpawnEnemyHelper(float FormationX,float FormationY)
     {
-        GameObject GO_Spawn = Instantiate(EnemyShip,transform.position,Quaternion.identity);
+        GameObject GO_Spawn = Instantiate(EnemyShip,transform.position, transform.rotation * Quaternion.Euler(0f, 180f, 0f));
         GO_Spawn.transform.parent = this.transform;
 
         GO_Spawn.GetComponent<EnemyControl>().setHealth(EnemyHealth);

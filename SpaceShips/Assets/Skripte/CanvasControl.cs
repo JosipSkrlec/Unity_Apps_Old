@@ -14,6 +14,8 @@ public class CanvasControl : MonoBehaviour
     public GameObject EndlessPanelForBuy;
     public GameObject LockerImage;
 
+    public static bool GamePaused = false;
+
     void Start()
     {
         // provjera prijedenih levela campaign-a
@@ -190,6 +192,21 @@ public class CanvasControl : MonoBehaviour
         Time.timeScale = 1.0f;
 
         SceneManager.LoadScene("ThanksScene");
+    }
+
+    public void PauseGame()
+    {
+        if (GamePaused == false)
+        {
+            GamePaused = true;
+            Time.timeScale = 0.0f;
+        }
+        else
+        {
+            GamePaused = false;
+            Time.timeScale = 1.0f;
+        }
+
     }
 
     // Helper metoda

@@ -186,8 +186,6 @@ public class ShopControl : MonoBehaviour
 
             cooldownPREF = PlayerPrefs.GetFloat("playerShootingCooldown");
 
-            Debug.Log(cooldownPREF);
-
             if (cooldownPREF == 0.2f)
             {
                 MoonstonesCountREF -= playerShootingCooldownMoonstonesCost;
@@ -369,6 +367,12 @@ public class ShopControl : MonoBehaviour
 
             }
 
+        }
+        else
+        {
+            NotificationText.SetActive(true);
+            NotificationText.GetComponent<Text>().text = "Not enought Moonstones";
+            NotificationText.GetComponent<ActiveObjectToUnactiveAfterSeconds>().enabled = true;
         }
 
     }// end of buy damage method

@@ -116,7 +116,7 @@ public class PlayerControl : MonoBehaviour
     {
         healthCheckerbool = false;
 
-        for (int x = 0; x <= 4; x++)
+        for (int x = 0; x <= 2; x++)
         {
             if (PlayerHealth-1 >= x)
             {
