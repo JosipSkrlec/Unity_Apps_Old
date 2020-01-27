@@ -440,7 +440,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "congratulation\n\n\rYou finished the game \n\nthank you for playing my
-    game.\n\nmore games will be available soon"
+    game.\n\nmore games will be available soon\n\nRemember number : 222"
 --- !u!222 &556794586
 CanvasRenderer:
   m_ObjectHideFlags: 0
