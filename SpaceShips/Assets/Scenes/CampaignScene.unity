@@ -454,7 +454,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11322079}
+      - m_Target: {fileID: 25138975}
         m_MethodName: OpenGameSceneAndSetParameters
         m_Mode: 1
         m_Arguments:
@@ -779,7 +779,6 @@ GameObject:
   - component: {fileID: 54790081}
   - component: {fileID: 54790080}
   - component: {fileID: 54790079}
-  - component: {fileID: 54790084}
   m_Layer: 5
   m_Name: ButtonLVL17
   m_TagString: Untagged
@@ -887,17 +886,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11322079}
-        m_MethodName: OpenGameSceneAndSetParameters
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 54790079}
         m_MethodName: OpenGameSceneAndSetParameters
         m_Mode: 1
@@ -948,24 +936,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54790077}
   m_CullTransparentMesh: 0
---- !u!114 &54790084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 54790077}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37bb0932af7350e448e192f73af9c852, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NumberOfLVL: 5
-  NumberOfEnemyWaves: 3
-  EnemyFormation: 3-6-7
-  EnemyAttackCooldown: 0.2
-  EnemyHealth: 0
-  MoonstonesReward: 256
 --- !u!1 &166599135
 GameObject:
   m_ObjectHideFlags: 0
@@ -1579,7 +1549,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11322079}
+      - m_Target: {fileID: 382570720}
         m_MethodName: OpenGameSceneAndSetParameters
         m_Mode: 1
         m_Arguments:
@@ -1908,7 +1878,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11322079}
+      - m_Target: {fileID: 455293560}
         m_MethodName: OpenGameSceneAndSetParameters
         m_Mode: 1
         m_Arguments:
@@ -2666,7 +2636,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11322079}
+      - m_Target: {fileID: 652385373}
         m_MethodName: OpenGameSceneAndSetParameters
         m_Mode: 1
         m_Arguments:
@@ -2913,7 +2883,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11322079}
+      - m_Target: {fileID: 803768445}
         m_MethodName: OpenGameSceneAndSetParameters
         m_Mode: 1
         m_Arguments:
@@ -3159,7 +3129,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11322079}
+      - m_Target: {fileID: 978793880}
         m_MethodName: OpenGameSceneAndSetParameters
         m_Mode: 1
         m_Arguments:
@@ -3580,7 +3550,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11322079}
+      - m_Target: {fileID: 1125278500}
         m_MethodName: OpenGameSceneAndSetParameters
         m_Mode: 1
         m_Arguments:
@@ -4182,7 +4152,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11322079}
+      - m_Target: {fileID: 1359048600}
         m_MethodName: OpenGameSceneAndSetParameters
         m_Mode: 1
         m_Arguments:
@@ -4766,7 +4736,6 @@ GameObject:
   - component: {fileID: 1546620393}
   - component: {fileID: 1546620392}
   - component: {fileID: 1546620391}
-  - component: {fileID: 1546620396}
   m_Layer: 5
   m_Name: ButtonLVL14
   m_TagString: Untagged
@@ -4874,17 +4843,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11322079}
-        m_MethodName: OpenGameSceneAndSetParameters
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1546620391}
         m_MethodName: OpenGameSceneAndSetParameters
         m_Mode: 1
@@ -4935,24 +4893,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1546620389}
   m_CullTransparentMesh: 0
---- !u!114 &1546620396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1546620389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37bb0932af7350e448e192f73af9c852, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NumberOfLVL: 5
-  NumberOfEnemyWaves: 3
-  EnemyFormation: 3-6-7
-  EnemyAttackCooldown: 0.2
-  EnemyHealth: 0
-  MoonstonesReward: 256
 --- !u!1 &1608587614
 GameObject:
   m_ObjectHideFlags: 0
@@ -5117,7 +5057,6 @@ GameObject:
   - component: {fileID: 1686411308}
   - component: {fileID: 1686411307}
   - component: {fileID: 1686411306}
-  - component: {fileID: 1686411311}
   m_Layer: 5
   m_Name: ButtonLVL12
   m_TagString: Untagged
@@ -5225,17 +5164,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11322079}
-        m_MethodName: OpenGameSceneAndSetParameters
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1686411306}
         m_MethodName: OpenGameSceneAndSetParameters
         m_Mode: 1
@@ -5286,24 +5214,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686411304}
   m_CullTransparentMesh: 0
---- !u!114 &1686411311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1686411304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37bb0932af7350e448e192f73af9c852, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NumberOfLVL: 5
-  NumberOfEnemyWaves: 3
-  EnemyFormation: 3-6-7
-  EnemyAttackCooldown: 0.2
-  EnemyHealth: 0
-  MoonstonesReward: 256
 --- !u!1 &1712732240
 GameObject:
   m_ObjectHideFlags: 0
@@ -5559,7 +5469,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11322079}
+      - m_Target: {fileID: 1789876353}
         m_MethodName: OpenGameSceneAndSetParameters
         m_Mode: 1
         m_Arguments:
@@ -6065,7 +5975,6 @@ GameObject:
   - component: {fileID: 2018837614}
   - component: {fileID: 2018837613}
   - component: {fileID: 2018837612}
-  - component: {fileID: 2018837617}
   m_Layer: 5
   m_Name: ButtonLVL13
   m_TagString: Untagged
@@ -6105,7 +6014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bb0932af7350e448e192f73af9c852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NumberOfLVL: 12
+  NumberOfLVL: 13
   NumberOfEnemyWaves: 9
   EnemyFormation: 3-4-5-3-3-4-5-7-7
   EnemyAttackCooldown: 0.5
@@ -6173,17 +6082,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11322079}
-        m_MethodName: OpenGameSceneAndSetParameters
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 2018837612}
         m_MethodName: OpenGameSceneAndSetParameters
         m_Mode: 1
@@ -6234,24 +6132,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2018837610}
   m_CullTransparentMesh: 0
---- !u!114 &2018837617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2018837610}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37bb0932af7350e448e192f73af9c852, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NumberOfLVL: 5
-  NumberOfEnemyWaves: 3
-  EnemyFormation: 3-6-7
-  EnemyAttackCooldown: 0.2
-  EnemyHealth: 0
-  MoonstonesReward: 256
 --- !u!1 &2115892604
 GameObject:
   m_ObjectHideFlags: 0
@@ -6373,7 +6253,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11322079}
+      - m_Target: {fileID: 2115892606}
         m_MethodName: OpenGameSceneAndSetParameters
         m_Mode: 1
         m_Arguments:
