@@ -1398,14 +1398,6 @@
 	}
 
 /* Menu */
-
-	#nav {
-		background: #0d1217;
-		z-index: 10002;
-		position: relative;
-		width: 4em;
-	}
-
 		#nav ul {
 			list-style: none;
 			margin: 0;
@@ -1425,7 +1417,7 @@
 				#nav ul li a {
 					color: rgba(255, 255, 255, 0.5);
 					text-decoration: none;
-					font-size: 2em;
+					font-size: 1.5em;
 				}
 
 					#nav ul li a:hover {
@@ -1436,13 +1428,28 @@
 						color: #19B5FE;
 					}
 
-				@media screen and (max-width: 736px) {
+					/*AKO JE WIDTH MANJI STAVITI DRUGACIJI NAV BAR TJ U MOBITELU UKINUTI*/
+					/*TAB I DESKTOP*/
+				@media all and (min-width: 736px) {
+					#nav {
+						background: #0d1217;
+						z-index: 10002;
+						position: relative;
 
-					#nav ul li {
-						width: 3.4em;
+						width: 4em;
+
 					}
-
 				}
+				/*MOBITEL*/
+				@media not all and (min-width: 736px) {
+					#nav  {
+						background-color: #07111f;
+						z-index: 10002;
+						/*width: 3.4em;*/
+
+					}
+				}
+
 
 /* Banner */
 
