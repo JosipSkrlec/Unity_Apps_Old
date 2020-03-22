@@ -93,7 +93,7 @@
 
 	body {
 		background-color: #fff;
-		color: #22313F;
+		color: #000000;
 	}
 
 	body, input, select, textarea {
@@ -1419,7 +1419,7 @@
 				#nav ul li a {
 					color: rgba(255, 255, 255, 0.5);
 					text-decoration: none;
-					font-size: 1.5em;
+					font-size: 2em;
 				}
 
 					#nav ul li a:hover {
@@ -1595,7 +1595,7 @@
 
 	#footer {
 		padding: 4em 0 2em 0;
-		background: #f2f2f2;
+		background: #0d1217;
 	}
 
 		#footer .copyright {
@@ -1671,3 +1671,58 @@
 .no-js .cd-words-wrapper b.is-visible {
   opacity: 1;
 }
+
+/*AVATAR*/
+.avatar {
+	border-radius: 100%;
+	display: inline-block;
+	margin: 0 0 2em 0;
+	padding: 1em;
+	border: solid 1px rgba(255, 255, 255, 0.25);
+	background-color: rgba(255, 255, 255, 0.075);
+}
+
+.avatar img {
+		border-radius: 100%;
+		display: block;
+		width: 8em;
+	}
+
+	/*sredina table*/
+	.sredina{
+	text-align: center;
+	color: black;
+	font-weight: bold;
+}
+
+
+table {
+	width: 100%;
+	text-align: center;
+	font-size: 30px;
+
+}
+
+	table tbody tr:nth-child(2n+2) {
+		color: white;
+		background: #000000;
+
+	}
+
+	table td {
+		padding: 0.5em 1em 0.5em 1em;
+	}
+
+	table th {
+		text-align: left;
+		padding: 0.5em 1em 0.5em 1em;
+	}
+
+	table thead {
+		background: #;
+		color: #fff;
+	}
+
+	table tfoot {
+		background: #eee;
+	}
