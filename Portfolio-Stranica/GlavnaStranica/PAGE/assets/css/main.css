@@ -1978,13 +1978,13 @@ width:150px;
 	font-size: 22px;
 
 }
+/*PROGRAMMING LANGUAGE*/
+.bar.csharp::before{
+  background-color: #00c97a;
+}
 
 .bar.cplusplus::before{
   background-color: #0087c2;
-}
-
-.bar.csharp::before{
-  background-color: #00c97a;
 }
 
 .bar.js::before{
@@ -1995,12 +1995,48 @@ width:150px;
   background-color: #9a02ba;
 }
 
+.bar.python::before{
+  background-color: #0087c2;
+}
+
 .bar.css::before{
   background-color: #005cc4;
 }
 
 .bar.html::before{
   background-color: #e67e22;
+}
+
+.bar.mySQL::before{
+  background-color: #e67e22;
+}
+/*GAME INDUSTRY PROGRAMS*/
+.bar.Unity::before{
+  background-color: #62acbd;
+}
+
+.bar.Unreal::before{
+  background-color: #62acbd;
+}
+
+.bar.Blender::before{
+  background-color: #eda900;
+}
+
+.bar.Substance::before{
+  background-color: #e5353b;
+}
+
+.bar.Quixel::before{
+  background-color: #eb6367;
+}
+
+.bar.ZBrush::before{
+  background-color: #db813b;
+}
+
+.bar.Photoshop::before{
+  background-color: #005cc4;
 }
 
 /*perfentages*/
