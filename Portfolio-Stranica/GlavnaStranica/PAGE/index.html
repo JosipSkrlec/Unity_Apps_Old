@@ -138,13 +138,14 @@
 							<!-- Social -->
 								<div class="social column">
 									<h3>About Me</h3>
+									<p>Nešto o meni!</p>
 									<p>Mus sed interdum nunc dictum rutrum scelerisque erat a parturient condimentum potenti dapibus vestibulum condimentum per tristique porta. Torquent a ut consectetur a vel ullamcorper a commodo a mattis ipsum class quam sed eros vestibulum quisque a eu nulla scelerisque a elementum vestibulum.</p>
 									<p>Aliquet dolor ultricies sem rhoncus dolor ullamcorper pharetra dis condimentum ullamcorper rutrum vehicula id nisi vel aptent orci litora hendrerit penatibus erat ad sit. In a semper velit eleifend a viverra adipiscing a phasellus urna praesent parturient integer ultrices montes parturient suscipit posuere quis aenean. Parturient euismod ultricies commodo arcu elementum suspendisse id dictumst at ut vestibulum conubia quisque a himenaeos dictum proin dis purus integer mollis parturient eros scelerisque dis libero parturient magnis.</p>
+
 									<h3>Follow Me</h3>
 									<ul class="icons">
-										<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="https://web.facebook.com/josip.skrlec.1?ref=bookmarks" class="icon fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+
 									</ul>
 								</div>
 
@@ -154,18 +155,23 @@
 									<form action="#" method="post">
 										<div class="field half first">
 											<label for="name">Name</label>
-											<input name="name" id="name" type="text" placeholder="Name">
+											<input class="form-control" id="name" type="text" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name.">
+
 										</div>
 										<div class="field half">
 											<label for="email">Email</label>
-											<input name="email" id="email" type="email" placeholder="Email">
+										<input class="form-control" id="email" type="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email address.">
+
+
 										</div>
 										<div class="field">
 											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="6" placeholder="Message"></textarea>
+										<textarea class="form-control" id="message" placeholder="Your Message" required="required" data-validation-required-message="Please enter a message."></textarea>
+
 										</div>
 										<ul class="actions">
-											<li><input value="Send Message" class="button" type="submit"></li>
+											<li><button id="sendMessageButton" class="sim-btn btn-hover-new" data-text="Send Message" type="submit">Send Message</button></li>
+
 										</ul>
 									</form>
 								</div>
@@ -175,7 +181,10 @@
 					<!-- Footer -->
 						<footer id="footer">
 							<div class="copyright">
+								Josip Škrlec
+								<br>
 								&copy; TEMPLATE FROM : <a href="https://templated.co/" target="_blank">TEMPLATED</a>
+
 							</div>
 						</footer>
 				</section>
@@ -189,6 +198,7 @@
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/contact_me.js"></script>
 
 			<script src="assets/js/headline.js"></script>
 
