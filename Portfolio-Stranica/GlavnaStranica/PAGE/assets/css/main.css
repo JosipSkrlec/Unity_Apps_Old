@@ -2067,15 +2067,14 @@ hr.LINE {
 
 /*Style for picture ofr project*/
 .imagestyleProject{
+
 	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
 
 	border-radius: 8%;
-	display: inline-block;
-	margin: 0 0 2em 0;
-	padding: 0em;
+
 }
 
 .centered{
