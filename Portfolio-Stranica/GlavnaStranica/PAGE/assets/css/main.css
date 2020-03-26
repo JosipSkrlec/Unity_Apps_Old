@@ -1415,7 +1415,7 @@
 			}
 
 				#nav ul li a {
-					color: rgba(255, 255, 255, 0.5);
+					color: #ff000080;
 					text-decoration: none;
 					font-size: 1.5em;
 				}
@@ -2064,3 +2064,25 @@ hr.LINE {
   border: 3px solid black;
   border-radius: 10px;
 }
+
+/*Style for picture ofr project*/
+.imagestyleProject{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 100%;
+
+	border-radius: 8%;
+	display: inline-block;
+	margin: 0 0 2em 0;
+	padding: 0em;
+}
+
+.centered{
+	border-radius: 8%;
+	display: inline-block;
+	margin: 0 0 2em 0;
+	padding: 0em;
+}
+
+/*BUTTONS INLINE*/
