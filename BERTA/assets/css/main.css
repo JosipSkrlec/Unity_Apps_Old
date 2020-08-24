@@ -1999,7 +1999,7 @@ ul.icons {
     -webkit-transition-delay: 1.25s;
     -ms-transition-delay: 1.25s;
     transition-delay: 1.25s;
-    background: #111111;
+    background: #11111142;
     content: '';
     display: block;
     height: 100%;
@@ -2010,7 +2010,7 @@ ul.icons {
     width: 100%;
     z-index: 1; }
   #banner:after {
-    background: linear-gradient(135deg, #ce1b28 0%, #111111 74%);
+    background: linear-gradient(135deg, #ce1b2861 0%, #111111 74%);
     content: ' ';
     display: block;
     height: 100%;
