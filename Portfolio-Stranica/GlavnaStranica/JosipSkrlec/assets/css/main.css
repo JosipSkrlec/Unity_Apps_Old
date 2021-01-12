@@ -355,7 +355,7 @@
 		button:hover,
 		.button:hover {
 			color: #FFF;
-			background: #019be3;
+			background: #555;
 		}
 
 		input[type="submit"].alt,
@@ -1459,7 +1459,7 @@
 					z-index: 99; /* Make sure it does not overlap */
 					border: none; /* Remove borders */
 					outline: none; /* Remove outline */
-					background: #000000;
+					background: #535250;
 					box-shadow: 0 0 0 2px #0000007a;
 					color: white; /* Text color */
 					line-height: 0em;
@@ -1584,7 +1584,7 @@
 		}
 
 		#banner h1 {
-			font-size: 4em;
+			font-size: 3.5em;
 			line-height: 1em;
 			margin: 0 0 0.5em 0;
 			padding: 0;
@@ -1761,16 +1761,7 @@
 	text-align: center;
 	color: black;
 	font-weight: bold;
-}
-
-/*SREDINA DIV*/
-.sredina{
-text-align: center;
-color: black;
-font-weight: bold;
-
-}
-
+	}
 
 table {
 	width: 100%;
@@ -2140,3 +2131,93 @@ hr.LINE {
 }
 
 /*BUTTONS INLINE*/
+
+/*SCROLLING (PRIKAZ NA ZIVOTOPIS)*/
+.m_scroll_arrows
+{	
+  display:block;
+  width: 5px;
+  height: 5px;
+  -ms-transform: rotate(45deg); /* IE 9 */
+  -webkit-transform: rotate(45deg); /* Chrome, Safari, Opera */
+  transform: rotate(45deg);
+
+  border-right: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+
+  width: 18px;
+  height: 18px;
+}
+.unu
+{
+  margin-top: 1px;
+}
+.unu, .doi, .trei
+{
+	-webkit-animation: mouse-scroll 1s infinite;
+	-moz-animation: mouse-scroll 1s infinite;
+	animation: mouse-scroll 1s infinite;
+}
+.unu
+{
+  -webkit-animation-delay: .1s;
+  -moz-animation-delay: .1s;
+  -webkit-animation-direction: alternate;
+
+  animation-direction: alternate;
+  animation-delay: alternate;
+}
+.doi
+{
+  -webkit-animation-delay: .2s;
+  -moz-animation-delay: .2s;
+  -webkit-animation-direction: alternate;
+
+  animation-delay: .2s;
+  animation-direction: alternate;
+
+  margin-top: -6px;
+}
+.trei
+{
+  -webkit-animation-delay: .3s;
+  -moz-animation-delay: .3s;
+  -webkit-animation-direction: alternate;
+
+  animation-delay: .3s;
+  animation-direction: alternate;
+
+
+  margin-top: -6px;
+}
+
+
+@-webkit-keyframes mouse-scroll {
+
+  0%   { opacity: 0;}
+  50%  { opacity: .5;}
+  100% { opacity: 1;}
+}
+@-moz-keyframes mouse-scroll {
+
+  0%   { opacity: 0; }
+  50%  { opacity: .5; }
+  100% { opacity: 1; }
+}
+@-o-keyframes mouse-scroll {
+
+  0%   { opacity: 0; }
+  50%  { opacity: .5; }
+  100% { opacity: 1; }
+}
+@keyframes mouse-scroll {
+
+  0%   { opacity: 0; }
+  50%  { opacity: .5; }
+  100% { opacity: 1; }
+}
+
+
+
+
+/*SCROLLING (PRIKAZ NA ZIVOTOPIS) DO TUDA*/
