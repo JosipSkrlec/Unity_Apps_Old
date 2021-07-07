@@ -40,7 +40,7 @@ public class DrawGizmos : MonoBehaviour
             //Gizmos.DrawWireSphere(PositionOfGizmoSphere, SphereGizmoSize);
             Handles.color = Color.blue;
 #pragma warning disable CS0618 // Type or member is obsolete
-            Handles.SphereCap(0, PositionOfGizmoSphere, Quaternion.identity, SphereGizmoSize);
+            //Handles.SphereCap(0, PositionOfGizmoSphere, Quaternion.identity, SphereGizmoSize);
 #pragma warning restore CS0618 // Type or member is obsolete
         }
 
