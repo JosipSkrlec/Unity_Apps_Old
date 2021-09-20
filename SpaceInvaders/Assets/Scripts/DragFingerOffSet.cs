@@ -19,9 +19,11 @@ public class DragFingerOffSet : MonoBehaviour
     void Update()
     {
 
-#if UNITY_EDITOR
+//#if UNITY_EDITOR || UNITY_EDITOR_WIN
         if (Input.GetMouseButtonDown(0))
         {
+            float a = 5.0f;
+            
             mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
             deltaX = mousePosition.x - transform.position.x;
@@ -45,36 +47,36 @@ public class DragFingerOffSet : MonoBehaviour
             rb.velocity = Vector2.zero;
         }
 
-#endif
+//#elif !UNITY_EDITOR || UNITY_ANDROID
+//        if (Input.touchCount > 0)
+//        {
+//            Touch touch = Input.GetTouch(0);
 
-        if (Input.touchCount > 0)
-        {
-            Touch touch = Input.GetTouch(0);
+//            Vector2 touchPos = Camera.main.ScreenToWorldPoint(touch.position);
 
-            Vector2 touchPos = Camera.main.ScreenToWorldPoint(touch.position);
+//            switch (touch.phase)
+//            {
 
-            switch (touch.phase)
-            {
+//                case TouchPhase.Began:
+//                    deltaX = touchPos.x - transform.position.x;
+//                    deltaY = touchPos.y - transform.position.y;
 
-                case TouchPhase.Began:
-                    deltaX = touchPos.x - transform.position.x;
-                    deltaY = touchPos.y - transform.position.y;
+//                    break;
 
-                    break;
+//                case TouchPhase.Moved:
+//                    rb.MovePosition(new Vector2(touchPos.x - deltaX, touchPos.y - deltaY));
 
-                case TouchPhase.Moved:
-                    rb.MovePosition(new Vector2(touchPos.x - deltaX, touchPos.y - deltaY));
+//                    break;
 
-                    break;
+//                case TouchPhase.Ended:
+//                    rb.velocity = Vector2.zero;
 
-                case TouchPhase.Ended:
-                    rb.velocity = Vector2.zero;
-
-                    break;
-            }
+//                    break;
+//            }
 
 
-        }    
+//        }
+//#endif
 
     }
 
